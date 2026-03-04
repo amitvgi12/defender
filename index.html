@@ -9,386 +9,187 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy: #0a0e1a;
-      --navy-mid: #111827;
-      --navy-light: #1c2537;
-      --gold: #c9a84c;
-      --gold-light: #e8c96b;
-      --gold-pale: #f5e6b0;
-      --red: #b91c1c;
-      --white: #f8f9fa;
-      --gray: #9ca3af;
-      --border: rgba(201,168,76,0.2);
+      --bg:          #ffffff;
+      --bg-alt:      #f4f7fb;
+      --bg-card:     #edf1f7;
+      --navy:        #111827;
+      --navy-mid:    #1e2a3b;
+      --gold:        #c9a84c;
+      --gold-light:  #e8c96b;
+      --gold-pale:   #fdf6e3;
+      --text:        #111827;
+      --text-muted:  #64748b;
+      --border:      rgba(201,168,76,0.25);
+      --border-gray: #e2e8f0;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      font-family: 'Barlow', sans-serif;
-      background: var(--navy);
-      color: var(--white);
-      overflow-x: hidden;
-    }
+    body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
 
-    /* ─── NAV ─── */
+    /* NAV */
     nav {
       position: fixed; top: 0; width: 100%; z-index: 100;
-      background: rgba(10,14,26,0.97);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 70px;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-gray);
+      box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+      padding: 0 2rem; display: flex; align-items: center;
+      justify-content: space-between; height: 70px;
     }
     .nav-logo img { height: 48px; object-fit: contain; }
     .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
-    .nav-links a {
-      color: var(--gray); text-decoration: none;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1rem; font-weight: 600; letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--gold); }
     .nav-actions { display: flex; align-items: center; gap: 1rem; }
-    .nav-phone {
-      color: var(--gold); font-weight: 600; text-decoration: none;
-      font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem;
-      letter-spacing: 0.05em;
-    }
-    .btn-contact {
-      background: var(--gold); color: var(--navy);
-      padding: 0.5rem 1.4rem; border-radius: 2px;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700; letter-spacing: 0.08em;
-      text-transform: uppercase; text-decoration: none;
-      font-size: 0.9rem; transition: background 0.2s;
-    }
+    .nav-phone { color: var(--navy); font-weight: 600; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; transition: color 0.2s; }
+    .nav-phone:hover { color: var(--gold); }
+    .btn-contact { background: var(--gold); color: #fff; padding: 0.5rem 1.4rem; border-radius: 2px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; font-size: 0.9rem; transition: background 0.2s; }
     .btn-contact:hover { background: var(--gold-light); }
     .nav-hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
-    .nav-hamburger span { width: 26px; height: 2px; background: var(--gold); transition: all 0.3s; }
-    .mobile-menu {
-      display: none; position: fixed; top: 70px; left: 0; right: 0;
-      background: var(--navy-mid); border-bottom: 1px solid var(--border);
-      padding: 1.5rem 2rem; z-index: 99;
-    }
+    .nav-hamburger span { width: 26px; height: 2px; background: var(--navy); transition: all 0.3s; }
+    .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border-gray); box-shadow: 0 4px 16px rgba(0,0,0,0.08); padding: 1.5rem 2rem; z-index: 99; }
     .mobile-menu.open { display: flex; flex-direction: column; gap: 1rem; }
-    .mobile-menu a {
-      color: var(--gray); text-decoration: none;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
-    }
+    .mobile-menu a { color: var(--text-muted); text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
     .mobile-menu a:hover { color: var(--gold); }
 
-    /* ─── HERO ─── */
-    .hero {
-      position: relative; height: 100vh; min-height: 640px;
-      display: flex; align-items: center;
-      overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background-image: url('https://img1.wsimg.com/isteam/ip/95804eb6-e04e-4ff7-9bcd-f341308d975f/ChatGPT%20Image%20May%206%2C%202025%20at%2001_47_29%20PM.png');
-      background-size: cover; background-position: center;
-      filter: brightness(0.38);
-    }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(105deg, rgba(10,14,26,0.88) 40%, rgba(10,14,26,0.3) 100%);
-    }
-    .hero-accent {
-      position: absolute; top: 0; right: 0; width: 40%;
-      height: 100%; background: linear-gradient(180deg, transparent, rgba(201,168,76,0.04) 50%, transparent);
-      pointer-events: none;
-    }
-    .hero-content {
-      position: relative; z-index: 2;
-      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
-      padding-top: 70px;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      border: 1px solid var(--gold); color: var(--gold);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em;
-      text-transform: uppercase; padding: 0.3rem 0.9rem;
-      margin-bottom: 1.5rem;
-    }
+    /* HERO */
+    .hero { position: relative; height: 100vh; min-height: 640px; display: flex; align-items: center; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background-image: url('https://img1.wsimg.com/isteam/ip/95804eb6-e04e-4ff7-9bcd-f341308d975f/ChatGPT%20Image%20May%206%2C%202025%20at%2001_47_29%20PM.png'); background-size: cover; background-position: center; filter: brightness(0.4); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(17,24,39,0.86) 40%, rgba(17,24,39,0.3) 100%); }
+    .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 2rem; padding-top: 70px; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid var(--gold); color: var(--gold); font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.3rem 0.9rem; margin-bottom: 1.5rem; }
     .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-    .hero h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(3.5rem, 9vw, 7.5rem);
-      line-height: 0.95; letter-spacing: 0.02em;
-      color: var(--white); margin-bottom: 1.5rem;
-    }
+    .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 9vw, 7.5rem); line-height: 0.95; letter-spacing: 0.02em; color: #fff; margin-bottom: 1.5rem; }
     .hero h1 .gold { color: var(--gold); display: block; }
-    .hero p {
-      font-size: 1.15rem; color: rgba(248,249,250,0.75);
-      max-width: 520px; line-height: 1.7; margin-bottom: 2.5rem;
-      font-weight: 300;
-    }
+    .hero p { font-size: 1.15rem; color: rgba(255,255,255,0.8); max-width: 520px; line-height: 1.7; margin-bottom: 2.5rem; font-weight: 300; }
     .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--gold); color: var(--navy);
-      padding: 0.85rem 2rem; font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700; font-size: 1rem; letter-spacing: 0.1em;
-      text-transform: uppercase; text-decoration: none;
-      border-radius: 2px; transition: all 0.2s;
-    }
+    .btn-primary { background: var(--gold); color: #fff; padding: 0.85rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.2s; display: inline-block; }
     .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
-    .btn-secondary {
-      border: 1px solid rgba(248,249,250,0.35); color: var(--white);
-      padding: 0.85rem 2rem; font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 600; font-size: 1rem; letter-spacing: 0.1em;
-      text-transform: uppercase; text-decoration: none;
-      border-radius: 2px; transition: all 0.2s;
-    }
+    .btn-secondary { border: 1px solid rgba(255,255,255,0.5); color: #fff; padding: 0.85rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.2s; display: inline-block; }
     .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
-    .hero-stats {
-      position: absolute; bottom: 3rem; left: 0; right: 0;
-      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
-      display: flex; gap: 3rem; z-index: 2;
-    }
+    .hero-stats { position: absolute; bottom: 3rem; left: 0; right: 0; max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; gap: 3rem; z-index: 2; }
     .hero-stat { border-left: 2px solid var(--gold); padding-left: 1rem; }
-    .hero-stat .num {
-      font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: var(--gold); line-height: 1;
-    }
-    .hero-stat .label { font-size: 0.8rem; color: var(--gray); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.2rem; }
+    .hero-stat .num { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: var(--gold); line-height: 1; }
+    .hero-stat .label { font-size: 0.8rem; color: rgba(255,255,255,0.6); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.2rem; }
 
-    /* ─── SECTIONS ─── */
+    /* SECTIONS */
     section { padding: 6rem 2rem; }
     .container { max-width: 1200px; margin: 0 auto; }
-    .section-label {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;
-    }
-    .section-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      line-height: 1; letter-spacing: 0.02em; margin-bottom: 1rem;
-    }
-    .section-sub { color: var(--gray); font-size: 1.05rem; max-width: 560px; line-height: 1.7; font-weight: 300; }
+    .section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; letter-spacing: 0.02em; margin-bottom: 1rem; color: var(--text); }
+    .section-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 560px; line-height: 1.7; font-weight: 300; }
     .divider { width: 48px; height: 3px; background: var(--gold); margin: 1.5rem 0; }
 
-    /* ─── MISSION ─── */
-    .mission { background: var(--navy-mid); }
+    /* MISSION */
+    .mission { background: var(--bg-alt); }
     .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-    .mission-img { position: relative; }
-    .mission-img img {
-      width: 100%; aspect-ratio: 4/5; object-fit: cover;
-      border-radius: 2px;
-    }
-    .mission-img-frame {
-      position: absolute; inset: -12px; border: 1px solid var(--border); border-radius: 2px; pointer-events: none; z-index: 0;
-    }
-    .mission-img { z-index: 1; }
-    .mission-img img { position: relative; z-index: 1; }
-    .mission-badge {
-      position: absolute; bottom: -1.5rem; right: -1.5rem;
-      background: var(--gold); color: var(--navy);
-      font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem;
-      padding: 1.2rem 1.5rem; letter-spacing: 0.05em;
-      z-index: 2; text-align: center; line-height: 1.2;
-    }
-    .mission-text p { color: var(--gray); line-height: 1.8; margin-bottom: 1.5rem; font-weight: 300; }
+    .mission-img { position: relative; z-index: 1; }
+    .mission-img img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 2px; position: relative; z-index: 1; }
+    .mission-img-frame { position: absolute; inset: -12px; border: 1px solid var(--border); border-radius: 2px; pointer-events: none; z-index: 0; }
+    .mission-badge { position: absolute; bottom: -1.5rem; right: -1.5rem; background: var(--gold); color: #fff; font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; padding: 1.2rem 1.5rem; letter-spacing: 0.05em; z-index: 2; text-align: center; line-height: 1.2; }
+    .mission-text p { color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem; font-weight: 300; }
     .mission-features { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
-    .mission-feature {
-      display: flex; align-items: flex-start; gap: 1rem;
-      padding: 1rem 1.25rem; border: 1px solid var(--border);
-      border-left: 3px solid var(--gold); background: rgba(201,168,76,0.04);
-    }
+    .mission-feature { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 1.25rem; border: 1px solid var(--border-gray); border-left: 3px solid var(--gold); background: var(--bg); }
     .mission-feature .icon { font-size: 1.3rem; }
-    .mission-feature h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 0.2rem; }
-    .mission-feature p { color: var(--gray); font-size: 0.9rem; margin: 0; }
+    .mission-feature h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 0.2rem; color: var(--text); }
+    .mission-feature p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
 
-    /* ─── SERVICES ─── */
-    .services { background: var(--navy); }
+    /* SERVICES */
+    .services { background: var(--bg); }
     .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
-    .service-card {
-      background: var(--navy-light);
-      border: 1px solid var(--border);
-      padding: 2.5rem 2rem;
-      position: relative; overflow: hidden;
-      transition: transform 0.3s, border-color 0.3s;
-    }
-    .service-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--gold), transparent);
-    }
-    .service-card:hover { transform: translateY(-6px); border-color: var(--gold); }
-    .service-icon {
-      width: 52px; height: 52px; background: rgba(201,168,76,0.1);
-      border: 1px solid var(--border); border-radius: 2px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem; margin-bottom: 1.5rem;
-    }
-    .service-card h3 {
-      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-      font-size: 1.2rem; letter-spacing: 0.06em; text-transform: uppercase;
-      margin-bottom: 0.75rem; color: var(--white);
-    }
-    .service-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.7; font-weight: 300; }
-    .service-num {
-      position: absolute; bottom: 1.5rem; right: 1.5rem;
-      font-family: 'Bebas Neue', sans-serif; font-size: 3rem;
-      color: rgba(201,168,76,0.08); letter-spacing: 0.02em;
-    }
+    .service-card { background: var(--bg-alt); border: 1px solid var(--border-gray); padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
+    .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), transparent); }
+    .service-card:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: 0 12px 32px rgba(201,168,76,0.12); }
+    .service-icon { width: 52px; height: 52px; background: var(--gold-pale); border: 1px solid var(--border); border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 1.5rem; }
+    .service-card h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.2rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.75rem; color: var(--text); }
+    .service-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; font-weight: 300; }
+    .service-num { position: absolute; bottom: 1.5rem; right: 1.5rem; font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: rgba(201,168,76,0.12); letter-spacing: 0.02em; }
 
-    /* ─── STATS ─── */
-    .stats { background: var(--gold); }
-    .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; }
-    .stat-block {
-      padding: 3.5rem 2rem; text-align: center;
-      border-right: 1px solid rgba(10,14,26,0.15);
-    }
+    /* STATS */
+    .stats { background: var(--navy); }
+    .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); }
+    .stat-block { padding: 3.5rem 2rem; text-align: center; border-right: 1px solid rgba(255,255,255,0.08); }
     .stat-block:last-child { border-right: none; }
-    .stat-num {
-      font-family: 'Bebas Neue', sans-serif; font-size: 4rem;
-      color: var(--navy); line-height: 1;
-    }
-    .stat-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(10,14,26,0.7); margin-top: 0.5rem; }
+    .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; color: var(--gold); line-height: 1; }
+    .stat-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 0.5rem; }
 
-    /* ─── CLIENTS ─── */
-    .clients { background: var(--navy-mid); }
+    /* CLIENTS */
+    .clients { background: var(--bg-alt); }
     .clients-marquee-wrap { overflow: hidden; margin-top: 3rem; position: relative; }
-    .clients-marquee-wrap::before, .clients-marquee-wrap::after {
-      content: ''; position: absolute; top: 0; bottom: 0; width: 10%; z-index: 2;
-    }
-    .clients-marquee-wrap::before { left: 0; background: linear-gradient(90deg, var(--navy-mid), transparent); }
-    .clients-marquee-wrap::after { right: 0; background: linear-gradient(270deg, var(--navy-mid), transparent); }
-    .clients-marquee { display: flex; gap: 2rem; animation: marquee 22s linear infinite; width: max-content; }
+    .clients-marquee-wrap::before, .clients-marquee-wrap::after { content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; }
+    .clients-marquee-wrap::before { left: 0; background: linear-gradient(90deg, var(--bg-alt), transparent); }
+    .clients-marquee-wrap::after  { right: 0; background: linear-gradient(270deg, var(--bg-alt), transparent); }
+    .clients-marquee { display: flex; gap: 1.5rem; animation: marquee 30s linear infinite; width: max-content; }
+    .clients-marquee:hover { animation-play-state: paused; }
     @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-    .client-item {
-      flex-shrink: 0; padding: 1.2rem 2.5rem;
-      border: 1px solid var(--border);
-      background: var(--navy-light);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 700; letter-spacing: 0.1em;
-      font-size: 0.95rem; text-transform: uppercase;
-      color: var(--gray); white-space: nowrap;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .client-item:hover { color: var(--gold); border-color: var(--gold); }
+    .client-item { flex-shrink: 0; width: 160px; height: 90px; border: 1px solid var(--border-gray); background: var(--bg); display: flex; align-items: center; justify-content: center; padding: 0.75rem 1.25rem; transition: border-color 0.25s, box-shadow 0.25s; }
+    .client-item:hover { border-color: var(--gold); box-shadow: 0 4px 16px rgba(201,168,76,0.12); }
+    .client-item img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; filter: grayscale(100%) opacity(0.55); transition: filter 0.3s; display: block; }
+    .client-item:hover img { filter: grayscale(0%) opacity(1); }
 
-    /* ─── FAQ ─── */
-    .faq { background: var(--navy); }
+    /* FAQ */
+    .faq { background: var(--bg); }
     .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
     .faq-list { display: flex; flex-direction: column; gap: 0; margin-top: 2.5rem; }
-    .faq-item { border-bottom: 1px solid var(--border); }
-    .faq-q {
-      width: 100%; background: none; border: none; color: var(--white);
-      font-family: 'Barlow', sans-serif; font-size: 1rem; font-weight: 600;
-      text-align: left; padding: 1.2rem 0; cursor: pointer;
-      display: flex; justify-content: space-between; align-items: center;
-      gap: 1rem;
-    }
+    .faq-item { border-bottom: 1px solid var(--border-gray); }
+    .faq-q { width: 100%; background: none; border: none; color: var(--text); font-family: 'Barlow', sans-serif; font-size: 1rem; font-weight: 600; text-align: left; padding: 1.2rem 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
     .faq-q:hover { color: var(--gold); }
     .faq-q .arrow { font-size: 1.2rem; color: var(--gold); transition: transform 0.3s; flex-shrink: 0; }
     .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
-    .faq-a { display: none; color: var(--gray); font-size: 0.95rem; line-height: 1.7; padding-bottom: 1.2rem; font-weight: 300; }
+    .faq-a { display: none; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; padding-bottom: 1.2rem; font-weight: 300; }
     .faq-item.open .faq-a { display: block; }
-    .faq-cta {
-      margin-top: 3rem; padding: 3rem;
-      background: var(--navy-light); border: 1px solid var(--border);
-      border-left: 4px solid var(--gold);
-    }
-    .faq-cta h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; margin-bottom: 0.75rem; }
-    .faq-cta p { color: var(--gray); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem; font-weight: 300; }
+    .faq-cta { margin-top: 3rem; padding: 3rem; background: var(--bg-alt); border: 1px solid var(--border-gray); border-left: 4px solid var(--gold); }
+    .faq-cta h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; margin-bottom: 0.75rem; color: var(--text); }
+    .faq-cta p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem; font-weight: 300; }
+    .btn-outline-dark { border: 1px solid rgba(17,24,39,0.25); color: var(--text); padding: 0.85rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.2s; display: inline-block; }
+    .btn-outline-dark:hover { border-color: var(--gold); color: var(--gold); }
 
-    /* ─── TEAM ─── */
-    .team { background: var(--navy-mid); }
-    .team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; margin-top: 3rem; }
-    .team-card { position: relative; overflow: hidden; }
-    .team-card img {
-      width: 100%; aspect-ratio: 3/4; object-fit: cover;
-      filter: grayscale(30%); transition: filter 0.3s, transform 0.3s;
-    }
-    .team-card:hover img { filter: grayscale(0%); transform: scale(1.03); }
-    .team-info {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      background: linear-gradient(transparent, rgba(10,14,26,0.95));
-      padding: 2rem 1.25rem 1.25rem;
-    }
-    .team-info h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.15rem; letter-spacing: 0.05em; }
-    .team-info span { color: var(--gold); font-size: 0.82rem; letter-spacing: 0.08em; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; }
-
-    /* ─── CONTACT BAND ─── */
-    .contact-band {
-      background: linear-gradient(135deg, var(--navy-light) 0%, rgba(201,168,76,0.08) 100%);
-      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-      padding: 5rem 2rem;
-    }
+    /* CONTACT BAND */
+    .contact-band { background: var(--navy-mid); border-top: 1px solid rgba(201,168,76,0.15); border-bottom: 1px solid rgba(201,168,76,0.15); padding: 5rem 2rem; }
     .contact-band-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-    .contact-band h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem,4vw,3.5rem); margin-bottom: 1rem; }
-    .contact-band p { color: var(--gray); line-height: 1.7; margin-bottom: 2rem; font-weight: 300; }
+    .contact-band h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem,4vw,3.5rem); margin-bottom: 1rem; color: #fff; }
+    .contact-band p { color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 2rem; font-weight: 300; }
     .contact-info-blocks { display: flex; flex-direction: column; gap: 1.5rem; }
     .contact-block { display: flex; gap: 1rem; align-items: flex-start; }
-    .contact-block-icon {
-      width: 42px; height: 42px; flex-shrink: 0;
-      background: rgba(201,168,76,0.1); border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
-    }
+    .contact-block-icon { width: 42px; height: 42px; flex-shrink: 0; background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
     .contact-block-text h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.82rem; color: var(--gold); margin-bottom: 0.2rem; }
-    .contact-block-text a, .contact-block-text p { color: var(--white); text-decoration: none; font-size: 0.95rem; font-weight: 300; }
+    .contact-block-text a, .contact-block-text p { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.95rem; font-weight: 300; }
     .contact-block-text a:hover { color: var(--gold); }
 
-    /* ─── FOOTER ─── */
-    footer {
-      background: var(--navy-mid); border-top: 1px solid var(--border);
-      padding: 4rem 2rem 2rem;
-    }
+    /* FOOTER */
+    footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.07); padding: 4rem 2rem 2rem; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
     .footer-brand img { height: 44px; object-fit: contain; margin-bottom: 1rem; }
-    .footer-brand p { color: var(--gray); font-size: 0.9rem; line-height: 1.7; max-width: 280px; font-weight: 300; }
-    .footer-col h4 {
-      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-      font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 1.2rem;
-    }
+    .footer-brand p { color: rgba(255,255,255,0.45); font-size: 0.9rem; line-height: 1.7; max-width: 280px; font-weight: 300; }
+    .footer-col h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-    .footer-col ul li a { color: var(--gray); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; font-weight: 300; }
+    .footer-col ul li a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; font-weight: 300; }
     .footer-col ul li a:hover { color: var(--gold); }
-    .footer-bottom {
-      border-top: 1px solid var(--border); padding-top: 2rem;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 1rem;
-    }
-    .footer-bottom p { color: var(--gray); font-size: 0.85rem; font-weight: 300; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom p { color: rgba(255,255,255,0.35); font-size: 0.85rem; font-weight: 300; }
     .footer-legal { display: flex; gap: 1.5rem; }
-    .footer-legal a { color: var(--gray); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-legal a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
     .footer-legal a:hover { color: var(--gold); }
 
-    /* ─── WHATSAPP FLOAT ─── */
-    .wa-float {
-      position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
-      background: #25D366; color: #fff;
-      width: 56px; height: 56px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem; box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-      text-decoration: none; transition: transform 0.2s;
-    }
+    /* WA FLOAT */
+    .wa-float { position: fixed; bottom: 2rem; right: 2rem; z-index: 999; background: #25D366; color: #fff; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none; transition: transform 0.2s; }
     .wa-float:hover { transform: scale(1.1); }
 
-    /* ─── ANIMATIONS ─── */
-    .fade-up {
-      opacity: 0; transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
+    /* ANIMATIONS */
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-    /* ─── RESPONSIVE ─── */
+    /* RESPONSIVE */
     @media (max-width: 900px) {
       .nav-links, .nav-actions { display: none; }
       .nav-hamburger { display: flex; }
       .mission-grid, .faq-grid, .contact-band-inner { grid-template-columns: 1fr; gap: 3rem; }
       .services-grid { grid-template-columns: 1fr 1fr; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
-      .team-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 600px) {
-      .services-grid, .team-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
       .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
       .footer-grid { grid-template-columns: 1fr; }
@@ -430,9 +231,8 @@
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
-  <div class="hero-accent"></div>
   <div class="hero-content fade-up visible">
-    <div class="hero-badge">Certified & Licensed Security Services</div>
+    <div class="hero-badge">Certified &amp; Licensed Security Services</div>
     <h1>Unleash<br><span class="gold">Your Safety.</span></h1>
     <p>Professional security guard services, manpower solutions, and risk assessment for businesses across Uttarakhand. Your peace of mind is our mission.</p>
     <div class="hero-btns">
@@ -454,37 +254,23 @@
     <div class="mission-grid">
       <div class="mission-img fade-up">
         <div class="mission-img-frame"></div>
-        <img src="https://img1.wsimg.com/isteam/ip/95804eb6-e04e-4ff7-9bcd-f341308d975f/ChatGPT%20Image%20May%206%2C%202025%20at%2001_47_29%20PM.png" alt="Defender Security Guard">
-        <div class="mission-badge">SINCE<br>2012</div>
+        <img src="https://img1.wsimg.com/isteam/ip/95804eb6-e04e-4ff7-9bcd-f341308d975f/ChatGPT%20Image%20May%206%2C%202025%20at%2001_47_29%20PM.png" alt="Defender Security Team">
+        <div class="mission-badge">EST.<br>2012</div>
       </div>
       <div class="mission-text fade-up">
         <div class="section-label">Our Mission</div>
-        <h2 class="section-title">We develop the ideal customized security plan for you</h2>
+        <h2 class="section-title">Your Safety Is Our Priority</h2>
         <div class="divider"></div>
-        <p>At Defender Security Services, we provide a variety of services to suit your unique requirements. Our dedication to excellence in delivering exceptional services to establishments nationwide is at the heart of each service.</p>
-        <p>Our mission is to help our customers feel safe and secure — from residential complexes to large commercial enterprises across Uttarakhand and beyond.</p>
+        <p>At Defender Security &amp; Manpower Services, we provide a variety of services to suit your unique requirements. Our dedication to excellence is at the heart of each service.</p>
+        <p>Our mission is to help our customers feel safe and secure — whether you're a corporate firm, hospital, school, or government body in Uttarakhand.</p>
         <div class="mission-features">
-          <div class="mission-feature">
-            <span class="icon">🛡️</span>
-            <div>
-              <h4>Customized Security Plans</h4>
-              <p>Tailored strategies built around your specific operational needs and risk profile.</p>
-            </div>
-          </div>
-          <div class="mission-feature">
-            <span class="icon">🎓</span>
-            <div>
-              <h4>Trained & Vetted Personnel</h4>
-              <p>Every guard undergoes rigorous background checks and professional training.</p>
-            </div>
-          </div>
-          <div class="mission-feature">
-            <span class="icon">📡</span>
-            <div>
-              <h4>24/7 Monitoring & Response</h4>
-              <p>Round-the-clock supervision ensuring rapid response to any security incident.</p>
-            </div>
-          </div>
+          <div class="mission-feature"><span class="icon">🛡️</span><div><h4>PSARA Licensed</h4><p>Fully licensed under the Private Security Agencies Regulation Act.</p></div></div>
+          <div class="mission-feature"><span class="icon">🎓</span><div><h4>Trained Personnel</h4><p>Every guard undergoes rigorous professional training &amp; background verification.</p></div></div>
+          <div class="mission-feature"><span class="icon">⏱️</span><div><h4>24/7 Operations</h4><p>Round-the-clock security and immediate incident response, every day of the year.</p></div></div>
+        </div>
+        <div style="margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="about.html" class="btn-primary">About Us</a>
+          <a href="contact.html" class="btn-outline-dark">Get a Quote</a>
         </div>
       </div>
     </div>
@@ -494,53 +280,21 @@
 <!-- SERVICES -->
 <section class="services">
   <div class="container">
-    <div class="fade-up">
+    <div class="fade-up" style="text-align:center;">
       <div class="section-label">What We Offer</div>
-      <h2 class="section-title">Comprehensive Security Solutions</h2>
-      <div class="divider"></div>
-      <p class="section-sub">Explore our full range of professional security and manpower services designed to protect your people, assets, and reputation.</p>
+      <h2 class="section-title">Our Security Services</h2>
+      <div class="divider" style="margin:1rem auto;"></div>
+      <p class="section-sub" style="margin:0 auto;text-align:center;">Comprehensive security and manpower solutions tailored for businesses, institutions, and events across Uttarakhand.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card fade-up">
-        <div class="service-icon">🛡️</div>
-        <h3>Security Guard Services</h3>
-        <p>Trained and licensed security guards deployed at your premises to monitor, deter threats, and maintain order 24/7.</p>
-        <div class="service-num">01</div>
-      </div>
-      <div class="service-card fade-up">
-        <div class="service-icon">🏢</div>
-        <h3>Corporate Security</h3>
-        <p>Specialized protection for offices, industrial sites, and commercial properties including access control and visitor management.</p>
-        <div class="service-num">02</div>
-      </div>
-      <div class="service-card fade-up">
-        <div class="service-icon">🚨</div>
-        <h3>Emergency Response</h3>
-        <p>Rapid deployment teams ready to respond immediately to any security incident or emergency situation around the clock.</p>
-        <div class="service-num">03</div>
-      </div>
-      <div class="service-card fade-up">
-        <div class="service-icon">🔍</div>
-        <h3>Risk Assessment</h3>
-        <p>Comprehensive vulnerability analysis and security audits to identify gaps and build a robust protection strategy.</p>
-        <div class="service-num">04</div>
-      </div>
-      <div class="service-card fade-up">
-        <div class="service-icon">👥</div>
-        <h3>Manpower Services</h3>
-        <p>Skilled manpower solutions for events, hospitality, and facility management — vetted and professionally trained.</p>
-        <div class="service-num">05</div>
-      </div>
-      <div class="service-card fade-up">
-        <div class="service-icon">🎪</div>
-        <h3>Event Security</h3>
-        <p>Crowd management and event protection for concerts, corporate events, and large public gatherings of any scale.</p>
-        <div class="service-num">06</div>
-      </div>
+      <div class="service-card fade-up"><div class="service-icon">🛡️</div><h3>Security Guards</h3><p>Uniformed, trained, and background-verified guards for premises, commercial, and residential deployments.</p><div class="service-num">01</div></div>
+      <div class="service-card fade-up"><div class="service-icon">🏢</div><h3>Corporate Security</h3><p>Dedicated security management for corporate offices, IT parks, banks, and commercial establishments.</p><div class="service-num">02</div></div>
+      <div class="service-card fade-up"><div class="service-icon">🎪</div><h3>Event Security</h3><p>Crowd management, VIP protection, and access control for conferences, public events, and ceremonies.</p><div class="service-num">03</div></div>
+      <div class="service-card fade-up"><div class="service-icon">📋</div><h3>Risk Assessment</h3><p>Thorough on-site evaluation and customized security plans tailored to your premises and threat profile.</p><div class="service-num">04</div></div>
+      <div class="service-card fade-up"><div class="service-icon">🚨</div><h3>Emergency Response</h3><p>Rapid response protocols and trained personnel for immediate action in critical situations and emergencies.</p><div class="service-num">05</div></div>
+      <div class="service-card fade-up"><div class="service-icon">👷</div><h3>Manpower Services</h3><p>Skilled manpower solutions for housekeeping, facility management, hospitality, and industrial operations.</p><div class="service-num">06</div></div>
     </div>
-    <div style="text-align:center; margin-top:3rem;">
-      <a href="services.html" class="btn-primary">View All Services</a>
-    </div>
+    <div style="text-align:center;margin-top:3rem;"><a href="services.html" class="btn-primary">View All Services</a></div>
   </div>
 </section>
 
@@ -563,36 +317,49 @@
       <div class="section-label">Trusted By</div>
       <h2 class="section-title">Our Valued Clients</h2>
       <div class="divider" style="margin:1rem auto;"></div>
-      <p class="section-sub" style="margin:0 auto; text-align:center;">Trusted by leading organizations across Uttarakhand and beyond to safeguard their operations.</p>
+      <p class="section-sub" style="margin:0 auto;text-align:center;">Trusted by leading organizations across Uttarakhand and beyond to safeguard their operations.</p>
     </div>
   </div>
-  <div class="clients-marquee-wrap" style="margin-top:3rem;">
+  <div class="clients-marquee-wrap">
     <div class="clients-marquee">
-      <div class="client-item">Uttarakhand Government</div>
-      <div class="client-item">ONGC Dehradun</div>
-      <div class="client-item">Forest Research Institute</div>
-      <div class="client-item">BHEL Haridwar</div>
-      <div class="client-item">Jolly Grant Airport</div>
-      <div class="client-item">Max Hospital</div>
-      <div class="client-item">Pacific Mall</div>
-      <div class="client-item">IMA Dehradun</div>
-      <div class="client-item">Graphic Era University</div>
-      <div class="client-item">DIT University</div>
-      <div class="client-item">Mussoorie Hotels</div>
-      <div class="client-item">Tapkeshwar Temple</div>
-      <!-- duplicate for seamless loop -->
-      <div class="client-item">Uttarakhand Government</div>
-      <div class="client-item">ONGC Dehradun</div>
-      <div class="client-item">Forest Research Institute</div>
-      <div class="client-item">BHEL Haridwar</div>
-      <div class="client-item">Jolly Grant Airport</div>
-      <div class="client-item">Max Hospital</div>
-      <div class="client-item">Pacific Mall</div>
-      <div class="client-item">IMA Dehradun</div>
-      <div class="client-item">Graphic Era University</div>
-      <div class="client-item">DIT University</div>
-      <div class="client-item">Mussoorie Hotels</div>
-      <div class="client-item">Tapkeshwar Temple</div>
+      <!--
+        ╔══════════════════════════════════════════════════════╗
+        ║  CLIENT LOGOS — HOW TO ADD YOUR IMAGES              ║
+        ║                                                      ║
+        ║  1. Create folder: assets/clients/                   ║
+        ║  2. Save your logo files there as:                   ║
+        ║     client-1.png, client-2.png … client-13.png       ║
+        ║  3. Recommended: PNG, transparent bg, 160×90 px      ║
+        ║  4. The marquee loops them automatically.            ║
+        ╚══════════════════════════════════════════════════════╝
+      -->
+      <div class="client-item"><img src="assets/clients/client-1.png"  alt="Client 1"></div>
+      <div class="client-item"><img src="assets/clients/client-2.png"  alt="Client 2"></div>
+      <div class="client-item"><img src="assets/clients/client-3.png"  alt="Client 3"></div>
+      <div class="client-item"><img src="assets/clients/client-4.png"  alt="Client 4"></div>
+      <div class="client-item"><img src="assets/clients/client-5.png"  alt="Client 5"></div>
+      <div class="client-item"><img src="assets/clients/client-6.png"  alt="Client 6"></div>
+      <div class="client-item"><img src="assets/clients/client-7.png"  alt="Client 7"></div>
+      <div class="client-item"><img src="assets/clients/client-8.png"  alt="Client 8"></div>
+      <div class="client-item"><img src="assets/clients/client-9.png"  alt="Client 9"></div>
+      <div class="client-item"><img src="assets/clients/client-10.png" alt="Client 10"></div>
+      <div class="client-item"><img src="assets/clients/client-11.png" alt="Client 11"></div>
+      <div class="client-item"><img src="assets/clients/client-12.png" alt="Client 12"></div>
+      <div class="client-item"><img src="assets/clients/client-13.png" alt="Client 13"></div>
+      <!-- Duplicate set — required for the seamless infinite scroll loop -->
+      <div class="client-item"><img src="assets/clients/client-1.png"  alt="Client 1"></div>
+      <div class="client-item"><img src="assets/clients/client-2.png"  alt="Client 2"></div>
+      <div class="client-item"><img src="assets/clients/client-3.png"  alt="Client 3"></div>
+      <div class="client-item"><img src="assets/clients/client-4.png"  alt="Client 4"></div>
+      <div class="client-item"><img src="assets/clients/client-5.png"  alt="Client 5"></div>
+      <div class="client-item"><img src="assets/clients/client-6.png"  alt="Client 6"></div>
+      <div class="client-item"><img src="assets/clients/client-7.png"  alt="Client 7"></div>
+      <div class="client-item"><img src="assets/clients/client-8.png"  alt="Client 8"></div>
+      <div class="client-item"><img src="assets/clients/client-9.png"  alt="Client 9"></div>
+      <div class="client-item"><img src="assets/clients/client-10.png" alt="Client 10"></div>
+      <div class="client-item"><img src="assets/clients/client-11.png" alt="Client 11"></div>
+      <div class="client-item"><img src="assets/clients/client-12.png" alt="Client 12"></div>
+      <div class="client-item"><img src="assets/clients/client-13.png" alt="Client 13"></div>
     </div>
   </div>
 </section>
@@ -607,69 +374,44 @@
         <div class="divider"></div>
         <div class="faq-list">
           <div class="faq-item open">
-            <button class="faq-q" onclick="toggleFaq(this)">
-              What security services do you offer?
-              <span class="arrow">▼</span>
-            </button>
+            <button class="faq-q" onclick="toggleFaq(this)">What security services do you offer?<span class="arrow">▼</span></button>
             <div class="faq-a">We offer security guard services, corporate protection, event security, emergency response, risk assessment, and manpower services — all tailored to your specific operational needs.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)">
-              Are your security guards trained and licensed?
-              <span class="arrow">▼</span>
-            </button>
+            <button class="faq-q" onclick="toggleFaq(this)">Are your security guards trained and licensed?<span class="arrow">▼</span></button>
             <div class="faq-a">Yes. All our security personnel undergo rigorous background verification, professional training, and are licensed under PSARA (Private Security Agencies Regulation Act) guidelines.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)">
-              Do you offer 24/7 security services?
-              <span class="arrow">▼</span>
-            </button>
+            <button class="faq-q" onclick="toggleFaq(this)">Do you offer 24/7 security services?<span class="arrow">▼</span></button>
             <div class="faq-a">Absolutely. Our operations center is active 24 hours a day, 7 days a week, ensuring uninterrupted protection and immediate incident response at all times.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)">
-              How do I get a free security assessment?
-              <span class="arrow">▼</span>
-            </button>
+            <button class="faq-q" onclick="toggleFaq(this)">How do I get a free security assessment?<span class="arrow">▼</span></button>
             <div class="faq-a">Simply contact us via phone, email, or WhatsApp. Our team will schedule a site visit to assess your requirements and provide a customized security proposal at no cost.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)">
-              Which areas do you serve?
-              <span class="arrow">▼</span>
-            </button>
+            <button class="faq-q" onclick="toggleFaq(this)">Which areas do you serve?<span class="arrow">▼</span></button>
             <div class="faq-a">We primarily serve Dehradun, Haridwar, Rishikesh, Mussoorie, and surrounding areas of Uttarakhand. Contact us for outstation deployments.</div>
           </div>
         </div>
       </div>
       <div class="fade-up">
         <div class="faq-cta">
-          <h3>50,000+ Clients Trust Defender Security</h3>
+          <h3>50+ Clients Trust Defender Security</h3>
           <p>Join leading organizations that rely on Defender Security Services to protect their premises, assets, and people every single day.</p>
           <div style="display:flex;gap:1rem;flex-wrap:wrap;">
             <a href="contact.html" class="btn-primary">Contact Us</a>
-            <a href="tel:8077942213" class="btn-secondary">Call Now</a>
+            <a href="tel:8077942213" class="btn-outline-dark">Call Now</a>
           </div>
         </div>
-        <div style="margin-top:2rem; padding:2rem; background:var(--navy-light); border:1px solid var(--border);">
+        <div style="margin-top:2rem;padding:2rem;background:var(--bg-alt);border:1px solid var(--border-gray);">
           <div class="section-label" style="margin-bottom:1rem;">What you will gain</div>
-          <ul style="list-style:none; display:flex; flex-direction:column; gap:0.75rem;">
-            <li style="display:flex;gap:0.75rem;align-items:center;color:var(--gray);font-weight:300;font-size:0.95rem;">
-              <span style="color:var(--gold);">✓</span> Exceptional security services
-            </li>
-            <li style="display:flex;gap:0.75rem;align-items:center;color:var(--gray);font-weight:300;font-size:0.95rem;">
-              <span style="color:var(--gold);">✓</span> Rapid response in emergencies
-            </li>
-            <li style="display:flex;gap:0.75rem;align-items:center;color:var(--gray);font-weight:300;font-size:0.95rem;">
-              <span style="color:var(--gold);">✓</span> Comprehensive 360° protection
-            </li>
-            <li style="display:flex;gap:0.75rem;align-items:center;color:var(--gray);font-weight:300;font-size:0.95rem;">
-              <span style="color:var(--gold);">✓</span> PSARA certified personnel
-            </li>
-            <li style="display:flex;gap:0.75rem;align-items:center;color:var(--gray);font-weight:300;font-size:0.95rem;">
-              <span style="color:var(--gold);">✓</span> Customized security plans
-            </li>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.75rem;">
+            <li style="display:flex;gap:0.75rem;align-items:center;color:var(--text-muted);font-weight:300;font-size:0.95rem;"><span style="color:var(--gold)">✓</span> Exceptional security services</li>
+            <li style="display:flex;gap:0.75rem;align-items:center;color:var(--text-muted);font-weight:300;font-size:0.95rem;"><span style="color:var(--gold)">✓</span> Rapid response in emergencies</li>
+            <li style="display:flex;gap:0.75rem;align-items:center;color:var(--text-muted);font-weight:300;font-size:0.95rem;"><span style="color:var(--gold)">✓</span> Comprehensive 360° protection</li>
+            <li style="display:flex;gap:0.75rem;align-items:center;color:var(--text-muted);font-weight:300;font-size:0.95rem;"><span style="color:var(--gold)">✓</span> PSARA certified personnel</li>
+            <li style="display:flex;gap:0.75rem;align-items:center;color:var(--text-muted);font-weight:300;font-size:0.95rem;"><span style="color:var(--gold)">✓</span> Customized security plans</li>
           </ul>
         </div>
       </div>
@@ -688,35 +430,10 @@
         <a href="contact.html" class="btn-primary">Contact Us Now</a>
       </div>
       <div class="contact-info-blocks fade-up">
-        <div class="contact-block">
-          <div class="contact-block-icon">📍</div>
-          <div class="contact-block-text">
-            <h4>Office Address</h4>
-            <p>Near, Kargi Chowk, Dehradun,<br>Uttarakhand 248001</p>
-          </div>
-        </div>
-        <div class="contact-block">
-          <div class="contact-block-icon">📞</div>
-          <div class="contact-block-text">
-            <h4>Phone</h4>
-            <a href="tel:8077942213">+91 8077942213</a><br>
-            <a href="tel:01352522520">0135 2522520</a>
-          </div>
-        </div>
-        <div class="contact-block">
-          <div class="contact-block-icon">✉️</div>
-          <div class="contact-block-text">
-            <h4>Email</h4>
-            <a href="mailto:Defenderuttarakhand@gmail.com">Defenderuttarakhand@gmail.com</a>
-          </div>
-        </div>
-        <div class="contact-block">
-          <div class="contact-block-icon">💬</div>
-          <div class="contact-block-text">
-            <h4>WhatsApp</h4>
-            <a href="https://wa.me/918077942213" target="_blank">Message us on WhatsApp</a>
-          </div>
-        </div>
+        <div class="contact-block"><div class="contact-block-icon">📍</div><div class="contact-block-text"><h4>Office Address</h4><p>Near, Kargi Chowk, Dehradun,<br>Uttarakhand 248001</p></div></div>
+        <div class="contact-block"><div class="contact-block-icon">📞</div><div class="contact-block-text"><h4>Phone</h4><a href="tel:8077942213">+91 8077942213</a><br><a href="tel:01352522520">0135 2522520</a></div></div>
+        <div class="contact-block"><div class="contact-block-icon">✉️</div><div class="contact-block-text"><h4>Email</h4><a href="mailto:Defenderuttarakhand@gmail.com">Defenderuttarakhand@gmail.com</a></div></div>
+        <div class="contact-block"><div class="contact-block-icon">💬</div><div class="contact-block-text"><h4>WhatsApp</h4><a href="https://wa.me/918077942213" target="_blank">Message us on WhatsApp</a></div></div>
       </div>
     </div>
   </div>
@@ -730,65 +447,24 @@
         <img src="https://img1.wsimg.com/isteam/ip/9621693c-899c-4763-b9aa-02fc73963b49/blob-9b78866.png" alt="Defender Security Services">
         <p>Professional security guard and manpower services in Dehradun, Uttarakhand. Trusted by leading organizations since 2012.</p>
       </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="jobs.html">Careers</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="services.html">Security Guards</a></li>
-          <li><a href="services.html">Corporate Security</a></li>
-          <li><a href="services.html">Event Security</a></li>
-          <li><a href="services.html">Risk Assessment</a></li>
-          <li><a href="services.html">Manpower Services</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:8077942213">+91 8077942213</a></li>
-          <li><a href="tel:01352522520">0135 2522520</a></li>
-          <li><a href="mailto:Defenderuttarakhand@gmail.com">Email Us</a></li>
-          <li><a href="https://wa.me/918077942213">WhatsApp</a></li>
-          <li><a href="contact.html">Get Directions</a></li>
-        </ul>
-      </div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About Us</a></li><li><a href="jobs.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Security Guards</a></li><li><a href="services.html">Corporate Security</a></li><li><a href="services.html">Event Security</a></li><li><a href="services.html">Risk Assessment</a></li><li><a href="services.html">Manpower Services</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:8077942213">+91 8077942213</a></li><li><a href="tel:01352522520">0135 2522520</a></li><li><a href="mailto:Defenderuttarakhand@gmail.com">Email Us</a></li><li><a href="https://wa.me/918077942213">WhatsApp</a></li><li><a href="contact.html">Get Directions</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <p>© 2025 Defender Security Services. All Rights Reserved. | Near Kargi Chowk, Dehradun, Uttarakhand 248001</p>
-      <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-      </div>
+      <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
     </div>
   </div>
 </footer>
 
-<!-- WhatsApp Float -->
 <a href="https://wa.me/918077942213" class="wa-float" target="_blank" title="Chat on WhatsApp">💬</a>
 
 <script>
-  function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
-  }
-  function toggleFaq(btn) {
-    const item = btn.closest('.faq-item');
-    item.classList.toggle('open');
-  }
-  // Scroll fade-up
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  function toggleFaq(btn) { btn.closest('.faq-item').classList.toggle('open'); }
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
-      }
-    });
+    entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80); });
   }, { threshold: 0.15 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
