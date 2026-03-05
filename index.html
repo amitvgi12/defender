@@ -9,46 +9,42 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg:          #ffffff;
-      --bg-alt:      #f4f7fb;
-      --bg-card:     #edf1f7;
-      --navy:        #111827;
-      --navy-mid:    #1e2a3b;
-      --gold:        #c9a84c;
-      --gold-light:  #e8c96b;
-      --gold-pale:   #fdf6e3;
-      --text:        #111827;
-      --text-muted:  #64748b;
-      --border:      rgba(201,168,76,0.25);
-      --border-gray: #e2e8f0;
+      --navy:       #0a0e1a;
+      --navy-mid:   #111827;
+      --navy-light: #1c2537;
+      --gold:       #c9a84c;
+      --gold-light: #e8c96b;
+      --gold-pale:  #f5e6b0;
+      --white:      #f8f9fa;
+      --gray:       #9ca3af;
+      --border:     rgba(201,168,76,0.2);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+    body { font-family: 'Barlow', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
 
     /* NAV */
     nav {
       position: fixed; top: 0; width: 100%; z-index: 100;
-      background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-gray);
-      box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+      background: rgba(10,14,26,0.97); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
       padding: 0 2rem; display: flex; align-items: center;
       justify-content: space-between; height: 70px;
     }
     .nav-logo img { height: 48px; object-fit: contain; }
     .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
-    .nav-links a { color: var(--text-muted); text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a { color: var(--gray); text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--gold); }
     .nav-actions { display: flex; align-items: center; gap: 1rem; }
-    .nav-phone { color: var(--navy); font-weight: 600; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; transition: color 0.2s; }
+    .nav-phone { color: var(--gold); font-weight: 600; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; }
     .nav-phone:hover { color: var(--gold); }
-    .btn-contact { background: var(--gold); color: #fff; padding: 0.5rem 1.4rem; border-radius: 2px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; font-size: 0.9rem; transition: background 0.2s; }
+    .btn-contact { background: var(--gold); color: var(--navy); padding: 0.5rem 1.4rem; border-radius: 2px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; font-size: 0.9rem; transition: background 0.2s; }
     .btn-contact:hover { background: var(--gold-light); }
     .nav-hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
-    .nav-hamburger span { width: 26px; height: 2px; background: var(--navy); transition: all 0.3s; }
-    .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border-gray); box-shadow: 0 4px 16px rgba(0,0,0,0.08); padding: 1.5rem 2rem; z-index: 99; }
+    .nav-hamburger span { width: 26px; height: 2px; background: var(--gold); transition: all 0.3s; }
+    .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: var(--navy-mid); border-bottom: 1px solid var(--border); padding: 1.5rem 2rem; z-index: 99; }
     .mobile-menu.open { display: flex; flex-direction: column; gap: 1rem; }
-    .mobile-menu a { color: var(--text-muted); text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+    .mobile-menu a { color: var(--gray); text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
     .mobile-menu a:hover { color: var(--gold); }
 
     /* HERO */
@@ -63,7 +59,7 @@
     .hero h1 .gold { color: var(--gold); display: block; }
     .hero p { font-size: 1.15rem; color: rgba(255,255,255,0.8); max-width: 520px; line-height: 1.7; margin-bottom: 2.5rem; font-weight: 300; }
     .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-primary { background: var(--gold); color: #fff; padding: 0.85rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.2s; display: inline-block; }
+    .btn-primary { background: var(--gold); color: var(--navy); padding: 0.85rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.2s; display: inline-block; }
     .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
     .btn-secondary { border: 1px solid rgba(255,255,255,0.5); color: #fff; padding: 0.85rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.2s; display: inline-block; }
     .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
@@ -76,33 +72,33 @@
     section { padding: 6rem 2rem; }
     .container { max-width: 1200px; margin: 0 auto; }
     .section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
-    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; letter-spacing: 0.02em; margin-bottom: 1rem; color: var(--text); }
-    .section-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 560px; line-height: 1.7; font-weight: 300; }
+    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; letter-spacing: 0.02em; margin-bottom: 1rem; }
+    .section-sub { color: var(--gray); font-size: 1.05rem; max-width: 560px; line-height: 1.7; font-weight: 300; }
     .divider { width: 48px; height: 3px; background: var(--gold); margin: 1.5rem 0; }
 
     /* MISSION */
-    .mission { background: var(--bg-alt); }
+    .mission { background: var(--navy-mid); }
     .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
     .mission-img { position: relative; z-index: 1; }
     .mission-img img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 2px; position: relative; z-index: 1; }
     .mission-img-frame { position: absolute; inset: -12px; border: 1px solid var(--border); border-radius: 2px; pointer-events: none; z-index: 0; }
-    .mission-badge { position: absolute; bottom: -1.5rem; right: -1.5rem; background: var(--gold); color: #fff; font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; padding: 1.2rem 1.5rem; letter-spacing: 0.05em; z-index: 2; text-align: center; line-height: 1.2; }
-    .mission-text p { color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem; font-weight: 300; }
+    .mission-badge { position: absolute; bottom: -1.5rem; right: -1.5rem; background: var(--gold); color: var(--navy); font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; padding: 1.2rem 1.5rem; letter-spacing: 0.05em; z-index: 2; text-align: center; line-height: 1.2; }
+    .mission-text p { color: var(--gray); line-height: 1.8; margin-bottom: 1.5rem; font-weight: 300; }
     .mission-features { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
-    .mission-feature { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 1.25rem; border: 1px solid var(--border-gray); border-left: 3px solid var(--gold); background: var(--bg); }
+    .mission-feature { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 1.25rem; border: 1px solid var(--border); border-left: 3px solid var(--gold); background: rgba(201,168,76,0.04); }
     .mission-feature .icon { font-size: 1.3rem; }
-    .mission-feature h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 0.2rem; color: var(--text); }
-    .mission-feature p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+    .mission-feature h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 0.2rem; }
+    .mission-feature p { color: var(--gray); font-size: 0.9rem; margin: 0; }
 
     /* SERVICES */
-    .services { background: var(--bg); }
+    .services { background: var(--navy); }
     .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
-    .service-card { background: var(--bg-alt); border: 1px solid var(--border-gray); padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
+    .service-card { background: var(--navy-light); border: 1px solid var(--border); padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
     .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), transparent); }
     .service-card:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: 0 12px 32px rgba(201,168,76,0.12); }
-    .service-icon { width: 52px; height: 52px; background: var(--gold-pale); border: 1px solid var(--border); border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 1.5rem; }
-    .service-card h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.2rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.75rem; color: var(--text); }
-    .service-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; font-weight: 300; }
+    .service-icon { width: 52px; height: 52px; background: rgba(201,168,76,0.1); border: 1px solid var(--border); border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 1.5rem; }
+    .service-card h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.2rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.75rem; color: var(--white); }
+    .service-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.7; font-weight: 300; }
     .service-num { position: absolute; bottom: 1.5rem; right: 1.5rem; font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: rgba(201,168,76,0.12); letter-spacing: 0.02em; }
 
     /* STATS */
@@ -114,34 +110,34 @@
     .stat-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 0.5rem; }
 
     /* CLIENTS */
-    .clients { background: var(--bg-alt); }
+    .clients { background: var(--navy-mid); }
     .clients-marquee-wrap { overflow: hidden; margin-top: 3rem; position: relative; }
     .clients-marquee-wrap::before, .clients-marquee-wrap::after { content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; }
-    .clients-marquee-wrap::before { left: 0; background: linear-gradient(90deg, var(--bg-alt), transparent); }
-    .clients-marquee-wrap::after  { right: 0; background: linear-gradient(270deg, var(--bg-alt), transparent); }
+    .clients-marquee-wrap::before { left: 0; background: linear-gradient(90deg, var(--navy-mid), transparent); }
+    .clients-marquee-wrap::after  { right: 0; background: linear-gradient(270deg, var(--navy-mid), transparent); }
     .clients-marquee { display: flex; gap: 1.5rem; animation: marquee 30s linear infinite; width: max-content; }
     .clients-marquee:hover { animation-play-state: paused; }
     @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-    .client-item { flex-shrink: 0; width: 160px; height: 90px; border: 1px solid var(--border-gray); background: var(--bg); display: flex; align-items: center; justify-content: center; padding: 0.75rem 1.25rem; transition: border-color 0.25s, box-shadow 0.25s; }
+    .client-item { flex-shrink: 0; width: 160px; height: 90px; border: 1px solid var(--border); background: var(--navy-light); display: flex; align-items: center; justify-content: center; padding: 0.75rem 1.25rem; transition: border-color 0.25s, box-shadow 0.25s; }
     .client-item:hover { border-color: var(--gold); box-shadow: 0 4px 16px rgba(201,168,76,0.12); }
     .client-item img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; filter: grayscale(100%) opacity(0.55); transition: filter 0.3s; display: block; }
     .client-item:hover img { filter: grayscale(0%) opacity(1); }
 
     /* FAQ */
-    .faq { background: var(--bg); }
+    .faq { background: var(--navy); }
     .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
     .faq-list { display: flex; flex-direction: column; gap: 0; margin-top: 2.5rem; }
-    .faq-item { border-bottom: 1px solid var(--border-gray); }
-    .faq-q { width: 100%; background: none; border: none; color: var(--text); font-family: 'Barlow', sans-serif; font-size: 1rem; font-weight: 600; text-align: left; padding: 1.2rem 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q { width: 100%; background: none; border: none; color: var(--white); font-family: 'Barlow', sans-serif; font-size: 1rem; font-weight: 600; text-align: left; padding: 1.2rem 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
     .faq-q:hover { color: var(--gold); }
     .faq-q .arrow { font-size: 1.2rem; color: var(--gold); transition: transform 0.3s; flex-shrink: 0; }
     .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
-    .faq-a { display: none; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; padding-bottom: 1.2rem; font-weight: 300; }
+    .faq-a { display: none; color: var(--gray); font-size: 0.95rem; line-height: 1.7; padding-bottom: 1.2rem; font-weight: 300; }
     .faq-item.open .faq-a { display: block; }
-    .faq-cta { margin-top: 3rem; padding: 3rem; background: var(--bg-alt); border: 1px solid var(--border-gray); border-left: 4px solid var(--gold); }
-    .faq-cta h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; margin-bottom: 0.75rem; color: var(--text); }
-    .faq-cta p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem; font-weight: 300; }
-    .btn-outline-dark { border: 1px solid rgba(17,24,39,0.25); color: var(--text); padding: 0.85rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.2s; display: inline-block; }
+    .faq-cta { margin-top: 3rem; padding: 3rem; background: var(--navy-light); border: 1px solid var(--border); border-left: 4px solid var(--gold); }
+    .faq-cta h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; margin-bottom: 0.75rem; }
+    .faq-cta p { color: var(--gray); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem; font-weight: 300; }
+    .btn-outline-dark { border: 1px solid rgba(248,249,250,0.35); color: var(--white); padding: 0.85rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.2s; display: inline-block; }
     .btn-outline-dark:hover { border-color: var(--gold); color: var(--gold); }
 
     /* CONTACT BAND */
@@ -404,7 +400,7 @@
             <a href="tel:8077942213" class="btn-outline-dark">Call Now</a>
           </div>
         </div>
-        <div style="margin-top:2rem;padding:2rem;background:var(--bg-alt);border:1px solid var(--border-gray);">
+        <div style="margin-top:2rem;padding:2rem;background:var(--navy-light);border:1px solid var(--border);">
           <div class="section-label" style="margin-bottom:1rem;">What you will gain</div>
           <ul style="list-style:none;display:flex;flex-direction:column;gap:0.75rem;">
             <li style="display:flex;gap:0.75rem;align-items:center;color:var(--text-muted);font-weight:300;font-size:0.95rem;"><span style="color:var(--gold)">✓</span> Exceptional security services</li>
@@ -432,7 +428,7 @@
       <div class="contact-info-blocks fade-up">
         <div class="contact-block"><div class="contact-block-icon">📍</div><div class="contact-block-text"><h4>Office Address</h4><p>Near, Kargi Chowk, Dehradun,<br>Uttarakhand 248001</p></div></div>
         <div class="contact-block"><div class="contact-block-icon">📞</div><div class="contact-block-text"><h4>Phone</h4><a href="tel:8077942213">+91 8077942213</a><br><a href="tel:01352522520">0135 2522520</a></div></div>
-        <div class="contact-block"><div class="contact-block-icon">✉️</div><div class="contact-block-text"><h4>Email</h4><a href="mailto:Defenderuttarakhand@gmail.com">Defenderuttarakhand@gmail.com</a></div></div>
+        <div class="contact-block"><div class="contact-block-icon">✉️</div><div class="contact-block-text"><h4>Email</h4><a href="/cdn-cgi/l/email-protection#2662434043484243545352524754474d4e47484266414b474f4a0845494b"><span class="__cf_email__" data-cfemail="aeeacbc8cbc0cacbdcdbdadacfdccfc5c6cfc0caeec9c3cfc7c280cdc1c3">[email&#160;protected]</span></a></div></div>
         <div class="contact-block"><div class="contact-block-icon">💬</div><div class="contact-block-text"><h4>WhatsApp</h4><a href="https://wa.me/918077942213" target="_blank">Message us on WhatsApp</a></div></div>
       </div>
     </div>
@@ -449,7 +445,7 @@
       </div>
       <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About Us</a></li><li><a href="jobs.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Security Guards</a></li><li><a href="services.html">Corporate Security</a></li><li><a href="services.html">Event Security</a></li><li><a href="services.html">Risk Assessment</a></li><li><a href="services.html">Manpower Services</a></li></ul></div>
-      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:8077942213">+91 8077942213</a></li><li><a href="tel:01352522520">0135 2522520</a></li><li><a href="mailto:Defenderuttarakhand@gmail.com">Email Us</a></li><li><a href="https://wa.me/918077942213">WhatsApp</a></li><li><a href="contact.html">Get Directions</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:8077942213">+91 8077942213</a></li><li><a href="tel:01352522520">0135 2522520</a></li><li><a href="/cdn-cgi/l/email-protection#a2e6c7c4c7ccc6c7d0d7d6d6c3d0c3c9cac3ccc6e2c5cfc3cbce8cc1cdcf">Email Us</a></li><li><a href="https://wa.me/918077942213">WhatsApp</a></li><li><a href="contact.html">Get Directions</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <p>© 2025 Defender Security Services. All Rights Reserved. | Near Kargi Chowk, Dehradun, Uttarakhand 248001</p>
@@ -460,13 +456,6 @@
 
 <a href="https://wa.me/918077942213" class="wa-float" target="_blank" title="Chat on WhatsApp">💬</a>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
-  function toggleFaq(btn) { btn.closest('.faq-item').classList.toggle('open'); }
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80); });
-  }, { threshold: 0.15 });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-</script>
-</body>
-</html>
+  function toggleFaq(btn) { btn.closest('.faq-item').classList.toggle('ope
