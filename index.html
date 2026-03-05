@@ -458,4 +458,11 @@
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
-  function toggleFaq(btn) { btn.closest('.faq-item').classList.toggle('ope
+  function toggleFaq(btn) { btn.closest('.faq-item').classList.toggle('open'); }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
