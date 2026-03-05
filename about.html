@@ -494,4 +494,12 @@
     item.addEventListener('click', () => openLB(item));
   });
   document.addEventListener('keydown', e => {
-    if (!document.getElementById('lightbox').classList.contains('open')) return;
+    if (!document.getElementById('lightbox').classList.contains('open')
+ ) return;
+    if (e.key === 'ArrowRight') navLB(1);
+    if (e.key === 'ArrowLeft')  navLB(-1);
+    if (e.key === 'Escape')     closeLB();
+  });
+</script>
+</body>
+</html>
