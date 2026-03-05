@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,15 +30,9 @@
       background: rgba(10,14,26,0.97); backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       padding: 0 2rem; display: flex; align-items: center;
-      justify-content: space-between; height: 90px;
-      transition: background 0.35s ease, border-color 0.35s ease, height 0.35s ease;
+      justify-content: space-between; height: 70px;
     }
-    nav.scrolled {
-      background: rgba(10,14,26,0.97); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border); height: 70px;
-    }
-    .nav-logo img { height: 48px; object-fit: contain; transition: height 0.35s ease; }
-    nav.scrolled .nav-logo img { height: 48px; }
+    .nav-logo img { height: 48px; object-fit: contain; }
     .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
     .nav-links a { color: var(--gray); text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--gold); }
@@ -462,18 +457,7 @@
 
 <a href="https://wa.me/918077942213" class="wa-float" target="_blank" title="Chat on WhatsApp">💬</a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
-  // Transparent nav → solid on scroll
-  (function(){
-    var nav = document.querySelector('nav');
-    function updateNav(){
-      if(window.scrollY > 40){ nav.classList.add('scrolled'); }
-      else { nav.classList.remove('scrolled'); }
-    }
-    window.addEventListener('scroll', updateNav, {passive:true});
-    updateNav();
-  })();
-</script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
   function toggleFaq(btn) { btn.closest('.faq-item').classList.toggle('open'); }
   const observer = new IntersectionObserver((entries) => {
