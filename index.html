@@ -177,19 +177,99 @@
     .fade-up.visible { opacity: 1; transform: translateY(0); }
 
     /* RESPONSIVE */
+    /* ── TABLET ── */
     @media (max-width: 900px) {
+      nav { padding: 0 1.25rem; }
       .nav-links, .nav-actions { display: none; }
       .nav-hamburger { display: flex; }
-      .mission-grid, .faq-grid, .contact-band-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .mission-grid, .faq-grid, .contact-band-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .services-grid { grid-template-columns: 1fr 1fr; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
+      section { padding: 4rem 1.5rem; }
+      .contact-band { padding: 4rem 1.5rem; }
     }
+
+    /* ── MOBILE ── */
     @media (max-width: 600px) {
-      .services-grid { grid-template-columns: 1fr; }
+      /* Nav */
+      nav { padding: 0 1rem; height: 70px; }
+      nav.scrolled { height: 60px; }
+      .nav-logo img { height: 52px; }
+      nav.scrolled .nav-logo img { height: 42px; }
+      .mobile-menu { top: 70px; }
+
+      /* Hero — fix the absolute-stats overlap */
+      .hero { height: auto; min-height: 100svh; padding-bottom: 2.5rem; display: flex; flex-direction: column; justify-content: flex-end; }
+      .hero-content { padding: 100px 1.25rem 0; }
+      .hero-badge { font-size: 0.7rem; letter-spacing: 0.1em; padding: 0.3rem 0.75rem; }
+      .hero h1 { font-size: clamp(2.8rem, 13vw, 4.5rem); margin-bottom: 1rem; }
+      .hero p { font-size: 1rem; margin-bottom: 1.75rem; }
+      .hero-btns { flex-direction: column; gap: 0.75rem; }
+      .btn-primary, .btn-secondary { width: 100%; text-align: center; padding: 0.9rem 1.5rem; }
+
+      /* Hero stats: pull out of absolute, flow below buttons */
+      .hero-stats {
+        position: static;
+        padding: 0 1.25rem;
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        max-width: 100%;
+      }
+      .hero-stat { border-left: 2px solid var(--gold); padding-left: 0.75rem; }
+      .hero-stat .num { font-size: 1.9rem; }
+      .hero-stat .label { font-size: 0.72rem; }
+
+      /* Sections */
+      section { padding: 3rem 1.25rem; }
+      .contact-band { padding: 3rem 1.25rem; }
+      .container { padding: 0; }
+      .section-title { font-size: clamp(2rem, 9vw, 3rem); }
+
+      /* Mission */
+      .mission-grid { gap: 2rem; }
+      .mission-badge { bottom: -1rem; right: -0.75rem; font-size: 0.9rem; padding: 0.9rem 1.1rem; }
+      .mission-img-frame { display: none; }
+      .mission-features { gap: 0.75rem; }
+
+      /* Services */
+      .services-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .service-card { padding: 1.75rem 1.25rem; }
+
+      /* Stats */
       .stats-grid { grid-template-columns: 1fr 1fr; }
-      .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
-      .footer-grid { grid-template-columns: 1fr; }
+      .stat-block { padding: 2.5rem 1rem; }
+      .stat-num { font-size: 2.8rem; }
+
+      /* Clients marquee */
+      .client-item { width: 130px; height: 75px; }
+
+      /* FAQ */
+      .faq-grid { gap: 2rem; }
+      .faq-cta { padding: 1.75rem; }
+      .faq-cta h3 { font-size: 1.6rem; }
+
+      /* Contact band */
+      .contact-band-inner { gap: 2rem; }
+      .contact-band h2 { font-size: clamp(1.8rem, 7vw, 2.8rem); }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      footer { padding: 3rem 1.25rem 2rem; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+      .footer-legal { gap: 1rem; }
+
+      /* WhatsApp float */
+      .wa-float { bottom: 1.25rem; right: 1.25rem; width: 50px; height: 50px; font-size: 1.4rem; }
+    }
+
+    /* ── SMALL PHONES ── */
+    @media (max-width: 380px) {
+      .hero h1 { font-size: clamp(2.4rem, 11vw, 3rem); }
+      .hero-badge { font-size: 0.65rem; }
+      .stat-num { font-size: 2.4rem; }
     }
   </style>
 </head>
