@@ -1,0 +1,16 @@
+{
+  "services": [
+    {
+      "title": "Corporate Security",
+      "desc": "Professional guards for corporate offices"
+    },
+    {
+      "title": "Event Security",
+      "desc": "Crowd management and safety"
+    },
+    {
+      "title": "Industrial Security",
+      "desc": "Factory and warehouse protection"
+    }
+  ]
+}
