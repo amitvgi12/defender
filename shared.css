@@ -116,7 +116,7 @@ section { padding: 6rem 2rem; }
 
 /* ── PAGE HERO (inner pages) ── */
 .page-hero {
-  padding: 140px 2rem 80px;
+  padding: 150px 2rem 80px; /* 70px nav + 80px breathing room = 150px min */
   background: linear-gradient(180deg, var(--navy-mid) 0%, var(--navy) 100%);
   position: relative; overflow: hidden;
 }
@@ -127,11 +127,13 @@ section { padding: 6rem 2rem; }
 }
 .page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; }
 .breadcrumb {
-  display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;
+  display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;
   font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem;
   letter-spacing: 0.1em; text-transform: uppercase;
+  width: auto; /* prevent full-width stretch */
 }
 .breadcrumb a { color: var(--gold); text-decoration: none; }
+.breadcrumb a:hover { color: var(--gold-light); }
 .breadcrumb span { color: var(--gray); }
 .page-hero h1 {
   font-family: 'Bebas Neue', sans-serif;
