@@ -4,9 +4,11 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Our Services | Defender Security Services</title>
+  <link rel="icon" type="image/png" href="https://img1.wsimg.com/isteam/ip/9621693c-899c-4763-b9aa-02fc73963b49/blob-9b78866.png"/>
   <meta name="description" content="Explore Defender Security Services' comprehensive range of professional security solutions in Dehradun, Uttarakhand."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css"/>
   <style>
     :root {
       --navy:#0a0e1a;--navy-mid:#111827;--navy-light:#1c2537;
@@ -131,7 +133,8 @@
   </style>
 </head>
 <body>
-<nav>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<nav id="navbar" role="navigation" aria-label="Main navigation">
   <a href="index.html" class="nav-logo"><img src="https://img1.wsimg.com/isteam/ip/9621693c-899c-4763-b9aa-02fc73963b49/blob-9b78866.png" alt="Defender Security Services"></a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -141,10 +144,10 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <div class="nav-actions">
-    <a href="tel:8077942213" class="nav-phone">📞 +91 8077942213</a>
+    <a href="tel:+918077942213" class="nav-phone">📞 +91 8077942213</a>
     <a href="contact.html" class="btn-contact">Get a Quote</a>
   </div>
-  <div class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+  <div class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
     <span></span><span></span><span></span>
   </div>
 </nav>
@@ -153,6 +156,7 @@
   <a href="tel:8077942213" style="color:var(--gold)">📞 +91 8077942213</a>
 </div>
 
+<main id="main-content">
 <div class="page-hero">
   <div class="page-hero-inner fade-up visible">
     <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Services</span></div>
@@ -306,7 +310,8 @@
   </div>
 </div>
 
-<footer>
+</main>
+<footer role="contentinfo">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -315,7 +320,7 @@
       </div>
       <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About Us</a></li><li><a href="jobs.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Security Guards</a></li><li><a href="services.html">Corporate Security</a></li><li><a href="services.html">Event Security</a></li><li><a href="services.html">Risk Assessment</a></li><li><a href="services.html">Manpower Services</a></li></ul></div>
-      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:8077942213">+91 8077942213</a></li><li><a href="tel:01352522520">0135 2522520</a></li><li><a href="mailto:Defenderuttarakhand@gmail.com">Email Us</a></li><li><a href="https://wa.me/918077942213">WhatsApp</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:8077942213">+91 8077942213</a></li><li><a href="tel:+9101352522520">0135 2522520</a></li><li><a href="mailto:Defenderuttarakhand@gmail.com">Email Us</a></li><li><a href="https://wa.me/918077942213" rel="noopener noreferrer">WhatsApp</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <p>© 2025 Defender Security Services. All Rights Reserved. | Near Kargi Chowk, Dehradun, Uttarakhand 248001</p>
@@ -323,8 +328,12 @@
     </div>
   </div>
 </footer>
-<a href="https://wa.me/918077942213" class="wa-float" target="_blank">💬</a>
+<a href="https://wa.me/918077942213" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">💬</a>
 <script>
+  const btn=document.getElementById('hamburgerBtn'),menu=document.getElementById('mobileMenu');
+  if(btn)btn.addEventListener('click',()=>{const o=menu.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+  if(menu)menu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{menu.classList.remove('open');if(btn)btn.setAttribute('aria-expanded','false')}));
+  window.addEventListener('scroll',()=>{const n=document.getElementById('navbar');if(n)n.classList.toggle('scrolled',window.scrollY>50)},{passive:true});
   const observer=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80)})},{threshold:0.15});
   document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
 </script>

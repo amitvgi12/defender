@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /assets/gallery/
+
+Sitemap: https://amitvgi12.github.io/defender/sitemap.xml

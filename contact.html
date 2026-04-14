@@ -3,242 +3,179 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us | Defender Security Services</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Contact Us | Defender Security Services – Dehradun</title>
+  <meta name="description" content="Contact Defender Security Services in Dehradun. Call +91 8077942213, WhatsApp, or fill the form to request a free security assessment. Available 24/7."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://amitvgi12.github.io/defender/contact.html"/>
+  <link rel="icon" type="image/png" href="https://img1.wsimg.com/isteam/ip/9621693c-899c-4763-b9aa-02fc73963b49/blob-9b78866.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet"/></noscript>
+  <link rel="stylesheet" href="shared.css"/>
   <style>
-    :root{--navy:#0a0e1a;--navy-mid:#111827;--navy-light:#1c2537;--gold:#c9a84c;--gold-light:#e8c96b;--white:#f8f9fa;--gray:#9ca3af;--border:rgba(201,168,76,0.2)}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Barlow',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden}
-    nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(10,14,26,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:70px}
-    .nav-logo img{height:48px;object-fit:contain}
-    .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
-    .nav-links a{color:var(--gray);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s}
-    .nav-links a:hover,.nav-links a.active{color:var(--gold)}
-    .nav-actions{display:flex;align-items:center;gap:1rem}
-    .nav-phone{color:var(--gold);font-weight:600;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:0.95rem}
-    .btn-contact{background:var(--gold);color:var(--navy);padding:0.5rem 1.4rem;border-radius:2px;font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-size:0.9rem}
-    .nav-hamburger{display:none;cursor:pointer;flex-direction:column;gap:5px}
-    .nav-hamburger span{width:26px;height:2px;background:var(--gold)}
-    .mobile-menu{display:none;position:fixed;top:70px;left:0;right:0;background:var(--navy-mid);border-bottom:1px solid var(--border);padding:1.5rem 2rem;z-index:99}
-    .mobile-menu.open{display:flex;flex-direction:column;gap:1rem}
-    .mobile-menu a{color:var(--gray);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em}
-
-    .page-hero{padding:140px 2rem 80px;background:linear-gradient(180deg,var(--navy-mid) 0%,var(--navy) 100%);position:relative;overflow:hidden}
-    .page-hero::before{content:'';position:absolute;inset:0;opacity:0.06;background:url('https://img1.wsimg.com/isteam/ip/95804eb6-e04e-4ff7-9bcd-f341308d975f/ChatGPT%20Image%20May%206%2C%202025%20at%2001_47_29%20PM.png') center/cover}
-    .page-hero-inner{max-width:1200px;margin:0 auto;position:relative}
-    .breadcrumb{display:flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem;font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase}
-    .breadcrumb a{color:var(--gold);text-decoration:none}.breadcrumb span{color:var(--gray)}
-    .page-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,6rem);line-height:0.95;letter-spacing:0.02em;margin-bottom:1rem}
-    .page-hero p{color:var(--gray);font-size:1.1rem;max-width:560px;line-height:1.7;font-weight:300}
-
-    .container{max-width:1200px;margin:0 auto}
-    .section-label{font-family:'Barlow Condensed',sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
-    .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);line-height:1;letter-spacing:0.02em;margin-bottom:1rem}
-    .divider{width:48px;height:3px;background:var(--gold);margin:1.5rem 0}
-
-    /* CONTACT MAIN */
-    .contact-main{padding:5rem 2rem;background:var(--navy)}
-    .contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start}
-    .contact-info-block{display:flex;gap:1rem;align-items:flex-start;margin-bottom:2rem;padding:1.5rem;background:var(--navy-light);border:1px solid var(--border)}
-    .contact-info-icon{width:48px;height:48px;flex-shrink:0;background:rgba(201,168,76,0.1);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
-    .contact-info-text h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;font-size:0.82rem;color:var(--gold);margin-bottom:0.4rem}
-    .contact-info-text a,.contact-info-text p{color:var(--white);text-decoration:none;font-size:0.95rem;font-weight:300;line-height:1.6}
-    .contact-info-text a:hover{color:var(--gold)}
-
-    /* FORM */
-    .contact-form{background:var(--navy-light);border:1px solid var(--border);padding:2.5rem}
-    .form-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;margin-bottom:0.5rem}
-    .form-sub{color:var(--gray);font-size:0.95rem;font-weight:300;margin-bottom:2rem}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
-    .form-group{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1rem}
-    .form-group label{font-family:'Barlow Condensed',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold)}
-    .form-group input,.form-group select,.form-group textarea{
-      background:var(--navy);border:1px solid var(--border);color:var(--white);
-      padding:0.75rem 1rem;font-family:'Barlow',sans-serif;font-size:0.95rem;font-weight:300;
-      border-radius:2px;outline:none;transition:border-color 0.2s;width:100%;
-    }
-    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold)}
-    .form-group textarea{min-height:120px;resize:vertical}
-    .form-group select option{background:var(--navy)}
-    .btn-submit{width:100%;background:var(--gold);color:var(--navy);padding:1rem;border:none;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:0.12em;text-transform:uppercase;border-radius:2px;transition:background 0.2s;margin-top:0.5rem}
-    .btn-submit:hover{background:var(--gold-light)}
-    .form-success{display:none;background:rgba(201,168,76,0.1);border:1px solid var(--gold);padding:1.5rem;text-align:center;margin-top:1rem;font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:0.05em;color:var(--gold)}
-
-    /* MAP */
-    .map-section{padding:0 2rem 5rem;background:var(--navy)}
-    .map-frame{border:1px solid var(--border);overflow:hidden}
-    .map-frame iframe{width:100%;height:420px;border:none;filter:grayscale(0.2) contrast(1.1)}
-
-    /* QUICK CONTACT CARDS */
-    .quick-contact{background:var(--navy-mid);padding:5rem 2rem;border-top:1px solid var(--border)}
-    .quick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
-    .quick-card{padding:2.5rem 2rem;border:1px solid var(--border);background:var(--navy-light);text-align:center;transition:border-color 0.2s}
-    .quick-card:hover{border-color:var(--gold)}
-    .quick-card .q-icon{font-size:2.5rem;margin-bottom:1.25rem}
-    .quick-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.5rem;color:var(--gold)}
-    .quick-card p{color:var(--gray);font-size:0.9rem;font-weight:300;margin-bottom:1.25rem}
-    .quick-card a{color:var(--white);font-weight:600;text-decoration:none;font-size:0.95rem;transition:color 0.2s}
-    .quick-card a:hover{color:var(--gold)}
-
-    footer{background:var(--navy-mid);border-top:1px solid var(--border);padding:4rem 2rem 2rem}
-    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
-    .footer-brand img{height:44px;object-fit:contain;margin-bottom:1rem}
-    .footer-brand p{color:var(--gray);font-size:0.9rem;line-height:1.7;max-width:280px;font-weight:300}
-    .footer-col h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
-    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
-    .footer-col ul li a{color:var(--gray);text-decoration:none;font-size:0.9rem;font-weight:300}
-    .footer-col ul li a:hover{color:var(--gold)}
-    .footer-bottom{border-top:1px solid var(--border);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-    .footer-bottom p{color:var(--gray);font-size:0.85rem;font-weight:300}
-    .footer-legal{display:flex;gap:1.5rem}
-    .footer-legal a{color:var(--gray);text-decoration:none;font-size:0.85rem}
-    .footer-legal a:hover{color:var(--gold)}
-    .wa-float{position:fixed;bottom:2rem;right:2rem;z-index:999;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 4px 20px rgba(37,211,102,0.4);text-decoration:none;transition:transform 0.2s}
-    .wa-float:hover{transform:scale(1.1)}
-    .fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
-    .fade-up.visible{opacity:1;transform:translateY(0)}
-    /* ── TABLET ── */
-    @media(max-width:900px){
-      nav{padding:0 1.25rem}
-      .nav-links,.nav-actions{display:none}
-      .nav-hamburger{display:flex}
-      .contact-grid{grid-template-columns:1fr;gap:3rem}
-      .quick-grid{grid-template-columns:1fr}
-      .footer-grid{grid-template-columns:1fr 1fr}
-      section{padding:4rem 1.5rem}
-    }
-    /* ── MOBILE ── */
-    @media(max-width:600px){
-      nav{padding:0 1rem;height:70px}
-      nav.scrolled{height:60px}
-      .nav-logo img{height:52px}
-      nav.scrolled .nav-logo img{height:42px}
-      .mobile-menu{top:70px}
-      section,div.contact-main{padding:3rem 1.25rem}
-      .page-hero{padding:110px 1.25rem 50px}
-      .page-hero h1{font-size:clamp(2.6rem,11vw,4rem)}
-      .section-title{font-size:clamp(2rem,9vw,3rem)}
-      .form-row{grid-template-columns:1fr}
-      .contact-form{padding:1.75rem 1.25rem}
-      .contact-info-block{padding:1.25rem}
-      .footer-grid{grid-template-columns:1fr;gap:2rem}
-      footer{padding:3rem 1.25rem 2rem}
-      .footer-bottom{flex-direction:column;align-items:flex-start;gap:.75rem}
-      .wa-float{bottom:1.25rem;right:1.25rem;width:50px;height:50px;font-size:1.4rem}
+    .contact-main { padding: 5rem 2rem; background: var(--navy); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start; }
+    .contact-info-block { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem; padding: 1.5rem; background: var(--navy-light); border: 1px solid var(--border); }
+    .contact-info-icon { width: 48px; height: 48px; flex-shrink: 0; background: rgba(201,168,76,0.1); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+    .contact-info-text h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.82rem; color: var(--gold); margin-bottom: 0.4rem; }
+    .contact-info-text a, .contact-info-text p { color: var(--white); text-decoration: none; font-size: 0.95rem; font-weight: 300; line-height: 1.6; }
+    .contact-info-text a:hover { color: var(--gold); }
+    .contact-form-box { background: var(--navy-light); border: 1px solid var(--border); padding: 2.5rem; }
+    .form-title { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; margin-bottom: 0.5rem; }
+    .form-sub { color: var(--gray); font-size: 0.95rem; font-weight: 300; margin-bottom: 2rem; }
+    .map-section { padding: 0 2rem 5rem; background: var(--navy); }
+    .map-frame { border: 1px solid var(--border); overflow: hidden; }
+    .map-frame iframe { width: 100%; height: 420px; border: none; filter: grayscale(0.15) contrast(1.1); }
+    .quick-contact { background: var(--navy-mid); padding: 5rem 2rem; border-top: 1px solid var(--border); }
+    .quick-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3rem; }
+    .quick-card { padding: 2.5rem 2rem; border: 1px solid var(--border); background: var(--navy-light); text-align: center; transition: border-color 0.2s, transform 0.2s; }
+    .quick-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .quick-card .q-icon { font-size: 2.5rem; margin-bottom: 1.25rem; }
+    .quick-card h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.1rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--gold); }
+    .quick-card p { color: var(--gray); font-size: 0.9rem; font-weight: 300; margin-bottom: 1.25rem; line-height: 1.6; }
+    .quick-card a { color: var(--white); font-weight: 600; text-decoration: none; font-size: 0.95rem; }
+    .quick-card a:hover { color: var(--gold); }
+    footer { background: var(--navy-mid); }
+    @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 3rem; } .quick-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) {
+      .contact-main { padding: 3rem 1.25rem; }
+      .contact-form-box { padding: 1.75rem 1.25rem; }
+      .contact-info-block { padding: 1.25rem; }
+      .map-section { padding: 0 1.25rem 3rem; }
+      .map-frame iframe { height: 280px; }
+      .quick-contact { padding: 3rem 1.25rem; }
     }
   </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="nav-logo"><img src="https://img1.wsimg.com/isteam/ip/9621693c-899c-4763-b9aa-02fc73963b49/blob-9b78866.png" alt="Defender Security Services"></a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
-    <li><a href="about.html">About Us</a></li><li><a href="jobs.html">Jobs</a></li>
-    <li><a href="contact.html" class="active">Contact</a></li>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo" aria-label="Defender Security Services – Home">
+    <img src="https://img1.wsimg.com/isteam/ip/9621693c-899c-4763-b9aa-02fc73963b49/blob-9b78866.png" alt="Defender Security Services" width="120" height="48"/>
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="jobs.html">Jobs</a></li>
+    <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
   </ul>
   <div class="nav-actions">
-    <a href="tel:8077942213" class="nav-phone">📞 +91 8077942213</a>
+    <a href="tel:+918077942213" class="nav-phone">📞 +91 8077942213</a>
     <a href="contact.html" class="btn-contact">Get a Quote</a>
   </div>
-  <div class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')"><span></span><span></span><span></span></div>
+  <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About Us</a><a href="jobs.html">Jobs</a><a href="contact.html">Contact</a>
-  <a href="tel:8077942213" style="color:var(--gold)">📞 +91 8077942213</a>
-</div>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation" aria-hidden="true">
+  <a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About Us</a>
+  <a href="jobs.html">Jobs</a><a href="contact.html" class="active">Contact</a>
+  <a href="tel:+918077942213" style="color:var(--gold)">📞 +91 8077942213</a>
+</nav>
 
 <div class="page-hero">
   <div class="page-hero-inner fade-up visible">
-    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Contact Us</span></div>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Contact Us</span>
+    </nav>
     <h1>Get In<br>Touch</h1>
     <p>We're available 24/7. Reach out for a free security assessment, quote, or any enquiry. Our team will respond promptly.</p>
   </div>
 </div>
 
+<main id="main-content">
+
 <!-- CONTACT MAIN -->
-<section class="contact-main">
+<section class="contact-main" aria-labelledby="contact-heading">
   <div class="container">
     <div class="contact-grid">
       <!-- INFO -->
       <div class="fade-up">
         <div class="section-label">Contact Information</div>
-        <h2 class="section-title">We'd Love to Hear From You</h2>
-        <div class="divider"></div>
+        <h2 class="section-title" id="contact-heading">We'd Love to Hear From You</h2>
+        <div class="divider" aria-hidden="true"></div>
         <div class="contact-info-block">
-          <div class="contact-info-icon">📍</div>
-          <div class="contact-info-text">
-            <h4>Office Address</h4>
-            <p>Near, Kargi Chowk, Dehradun,<br>Uttarakhand – 248001</p>
+          <div class="contact-info-icon" aria-hidden="true">📍</div>
+          <div class="contact-info-text"><h4>Office Address</h4><p>Near Kargi Chowk, Dehradun,<br>Uttarakhand – 248001</p></div>
+        </div>
+        <div class="contact-info-block">
+          <div class="contact-info-icon" aria-hidden="true">📞</div>
+          <div class="contact-info-text"><h4>Phone Numbers</h4>
+            <a href="tel:+918077942213">+91 8077942213</a><br>
+            <a href="tel:+9101352522520">0135 2522520</a>
           </div>
         </div>
         <div class="contact-info-block">
-          <div class="contact-info-icon">📞</div>
-          <div class="contact-info-text">
-            <h4>Phone Numbers</h4>
-            <a href="tel:8077942213">+91 8077942213</a><br>
-            <a href="tel:01352522520">0135 2522520</a>
-          </div>
+          <div class="contact-info-icon" aria-hidden="true">✉️</div>
+          <div class="contact-info-text"><h4>Email Address</h4><a href="mailto:Defenderuttarakhand@gmail.com">Defenderuttarakhand@gmail.com</a></div>
         </div>
         <div class="contact-info-block">
-          <div class="contact-info-icon">✉️</div>
-          <div class="contact-info-text">
-            <h4>Email Address</h4>
-            <a href="mailto:Defenderuttarakhand@gmail.com">Defenderuttarakhand@gmail.com</a>
-          </div>
+          <div class="contact-info-icon" aria-hidden="true">💬</div>
+          <div class="contact-info-text"><h4>WhatsApp</h4><a href="https://wa.me/918077942213" target="_blank" rel="noopener noreferrer">Message us on WhatsApp →</a></div>
         </div>
         <div class="contact-info-block">
-          <div class="contact-info-icon">💬</div>
-          <div class="contact-info-text">
-            <h4>WhatsApp</h4>
-            <a href="https://wa.me/918077942213" target="_blank">Message us on WhatsApp →</a>
-          </div>
-        </div>
-        <div class="contact-info-block">
-          <div class="contact-info-icon">🕐</div>
-          <div class="contact-info-text">
-            <h4>Availability</h4>
-            <p>24 hours a day, 7 days a week,<br>365 days a year</p>
-          </div>
+          <div class="contact-info-icon" aria-hidden="true">🕐</div>
+          <div class="contact-info-text"><h4>Availability</h4><p>24 hours a day, 7 days a week,<br>365 days a year</p></div>
         </div>
       </div>
 
       <!-- FORM -->
-      <div class="contact-form fade-up">
+      <div class="contact-form-box fade-up">
         <div class="form-title">Send Us a Message</div>
-        <div class="form-sub">Fill out the form below and our team will get back to you within 24 hours.</div>
-        <div class="form-row">
-          <div class="form-group"><label>First Name *</label><input type="text" placeholder="Rahul" required></div>
-          <div class="form-group"><label>Last Name *</label><input type="text" placeholder="Sharma" required></div>
-        </div>
-        <div class="form-row">
-          <div class="form-group"><label>Phone *</label><input type="tel" placeholder="+91 98765 43210" required></div>
-          <div class="form-group"><label>Email *</label><input type="email" placeholder="your@email.com" required></div>
-        </div>
-        <div class="form-group">
-          <label>Company / Organization</label>
-          <input type="text" placeholder="Your company name">
-        </div>
-        <div class="form-group">
-          <label>Service Required *</label>
-          <select required>
-            <option value="">Select a service...</option>
-            <option>Security Guard Services</option>
-            <option>Corporate Security</option>
-            <option>Event Security</option>
-            <option>Risk Assessment</option>
-            <option>Manpower Services</option>
-            <option>Emergency Response</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea placeholder="Tell us about your security requirements, location, number of guards needed, etc."></textarea>
-        </div>
-        <button class="btn-submit" onclick="submitForm(event)">Send Message →</button>
-        <div class="form-success" id="formSuccess">
-          ✓ Thank you! We'll get back to you within 24 hours.
+        <div class="form-sub">Fill out the form and we'll reach out via WhatsApp within a few hours.</div>
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name *</label>
+              <input id="fname" name="first_name" type="text" placeholder="Rahul" required autocomplete="given-name"/>
+              <span class="field-error" id="fname-err">Please enter your first name.</span>
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name *</label>
+              <input id="lname" name="last_name" type="text" placeholder="Sharma" required autocomplete="family-name"/>
+              <span class="field-error" id="lname-err">Please enter your last name.</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fphone">Phone *</label>
+              <input id="fphone" name="phone" type="tel" placeholder="+91 98765 43210" required autocomplete="tel" pattern="[\d\s\+\-]{8,15}"/>
+              <span class="field-error" id="fphone-err">Please enter a valid phone number.</span>
+            </div>
+            <div class="form-group">
+              <label for="femail">Email</label>
+              <input id="femail" name="email" type="email" placeholder="your@email.com" autocomplete="email"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="fcompany">Company / Organization</label>
+            <input id="fcompany" name="company" type="text" placeholder="Your company name" autocomplete="organization"/>
+          </div>
+          <div class="form-group">
+            <label for="fservice">Service Required *</label>
+            <select id="fservice" name="service" required>
+              <option value="">Select a service...</option>
+              <option value="Security Guard Services">Security Guard Services</option>
+              <option value="Corporate Security">Corporate Security</option>
+              <option value="Event Security">Event Security</option>
+              <option value="Risk Assessment">Risk Assessment</option>
+              <option value="Manpower Services">Manpower Services</option>
+              <option value="Emergency Response">Emergency Response</option>
+              <option value="Other">Other</option>
+            </select>
+            <span class="field-error" id="fservice-err">Please select a service.</span>
+          </div>
+          <div class="form-group">
+            <label for="fmessage">Message</label>
+            <textarea id="fmessage" name="message" placeholder="Tell us about your security requirements, location, number of guards needed, etc."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send via WhatsApp →</button>
+        </form>
+        <div class="form-success" id="formSuccess" role="alert">
+          ✓ Redirecting to WhatsApp with your enquiry pre-filled. We'll respond within a few hours.
         </div>
       </div>
     </div>
@@ -250,42 +187,43 @@
   <div class="container">
     <div class="section-label" style="margin-bottom:1rem;">Find Us</div>
     <div class="map-frame">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3449.663869371842!2d78.02160497544668!3d30.28899500694284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929c680105091%3A0xb9c81c3138e01ff0!2sDefender%20security%20services!5e1!3m2!1sen!2sin!4v1772544190840!5m2!1sen!2sin" 
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3449.663869371842!2d78.02160497544668!3d30.28899500694284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929c680105091%3A0xb9c81c3138e01ff0!2sDefender%20security%20services!5e1!3m2!1sen!2sin!4v1772544190840!5m2!1sen!2sin"
+        title="Defender Security Services Location – Near Kargi Chowk, Dehradun"
         loading="lazy"
-        title="Defender Security Services Location - Near Kargi Chowk, Dehradun">
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        aria-label="Google Maps showing Defender Security Services office near Kargi Chowk, Dehradun">
       </iframe>
     </div>
-    <p style="color:var(--gray);font-size:0.85rem;margin-top:0.75rem;font-weight:300;">
-      📍 Near, Kargi Chowk, Dehradun, Uttarakhand 248001
-    </p>
+    <p style="color:var(--gray);font-size:0.85rem;margin-top:0.75rem;font-weight:300;">📍 Near Kargi Chowk, Dehradun, Uttarakhand 248001</p>
   </div>
 </div>
 
 <!-- QUICK CONTACT -->
-<section class="quick-contact">
+<section class="quick-contact" aria-labelledby="quick-contact-heading">
   <div class="container">
     <div class="fade-up" style="text-align:center;">
       <div class="section-label">Quick Contact</div>
-      <h2 class="section-title">We're Always Available</h2>
-      <div class="divider" style="margin:1rem auto;"></div>
+      <h2 class="section-title" id="quick-contact-heading">We're Always Available</h2>
+      <div class="divider" style="margin:1rem auto;" aria-hidden="true"></div>
     </div>
     <div class="quick-grid">
       <div class="quick-card fade-up">
-        <div class="q-icon">📞</div>
+        <div class="q-icon" aria-hidden="true">📞</div>
         <h3>Call Us</h3>
         <p>Speak directly with our operations team anytime, day or night.</p>
-        <a href="tel:8077942213">+91 8077942213</a><br>
-        <a href="tel:01352522520" style="font-size:0.9rem;color:var(--gray)">0135 2522520</a>
+        <a href="tel:+918077942213">+91 8077942213</a><br>
+        <a href="tel:+9101352522520" style="font-size:0.9rem;color:var(--gray)">0135 2522520</a>
       </div>
       <div class="quick-card fade-up">
-        <div class="q-icon">💬</div>
+        <div class="q-icon" aria-hidden="true">💬</div>
         <h3>WhatsApp</h3>
         <p>Send us a quick message for fast response and free quotes.</p>
-        <a href="https://wa.me/918077942213" target="_blank">Message on WhatsApp →</a>
+        <a href="https://wa.me/918077942213" target="_blank" rel="noopener noreferrer">Message on WhatsApp →</a>
       </div>
       <div class="quick-card fade-up">
-        <div class="q-icon">✉️</div>
+        <div class="q-icon" aria-hidden="true">✉️</div>
         <h3>Email Us</h3>
         <p>Send your detailed requirements and we'll prepare a custom proposal.</p>
         <a href="mailto:Defenderuttarakhand@gmail.com">Defenderuttarakhand@gmail.com</a>
@@ -294,13 +232,15 @@
   </div>
 </section>
 
-<footer>
+</main>
+
+<footer role="contentinfo">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><img src="https://img1.wsimg.com/isteam/ip/9621693c-899c-4763-b9aa-02fc73963b49/blob-9b78866.png" alt="Defender Security Services"><p>Professional security guard and manpower services in Dehradun, Uttarakhand. Trusted by leading organizations since 2022.</p></div>
+      <div class="footer-brand"><img src="https://img1.wsimg.com/isteam/ip/9621693c-899c-4763-b9aa-02fc73963b49/blob-9b78866.png" alt="Defender Security Services" width="120" height="44" loading="lazy"/><p>Professional security guard and manpower services in Dehradun, Uttarakhand. Trusted by leading organizations since 2022.</p></div>
       <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About Us</a></li><li><a href="jobs.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Security Guards</a></li><li><a href="services.html">Corporate Security</a></li><li><a href="services.html">Event Security</a></li><li><a href="services.html">Risk Assessment</a></li></ul></div>
-      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:8077942213">+91 8077942213</a></li><li><a href="tel:01352522520">0135 2522520</a></li><li><a href="mailto:Defenderuttarakhand@gmail.com">Email Us</a></li><li><a href="https://wa.me/918077942213">WhatsApp</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+918077942213">+91 8077942213</a></li><li><a href="tel:+9101352522520">0135 2522520</a></li><li><a href="mailto:Defenderuttarakhand@gmail.com">Email Us</a></li><li><a href="https://wa.me/918077942213" target="_blank" rel="noopener noreferrer">WhatsApp</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <p>© 2025 Defender Security Services. All Rights Reserved.</p>
@@ -308,15 +248,80 @@
     </div>
   </div>
 </footer>
-<a href="https://wa.me/918077942213" class="wa-float" target="_blank">💬</a>
+<a href="https://wa.me/918077942213" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">💬</a>
+
 <script>
-  function submitForm(e) {
+  /* ── HAMBURGER ── */
+  const btn = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    menu.setAttribute('aria-hidden', !open);
+  });
+  menu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+    menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); menu.setAttribute('aria-hidden','true');
+  }));
+
+  /* ── NAV SCROLL ── */
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+
+  /* ── CONTACT FORM → WHATSAPP ── */
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
+    let valid = true;
+
+    const fields = [
+      { id: 'fname', errId: 'fname-err', check: v => v.trim().length >= 2 },
+      { id: 'lname', errId: 'lname-err', check: v => v.trim().length >= 2 },
+      { id: 'fphone', errId: 'fphone-err', check: v => /[\d\s\+\-]{8,15}/.test(v.trim()) },
+      { id: 'fservice', errId: 'fservice-err', check: v => v !== '' },
+    ];
+
+    fields.forEach(f => {
+      const el = document.getElementById(f.id);
+      const err = document.getElementById(f.errId);
+      if (!f.check(el.value)) {
+        el.classList.add('error'); err.style.display = 'block'; valid = false;
+      } else {
+        el.classList.remove('error'); err.style.display = 'none';
+      }
+    });
+
+    if (!valid) return;
+
+    const fname   = document.getElementById('fname').value.trim();
+    const lname   = document.getElementById('lname').value.trim();
+    const phone   = document.getElementById('fphone').value.trim();
+    const email   = document.getElementById('femail').value.trim();
+    const company = document.getElementById('fcompany').value.trim();
+    const service = document.getElementById('fservice').value;
+    const message = document.getElementById('fmessage').value.trim();
+
+    const text = [
+      `*New Enquiry – Defender Security Services*`,
+      ``,
+      `Name: ${fname} ${lname}`,
+      `Phone: ${phone}`,
+      email   ? `Email: ${email}`   : null,
+      company ? `Company: ${company}` : null,
+      `Service: ${service}`,
+      message ? `Message: ${message}` : null,
+    ].filter(Boolean).join('\n');
+
     document.getElementById('formSuccess').style.display = 'block';
-    setTimeout(()=>document.getElementById('formSuccess').style.display='none', 5000);
-  }
-  const observer=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80)})},{threshold:0.12});
-  document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+    setTimeout(() => {
+      window.open(`https://wa.me/918077942213?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+    }, 600);
+  });
+
+  /* ── FADE-UP ── */
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 </script>
 </body>
 </html>
