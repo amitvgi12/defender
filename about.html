@@ -332,4 +332,8 @@
   function navLB(d){lbIdx=(lbIdx+d+lbItems.length)%lbItems.length;updateLB()}
   function updateLB(){const item=lbItems[lbIdx];const img=item.querySelector('img');if(img&&img.style.display!=='none'){document.getElementById('lbImg').src=img.src;document.getElementById('lbImg').alt=img.alt}document.getElementById('lbCap').textContent=item.dataset.cap||''}
   document.querySelectorAll('.gallery-item').forEach(item=>{item.addEventListener('click',()=>openLB(item))});
-  document.addEventListener('keydown',e=>{if(!document.getElementById('lightbox').classList.contains('open'))return;if(e.key==='ArrowRight')navLB(1);if(e.key==='ArrowLeft')navLB(-1);if(e.key==='Escape')clo
+  document.addEventListener('keydown',e=>{if(!document.getElementById('lightbox').classList.contains('open'))return;if(e.key==='ArrowRight')navLB(1);if(e.key==='ArrowLeft')navLB(-1);if(e.key==='Escape')closeLB()});
+  document.getElementById('lightbox').addEventListener('click',e=>{if(e.target===document.getElementById('lightbox'))closeLB()});
+</script>
+</body>
+</html>

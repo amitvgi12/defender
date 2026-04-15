@@ -334,4 +334,8 @@
   if(btn)btn.addEventListener('click',()=>{const o=menu.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
   if(menu)menu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{menu.classList.remove('open');if(btn)btn.setAttribute('aria-expanded','false')}));
   window.addEventListener('scroll',()=>{const n=document.getElementById('navbar');if(n)n.classList.toggle('scrolled',window.scrollY>50)},{passive:true});
-  const observer=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout((
+  const observer=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80)})},{threshold:0.15});
+  document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

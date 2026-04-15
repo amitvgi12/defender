@@ -373,4 +373,6 @@
     document.getElementById('appSuccess').style.display = 'block';
     setTimeout(() => { window.open('https://wa.me/918077942213?text=' + encodeURIComponent(text), '_blank', 'noopener,noreferrer'); }, 600);
   }
-  const observer=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout((
+  const observer=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80)})},{threshold:0.12});
+  document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+</script>
