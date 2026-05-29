@@ -5,9 +5,88 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Defender Security Services | Dehradun, Uttarakhand</title>
-  <meta name="description" content="Defender Security Services – Professional security guard services, manpower solutions, and risk assessment in Dehradun, Uttarakhand."/>
+  <meta name="description" content="Defender Security Services – Professional security guard services, manpower solutions, and risk assessment in Dehradun, Uttarakhand. PSARA licensed. 24/7 operations."/>
+  <link rel="canonical" href="https://defendersecurityservices.in/"/>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://defendersecurityservices.in/"/>
+  <meta property="og:title" content="Defender Security Services | Dehradun, Uttarakhand"/>
+  <meta property="og:description" content="Professional security guard services, manpower solutions, and risk assessment for businesses across Uttarakhand. PSARA licensed. 24/7 operations."/>
+  <meta property="og:image" content="https://defendersecurityservices.in/assets/logo.png"/>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Defender Security Services | Dehradun"/>
+  <meta name="twitter:description" content="Professional security services in Uttarakhand. PSARA licensed. 24/7 operations."/>
+  <meta name="twitter:image" content="https://defendersecurityservices.in/assets/logo.png"/>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- LocalBusiness + FAQ structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "Defender Security Services",
+        "url": "https://defendersecurityservices.in",
+        "logo": "https://defendersecurityservices.in/assets/logo.png",
+        "image": "https://defendersecurityservices.in/assets/hero-bg.jpg",
+        "description": "Professional security guard services, manpower solutions, and risk assessment in Dehradun, Uttarakhand. PSARA licensed.",
+        "telephone": "+918077942213",
+        "email": "Defenderuttarakhand@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Near Kargi Chowk",
+          "addressLocality": "Dehradun",
+          "addressRegion": "Uttarakhand",
+          "postalCode": "248001",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 30.289,
+          "longitude": 78.022
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        "foundingDate": "2022",
+        "areaServed": ["Dehradun","Haridwar","Rishikesh","Mussoorie","Uttarakhand"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What security services do you offer?",
+            "acceptedAnswer": {"@type": "Answer","text": "We offer security guard services, corporate protection, event security, emergency response, risk assessment, and manpower services — all tailored to your specific operational needs."}
+          },
+          {
+            "@type": "Question",
+            "name": "Are your security guards trained and licensed?",
+            "acceptedAnswer": {"@type": "Answer","text": "Yes. All our security personnel undergo rigorous background verification, professional training, and are licensed under PSARA (Private Security Agencies Regulation Act) guidelines."}
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer 24/7 security services?",
+            "acceptedAnswer": {"@type": "Answer","text": "Absolutely. Our operations center is active 24 hours a day, 7 days a week, ensuring uninterrupted protection and immediate incident response at all times."}
+          },
+          {
+            "@type": "Question",
+            "name": "Which areas do you serve?",
+            "acceptedAnswer": {"@type": "Answer","text": "We primarily serve Dehradun, Haridwar, Rishikesh, Mussoorie, and surrounding areas of Uttarakhand."}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
   <style>
     :root {
       --navy:       #0a0e1a;
@@ -25,9 +104,13 @@
     body { font-family: 'Barlow', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
 
     /* NAV */
+    /* Skip link */
+    .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { position: fixed; top: 0; left: 0; width: auto; height: auto; padding: 0.75rem 1.5rem; background: var(--gold); color: var(--navy); font-weight: 700; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; z-index: 9999; }
+
     nav {
       position: fixed; top: 0; width: 100%; z-index: 100;
-      background: rgba(10,14,26,0.97); backdrop-filter: blur(12px);
+      background: rgba(10,14,26,0.97); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       padding: 0 2rem; display: flex; align-items: center;
       justify-content: space-between; height: 70px;
@@ -50,7 +133,7 @@
 
     /* HERO */
     .hero { position: relative; height: 100vh; min-height: 640px; display: flex; align-items: center; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; background-image: url('https://img1.wsimg.com/isteam/ip/95804eb6-e04e-4ff7-9bcd-f341308d975f/ChatGPT%20Image%20May%206%2C%202025%20at%2001_47_29%20PM.png'); background-size: cover; background-position: center; filter: brightness(0.4); }
+    .hero-bg { position: absolute; inset: 0; background-image: url('assets/hero-bg.jpg'); background-size: cover; background-position: center; filter: brightness(0.4); }
     .hero-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(17,24,39,0.86) 40%, rgba(17,24,39,0.3) 100%); }
     .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 2rem; padding-top: 70px; }
     .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid var(--gold); color: var(--gold); font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.3rem 0.9rem; margin-bottom: 1.5rem; }
@@ -274,11 +357,12 @@
   </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- NAV -->
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="https://img1.wsimg.com/isteam/ip/9621693c-899c-4763-b9aa-02fc73963b49/blob-9b78866.png" alt="Defender Security Services Logo">
+    <img src="assets/logo.png" alt="Defender Security Services Logo">
   </a>
   <ul class="nav-links">
     <li><a href="index.html" class="active">Home</a></li>
@@ -305,7 +389,7 @@
 </div>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="main-content">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content fade-up visible">
@@ -319,7 +403,7 @@
   </div>
   <div class="hero-stats">
     <div class="hero-stat"><div class="num">50+</div><div class="label">Trained Guards</div></div>
-    <div class="hero-stat"><div class="num">3+</div><div class="label">Years Experience</div></div>
+    <div class="hero-stat"><div class="num">4+</div><div class="label">Years Experience</div></div>
     <div class="hero-stat"><div class="num">10+</div><div class="label">Corporate Clients</div></div>
     <div class="hero-stat"><div class="num">24/7</div><div class="label">Operations</div></div>
   </div>
@@ -331,7 +415,7 @@
     <div class="mission-grid">
       <div class="mission-img fade-up">
         <div class="mission-img-frame"></div>
-        <img src="https://img1.wsimg.com/isteam/ip/95804eb6-e04e-4ff7-9bcd-f341308d975f/ChatGPT%20Image%20May%206%2C%202025%20at%2001_47_29%20PM.png" alt="Defender Security Team">
+        <img src="assets/hero-bg.jpg" alt="Defender Security Team">
         <div class="mission-badge">EST.<br>2022</div>
       </div>
       <div class="mission-text fade-up">
@@ -380,8 +464,8 @@
   <div class="container">
     <div class="stats-grid">
       <div class="stat-block"><div class="stat-num">50+</div><div class="stat-label">Guards Deployed</div></div>
-      <div class="stat-block"><div class="stat-num">3+</div><div class="stat-label">Corporate Clients</div></div>
-      <div class="stat-block"><div class="stat-num">10+</div><div class="stat-label">Years of Service</div></div>
+      <div class="stat-block"><div class="stat-num">10+</div><div class="stat-label">Corporate Clients</div></div>
+      <div class="stat-block"><div class="stat-num">4+</div><div class="stat-label">Years of Service</div></div>
       <div class="stat-block"><div class="stat-num">24/7</div><div class="stat-label">Operations Center</div></div>
     </div>
   </div>
@@ -399,44 +483,29 @@
   </div>
   <div class="clients-marquee-wrap">
     <div class="clients-marquee">
-      <!--
-        ╔══════════════════════════════════════════════════════╗
-        ║  CLIENT LOGOS — HOW TO ADD YOUR IMAGES              ║
-        ║                                                      ║
-        ║  1. Create folder: assets/clients/                   ║
-        ║  2. Save your logo files there as:                   ║
-        ║     client-1.png, client-2.png … client-13.png       ║
-        ║  3. Recommended: PNG, transparent bg, 160×90 px      ║
-        ║  4. The marquee loops them automatically.            ║
-        ╚══════════════════════════════════════════════════════╝
-      -->
-      <div class="client-item"><img src="assets/clients/client-1.png"  alt="Client 1"></div>
-      <div class="client-item"><img src="assets/clients/client-2.png"  alt="Client 2"></div>
-      <div class="client-item"><img src="assets/clients/client-3.png"  alt="Client 3"></div>
-      <div class="client-item"><img src="assets/clients/client-4.png"  alt="Client 4"></div>
-      <div class="client-item"><img src="assets/clients/client-5.png"  alt="Client 5"></div>
-      <div class="client-item"><img src="assets/clients/client-6.png"  alt="Client 6"></div>
-      <div class="client-item"><img src="assets/clients/client-7.png"  alt="Client 7"></div>
-      <div class="client-item"><img src="assets/clients/client-8.png"  alt="Client 8"></div>
-      <div class="client-item"><img src="assets/clients/client-9.png"  alt="Client 9"></div>
-      <div class="client-item"><img src="assets/clients/client-10.jpeg" alt="Client 10"></div>
-      <div class="client-item"><img src="assets/clients/client-11.jpeg" alt="Client 11"></div>
-      <div class="client-item"><img src="assets/clients/client-12.png" alt="Client 12"></div>
-      <div class="client-item"><img src="assets/clients/client-13.png" alt="Client 13"></div>
-      <!-- Duplicate set — required for the seamless infinite scroll loop -->
-      <div class="client-item"><img src="assets/clients/client-1.png"  alt="Client 1"></div>
-      <div class="client-item"><img src="assets/clients/client-2.png"  alt="Client 2"></div>
-      <div class="client-item"><img src="assets/clients/client-3.png"  alt="Client 3"></div>
-      <div class="client-item"><img src="assets/clients/client-4.png"  alt="Client 4"></div>
-      <div class="client-item"><img src="assets/clients/client-5.png"  alt="Client 5"></div>
-      <div class="client-item"><img src="assets/clients/client-6.png"  alt="Client 6"></div>
-      <div class="client-item"><img src="assets/clients/client-7.png"  alt="Client 7"></div>
-      <div class="client-item"><img src="assets/clients/client-8.png"  alt="Client 8"></div>
-      <div class="client-item"><img src="assets/clients/client-9.png"  alt="Client 9"></div>
-      <div class="client-item"><img src="assets/clients/client-10.jpeg" alt="Client 10"></div>
-      <div class="client-item"><img src="assets/clients/client-11.jpeg" alt="Client 11"></div>
-      <div class="client-item"><img src="assets/clients/client-12.png" alt="Client 12"></div>
-      <div class="client-item"><img src="assets/clients/client-13.png" alt="Client 13"></div>
+      <div class="client-item"><img src="assets/clients/client-1.png"  alt="Client 1" loading="lazy"></div>
+      <div class="client-item"><img src="assets/clients/client-2.png"  alt="Client 2" loading="lazy"></div>
+      <div class="client-item"><img src="assets/clients/client-3.png"  alt="Client 3" loading="lazy"></div>
+      <div class="client-item"><img src="assets/clients/client-4.png"  alt="Client 4" loading="lazy"></div>
+      <div class="client-item"><img src="assets/clients/client-5.png"  alt="Client 5" loading="lazy"></div>
+      <div class="client-item"><img src="assets/clients/client-6.png"  alt="Client 6" loading="lazy"></div>
+      <div class="client-item"><img src="assets/clients/client-7.png"  alt="Client 7" loading="lazy"></div>
+      <div class="client-item"><img src="assets/clients/client-8.png"  alt="Client 8" loading="lazy"></div>
+      <div class="client-item"><img src="assets/clients/client-9.png"  alt="Client 9" loading="lazy"></div>
+      <div class="client-item"><img src="assets/clients/client-10.jpeg" alt="Client 10" loading="lazy"></div>
+      <div class="client-item"><img src="assets/clients/client-11.jpeg" alt="Client 11" loading="lazy"></div>
+      <!-- Duplicate set for seamless infinite scroll -->
+      <div class="client-item"><img src="assets/clients/client-1.png"  alt="Client 1" loading="lazy"></div>
+      <div class="client-item"><img src="assets/clients/client-2.png"  alt="Client 2" loading="lazy"></div>
+      <div class="client-item"><img src="assets/clients/client-3.png"  alt="Client 3" loading="lazy"></div>
+      <div class="client-item"><img src="assets/clients/client-4.png"  alt="Client 4" loading="lazy"></div>
+      <div class="client-item"><img src="assets/clients/client-5.png"  alt="Client 5" loading="lazy"></div>
+      <div class="client-item"><img src="assets/clients/client-6.png"  alt="Client 6" loading="lazy"></div>
+      <div class="client-item"><img src="assets/clients/client-7.png"  alt="Client 7" loading="lazy"></div>
+      <div class="client-item"><img src="assets/clients/client-8.png"  alt="Client 8" loading="lazy"></div>
+      <div class="client-item"><img src="assets/clients/client-9.png"  alt="Client 9" loading="lazy"></div>
+      <div class="client-item"><img src="assets/clients/client-10.jpeg" alt="Client 10" loading="lazy"></div>
+      <div class="client-item"><img src="assets/clients/client-11.jpeg" alt="Client 11" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -451,23 +520,23 @@
         <div class="divider"></div>
         <div class="faq-list">
           <div class="faq-item open">
-            <button class="faq-q" onclick="toggleFaq(this)">What security services do you offer?<span class="arrow">▼</span></button>
+            <button type="button" class="faq-q" onclick="toggleFaq(this)">What security services do you offer?<span class="arrow">▼</span></button>
             <div class="faq-a">We offer security guard services, corporate protection, event security, emergency response, risk assessment, and manpower services — all tailored to your specific operational needs.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)">Are your security guards trained and licensed?<span class="arrow">▼</span></button>
+            <button type="button" class="faq-q" onclick="toggleFaq(this)">Are your security guards trained and licensed?<span class="arrow">▼</span></button>
             <div class="faq-a">Yes. All our security personnel undergo rigorous background verification, professional training, and are licensed under PSARA (Private Security Agencies Regulation Act) guidelines.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)">Do you offer 24/7 security services?<span class="arrow">▼</span></button>
+            <button type="button" class="faq-q" onclick="toggleFaq(this)">Do you offer 24/7 security services?<span class="arrow">▼</span></button>
             <div class="faq-a">Absolutely. Our operations center is active 24 hours a day, 7 days a week, ensuring uninterrupted protection and immediate incident response at all times.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)">How do I get a free security assessment?<span class="arrow">▼</span></button>
+            <button type="button" class="faq-q" onclick="toggleFaq(this)">How do I get a free security assessment?<span class="arrow">▼</span></button>
             <div class="faq-a">Simply contact us via phone, email, or WhatsApp. Our team will schedule a site visit to assess your requirements and provide a customized security proposal at no cost.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)">Which areas do you serve?<span class="arrow">▼</span></button>
+            <button type="button" class="faq-q" onclick="toggleFaq(this)">Which areas do you serve?<span class="arrow">▼</span></button>
             <div class="faq-a">We primarily serve Dehradun, Haridwar, Rishikesh, Mussoorie, and surrounding areas of Uttarakhand. Contact us for outstation deployments.</div>
           </div>
         </div>
@@ -510,7 +579,7 @@
         <div class="contact-block"><div class="contact-block-icon">📍</div><div class="contact-block-text"><h4>Office Address</h4><p>Near, Kargi Chowk, Dehradun,<br>Uttarakhand 248001</p></div></div>
         <div class="contact-block"><div class="contact-block-icon">📞</div><div class="contact-block-text"><h4>Phone</h4><a href="tel:8077942213">+91 8077942213</a><br><a href="tel:01352522520">0135 2522520</a></div></div>
         <div class="contact-block"><div class="contact-block-icon">✉️</div><div class="contact-block-text"><h4>Email</h4><a href="mailto:Defenderuttarakhand@gmail.com">Defenderuttarakhand@gmail.com</a></div></div>
-        <div class="contact-block"><div class="contact-block-icon">💬</div><div class="contact-block-text"><h4>WhatsApp</h4><a href="https://wa.me/918077942213" target="_blank">Message us on WhatsApp</a></div></div>
+        <div class="contact-block"><div class="contact-block-icon">💬</div><div class="contact-block-text"><h4>WhatsApp</h4><a href="https://wa.me/918077942213" target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a></div></div>
       </div>
     </div>
   </div>
@@ -521,7 +590,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="https://img1.wsimg.com/isteam/ip/9621693c-899c-4763-b9aa-02fc73963b49/blob-9b78866.png" alt="Defender Security Services">
+        <img src="assets/logo.png" alt="Defender Security Services">
         <p>Professional security guard and manpower services in Dehradun, Uttarakhand. Trusted by leading organizations since 2022.</p>
       </div>
       <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About Us</a></li><li><a href="jobs.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
@@ -529,15 +598,15 @@
       <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:8077942213">+91 8077942213</a></li><li><a href="tel:01352522520">0135 2522520</a></li><li><a href="mailto:Defenderuttarakhand@gmail.com">Email Us</a></li><li><a href="https://wa.me/918077942213">WhatsApp</a></li><li><a href="contact.html">Get Directions</a></li></ul></div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Defender Security Services. All Rights Reserved. | Near Kargi Chowk, Dehradun, Uttarakhand 248001</p>
-      <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+      <p>© 2026 Defender Security Services. All Rights Reserved. | Near Kargi Chowk, Dehradun, Uttarakhand 248001</p>
+      <div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
     </div>
   </div>
 </footer>
 
 <a href="https://wa.me/918077942213" class="wa-float" target="_blank" title="Chat on WhatsApp">💬</a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
   function toggleFaq(btn) { btn.closest('.faq-item').classList.toggle('open'); }
   const observer = new IntersectionObserver((entries) => {

@@ -3,7 +3,15 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us | Defender Security Services</title>
+  <title>About Us | Defender Security Services – Dehradun, Uttarakhand</title>
+  <meta name="description" content="About Defender Security Services – PSARA licensed security agency founded in 2022 in Dehradun, Uttarakhand. Integrity, professionalism, and 24/7 commitment."/>
+  <link rel="canonical" href="https://defendersecurityservices.in/about.html"/>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://defendersecurityservices.in/about.html"/>
+  <meta property="og:title" content="About Us | Defender Security Services"/>
+  <meta property="og:description" content="PSARA licensed security agency based in Dehradun. Founded 2022. Professional guards, 24/7 operations across Uttarakhand."/>
+  <meta property="og:image" content="https://defendersecurityservices.in/assets/logo.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -22,7 +30,11 @@
     body { font-family: 'Barlow', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
 
     /* NAV */
-    nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(10,14,26,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+    /* Skip link */
+    .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { position: fixed; top: 0; left: 0; width: auto; height: auto; padding: 0.75rem 1.5rem; background: var(--gold); color: var(--navy); font-weight: 700; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; z-index: 9999; }
+
+    nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(10,14,26,0.97); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
     .nav-logo img { height: 48px; object-fit: contain; }
     .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
     .nav-links a { color: var(--gray); text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
@@ -41,7 +53,7 @@
 
     /* PAGE HERO */
     .page-hero { padding: 140px 2rem 80px; background: linear-gradient(180deg, var(--navy-mid) 0%, var(--navy) 100%); position: relative; overflow: hidden; }
-    .page-hero::before { content: ''; position: absolute; inset: 0; background: url('https://img1.wsimg.com/isteam/ip/95804eb6-e04e-4ff7-9bcd-f341308d975f/ChatGPT%20Image%20May%206%2C%202025%20at%2001_47_29%20PM.png') center/cover; opacity: 0.04; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: url('assets/hero-bg.jpg') center/cover; opacity: 0.04; }
     .page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; }
     .breadcrumb { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
     .breadcrumb a { color: var(--gold); text-decoration: none; }
@@ -236,12 +248,29 @@
       .team-grid { grid-template-columns: 1fr; }
       .cert-grid { grid-template-columns: 1fr; }
     }
+
+    /* LICENSES */
+    .licenses { background: var(--navy); padding: 5rem 2rem; }
+    .section-sub-center { color: var(--gray); font-size: 1.05rem; max-width: 560px; line-height: 1.7; font-weight: 300; margin: 0 auto; text-align: center; }
+    .licenses .cert-grid { margin-top: 3rem; }
+    .licenses-brochure { text-align: center; margin-top: 2.5rem; }
+
+    /* ABOUT CTA */
+    .about-cta { background: var(--navy-mid); padding: 5rem 2rem; border-top: 1px solid var(--border); text-align: center; }
+    .about-cta p { color: var(--gray); max-width: 520px; margin: 0 auto 2rem; line-height: 1.7; font-weight: 300; }
+    .about-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 600px) {
+      .licenses { padding: 3rem 1.25rem; }
+      .about-cta { padding: 3rem 1.25rem; }
+    }
   </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <nav>
-  <a href="index.html" class="nav-logo"><img src="https://img1.wsimg.com/isteam/ip/9621693c-899c-4763-b9aa-02fc73963b49/blob-9b78866.png" alt="Defender Security Services"></a>
+  <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Defender Security Services"></a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
@@ -260,11 +289,11 @@
   <a href="tel:8077942213" style="color:var(--gold)">📞 +91 8077942213</a>
 </div>
 
-<div class="page-hero">
+<div class="page-hero" id="main-content">
   <div class="page-hero-inner fade-up visible">
     <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>About Us</span></div>
     <h1>About Defender<br>Security</h1>
-    <p>Over a decade of trusted security excellence across Uttarakhand — protecting what matters most to businesses and communities.</p>
+    <p>4+ years of trusted security excellence across Uttarakhand — protecting what matters most to businesses and communities.</p>
   </div>
 </div>
 
@@ -273,7 +302,7 @@
   <div class="container">
     <div class="story-grid">
       <div class="story-img fade-up">
-        <img src="https://img1.wsimg.com/isteam/ip/95804eb6-e04e-4ff7-9bcd-f341308d975f/ChatGPT%20Image%20May%206%2C%202025%20at%2001_47_29%20PM.png" alt="Defender Security Team">
+        <img src="assets/hero-bg.jpg" alt="Defender Security Team">
         <div class="story-overlay">EST.<br>2022</div>
       </div>
       <div class="fade-up">
@@ -281,7 +310,7 @@
         <h2 class="section-title">Who We Are</h2>
         <div class="divider"></div>
         <p>Defender Security &amp; Manpower Services was founded in Dehradun with a singular mission: to provide dependable, professional security services to the people and businesses of Uttarakhand.</p>
-        <p>Over the years, we have grown from a small local operation to one of the most trusted names in security across the region, deploying hundreds of trained guards and manpower professionals to clients ranging from government institutions and hospitals to hotels and industrial facilities.</p>
+        <p>Since 2022, we have grown from a small local operation to one of the most trusted names in security across the region, deploying 50+ trained guards and manpower professionals to clients ranging from government institutions and hospitals to hotels and industrial facilities.</p>
         <p>We are PSARA licensed and operate with unwavering commitment to professionalism, integrity, and the safety of every client we serve.</p>
         <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;">
           <a href="contact.html" class="btn-primary">Work With Us</a>
@@ -321,10 +350,10 @@
       <p class="section-sub">Dedicated professionals with decades of combined experience in security, law enforcement, and operations management.</p>
     </div>
     <div class="team-grid">
-      <div class="team-card fade-up"><div class="team-bg">👤</div><div class="team-info"><h3>Director</h3><span>Founder &amp; CEO</span></div></div>
-      <div class="team-card fade-up"><div class="team-bg">👤</div><div class="team-info"><h3>Operations Head</h3><span>Chief Operations Officer</span></div></div>
-      <div class="team-card fade-up"><div class="team-bg">👤</div><div class="team-info"><h3>Security Chief</h3><span>Chief Security Officer</span></div></div>
-      <div class="team-card fade-up"><div class="team-bg">👤</div><div class="team-info"><h3>Training Head</h3><span>Head of Guard Training</span></div></div>
+      <div class="team-card fade-up"><div class="team-bg">🛡️</div><div class="team-info"><h3>Founder &amp; Director</h3><span>Leadership &amp; Vision</span></div></div>
+      <div class="team-card fade-up"><div class="team-bg">⚙️</div><div class="team-info"><h3>Operations Head</h3><span>Field Deployment &amp; Logistics</span></div></div>
+      <div class="team-card fade-up"><div class="team-bg">🔒</div><div class="team-info"><h3>Security Chief</h3><span>Guard Oversight &amp; Compliance</span></div></div>
+      <div class="team-card fade-up"><div class="team-bg">🎓</div><div class="team-info"><h3>Training Head</h3><span>Personnel Development</span></div></div>
     </div>
   </div>
 </section>
@@ -365,143 +394,59 @@
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     GALLERY SECTION
-     ═══════════════════════════════════════════════════════════════
-     HOW TO ADD YOUR IMAGES:
-       1. Create folder:  assets/gallery/
-       2. Save your photos there (JPG/PNG recommended)
-       3. Replace the src values in each .gallery-item below
-       4. Update the data-caption text to describe each photo
-       5. You can add or remove .gallery-item blocks as needed
-          — the masonry layout adjusts automatically.
-     ═══════════════════════════════════════════════════════════════ -->
-<section class="gallery">
+<!-- LICENSES & COMPLIANCE -->
+<section class="licenses">
   <div class="container">
-    <div class="gallery-header fade-up">
-      <div class="section-label">Visual Showcase</div>
-      <h2 class="section-title">Our <span style="color:var(--gold)">Gallery</span></h2>
+    <div class="fade-up" style="text-align:center;">
+      <div class="section-label">Legal &amp; Compliance</div>
+      <h2 class="section-title">Licences &amp; Registrations</h2>
       <div class="divider" style="margin:1rem auto;"></div>
-      <p class="section-sub">A glimpse into Defender Security &amp; Manpower Services — our personnel, deployments, training, and on-ground operations across Uttarakhand.</p>
+      <p class="section-sub-center">Defender Security Services operates with full legal compliance. Our credentials are available for verification by prospective clients.</p>
     </div>
-
-    <!-- Filter buttons — update the data-filter values to match your categories -->
-    <div class="gallery-filters fade-up">
-      <button class="gf-btn active" data-filter="all">All</button>
-      <button class="gf-btn" data-filter="deployment">Deployment</button>
-      <button class="gf-btn" data-filter="training">Training</button>
-      <button class="gf-btn" data-filter="events">Events</button>
-      <button class="gf-btn" data-filter="team">Team</button>
+    <div class="cert-grid fade-up">
+      <div class="cert-card"><div class="cert-icon">📜</div><h4>PSARA Licensed</h4><p>Certified under the Private Security Agencies Regulation Act — legally compliant to deploy guards in Uttarakhand.</p></div>
+      <div class="cert-card"><div class="cert-icon">🏛️</div><h4>Govt. Registered Business</h4><p>Registered entity with Uttarakhand Government. Full registration and GST details available on request.</p></div>
+      <div class="cert-card"><div class="cert-icon">🧾</div><h4>GST Registered</h4><p>Goods &amp; Services Tax registered. Official invoices issued for all contracts and service engagements.</p></div>
+      <div class="cert-card"><div class="cert-icon">📄</div><h4>Company Brochure</h4><p>Download our official business brochure with full registration, tax, office, and contact details.</p></div>
     </div>
-
-    <div class="gallery-grid fade-up" id="galleryGrid">
-
-      <!--
-        Each block below is one photo.
-        • src        → path to your image file, e.g. assets/gallery/photo-1.jpg
-        • alt        → short description (for accessibility/SEO)
-        • data-cat   → filter category: deployment | training | events | team
-        • data-cap   → caption shown in the lightbox
-        Add as many blocks as you need — copy the pattern below.
-      -->
-
-      <div class="gallery-item" data-cat="deployment" data-cap="Security Deployment – Corporate Campus">
-        <img src="assets/gallery/gallery-1.jpg" alt="Security deployment at corporate campus" loading="lazy">
-        <div class="gallery-overlay"><span class="gallery-overlay-text">Deployment</span></div>
-      </div>
-
-      <div class="gallery-item" data-cat="training" data-cap="Guard Training Session – Dehradun HQ">
-        <img src="assets/gallery/gallery-2.jpg" alt="Guard training session" loading="lazy">
-        <div class="gallery-overlay"><span class="gallery-overlay-text">Training</span></div>
-      </div>
-
-      <div class="gallery-item" data-cat="events" data-cap="Event Security – VIP Function">
-        <img src="assets/gallery/gallery-3.jpg" alt="Event security VIP function" loading="lazy">
-        <div class="gallery-overlay"><span class="gallery-overlay-text">Events</span></div>
-      </div>
-
-      <div class="gallery-item" data-cat="team" data-cap="Defender Security – Full Team">
-        <img src="assets/gallery/gallery-4.jpg" alt="Full team photo" loading="lazy">
-        <div class="gallery-overlay"><span class="gallery-overlay-text">Team</span></div>
-      </div>
-
-      <div class="gallery-item" data-cat="deployment" data-cap="Gate Security – Industrial Zone">
-        <img src="assets/gallery/gallery-5.jpg" alt="Gate security industrial zone" loading="lazy">
-        <div class="gallery-overlay"><span class="gallery-overlay-text">Deployment</span></div>
-      </div>
-
-      <div class="gallery-item" data-cat="training" data-cap="Physical Fitness Drill – Training Ground">
-        <img src="assets/gallery/gallery-6.jpg" alt="Fitness drill training" loading="lazy">
-        <div class="gallery-overlay"><span class="gallery-overlay-text">Training</span></div>
-      </div>
-
-      <div class="gallery-item" data-cat="events" data-cap="Crowd Management – Public Event">
-        <img src="assets/gallery/gallery-7.jpg" alt="Crowd management public event" loading="lazy">
-        <div class="gallery-overlay"><span class="gallery-overlay-text">Events</span></div>
-      </div>
-
-      <div class="gallery-item" data-cat="deployment" data-cap="CCTV Monitoring – Control Room">
-        <img src="assets/gallery/gallery-8.jpg" alt="CCTV monitoring control room" loading="lazy">
-        <div class="gallery-overlay"><span class="gallery-overlay-text">Deployment</span></div>
-      </div>
-
-      <div class="gallery-item" data-cat="team" data-cap="Guard Parade – Morning Briefing">
-        <img src="assets/gallery/gallery-9.jpg" alt="Guard parade morning briefing" loading="lazy">
-        <div class="gallery-overlay"><span class="gallery-overlay-text">Team</span></div>
-      </div>
-
-      <div class="gallery-item" data-cat="training" data-cap="First Aid Training – All Personnel">
-        <img src="assets/gallery/gallery-10.jpg" alt="First aid training" loading="lazy">
-        <div class="gallery-overlay"><span class="gallery-overlay-text">Training</span></div>
-      </div>
-
-      <div class="gallery-item" data-cat="deployment" data-cap="Hotel Security – Mussoorie">
-        <img src="assets/gallery/gallery-11.jpg" alt="Hotel security deployment" loading="lazy">
-        <div class="gallery-overlay"><span class="gallery-overlay-text">Deployment</span></div>
-      </div>
-
-      <div class="gallery-item" data-cat="events" data-cap="Award Ceremony – Client Event">
-        <img src="assets/gallery/gallery-12.jpg" alt="Award ceremony client event" loading="lazy">
-        <div class="gallery-overlay"><span class="gallery-overlay-text">Events</span></div>
-      </div>
-
-    </div><!-- /gallery-grid -->
-
-    <div style="text-align:center;margin-top:3rem;" class="fade-up">
-      <a href="contact.html" class="btn-primary">Get a Security Assessment →</a>
+    <div class="licenses-brochure fade-up">
+      <a href="assets/brochure.pdf" class="btn-primary" target="_blank" rel="noopener noreferrer">Download Company Brochure (PDF)</a>
     </div>
   </div>
 </section>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLB()">
-  <div class="lb-inner">
-    <button class="lb-close" onclick="closeLB()">&#10005;</button>
-    <button class="lb-nav lb-prev" onclick="navLB(-1)">&#8249;</button>
-    <button class="lb-nav lb-next" onclick="navLB(1)">&#8250;</button>
-    <img id="lbImg" src="" alt="">
-    <div class="lb-caption" id="lbCap"></div>
+<!-- CONTACT CTA -->
+<section class="about-cta">
+  <div class="container fade-up">
+    <div class="section-label">Ready to Partner?</div>
+    <h2 class="section-title">Let's Secure Your Premises</h2>
+    <div class="divider" style="margin:1rem auto;"></div>
+    <p>Get a free on-site security assessment and a customized proposal. Our team is available 24 hours a day, 7 days a week.</p>
+    <div class="about-cta-btns">
+      <a href="contact.html" class="btn-primary">Get Free Assessment</a>
+      <a href="tel:8077942213" class="btn-secondary">Call +91 8077942213</a>
+    </div>
   </div>
-</div>
+</section>
 
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><img src="https://img1.wsimg.com/isteam/ip/9621693c-899c-4763-b9aa-02fc73963b49/blob-9b78866.png" alt="Defender Security Services"><p>Professional security guard and manpower services in Dehradun, Uttarakhand. Trusted by leading organizations since 2022.</p></div>
+      <div class="footer-brand"><img src="assets/logo.png" alt="Defender Security Services"><p>Professional security guard and manpower services in Dehradun, Uttarakhand. Trusted by leading organizations since 2022.</p></div>
       <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About Us</a></li><li><a href="jobs.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Security Guards</a></li><li><a href="services.html">Corporate Security</a></li><li><a href="services.html">Event Security</a></li><li><a href="services.html">Risk Assessment</a></li></ul></div>
       <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:8077942213">+91 8077942213</a></li><li><a href="tel:01352522520">0135 2522520</a></li><li><a href="mailto:Defenderuttarakhand@gmail.com">Email Us</a></li><li><a href="https://wa.me/918077942213">WhatsApp</a></li></ul></div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Defender Security Services. All Rights Reserved.</p>
-      <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+      <p>© 2026 Defender Security Services. All Rights Reserved. | Near Kargi Chowk, Dehradun, Uttarakhand 248001</p>
+      <div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
     </div>
   </div>
 </footer>
 
-<a href="https://wa.me/918077942213" class="wa-float" target="_blank">💬</a>
+<a href="https://wa.me/918077942213" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">💬</a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Scroll animations
   const obs = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80); });

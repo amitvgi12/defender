@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /assets/brochure.pdf
+
+Sitemap: https://defendersecurityservices.in/sitemap.xml
