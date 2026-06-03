@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /assets/brochure.pdf
 
-Sitemap: https://defendersecurityservices.in/sitemap.xml
+Sitemap: https://amitvgi12.github.io/defender/sitemap.xml
