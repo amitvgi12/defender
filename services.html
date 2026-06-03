@@ -74,13 +74,10 @@
     .service-detail:nth-child(even) .service-detail-inner{direction:rtl}
     .service-detail:nth-child(even) .service-detail-inner > *{direction:ltr}
     .service-visual{position:relative}
-    .service-icon-big{
-      width:100%;aspect-ratio:4/3;background:var(--navy-light);border:1px solid var(--border);
-      display:flex;align-items:center;justify-content:center;font-size:6rem;
-      position:relative;overflow:hidden;
-    }
-    .service-icon-big::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,0.08),transparent)}
-    .service-num-bg{position:absolute;bottom:-1rem;right:-1rem;font-family:'Bebas Neue',sans-serif;font-size:8rem;color:rgba(201,168,76,0.06);line-height:1;pointer-events:none}
+    .service-image{width:100%;aspect-ratio:4/3;background:var(--navy-light);border:1px solid var(--border);position:relative;overflow:hidden}
+    .service-image::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,26,0.02),rgba(10,14,26,0.18));pointer-events:none}
+    .service-image img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+    .service-image--top img{object-position:center top}
     .service-text h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);line-height:1;margin-bottom:1rem}
     .service-text p{color:var(--gray);line-height:1.8;margin-bottom:1.5rem;font-weight:300}
     .service-features{display:flex;flex-direction:column;gap:0.6rem;margin-bottom:2rem}
@@ -135,14 +132,14 @@
       .section-title{font-size:clamp(2rem,9vw,3rem)}
       .service-detail-inner{grid-template-columns:1fr;gap:1.5rem}
       .service-detail{padding:3rem 1.25rem}
-      .service-icon-big{height:220px}
+      .service-image{aspect-ratio:16/10}
       .footer-grid{grid-template-columns:1fr;gap:2rem}
       footer{padding:3rem 1.25rem 2rem}
       .footer-bottom{flex-direction:column;align-items:flex-start;gap:.75rem}
       .wa-float{bottom:1.25rem;right:1.25rem;width:50px;height:50px;font-size:1.4rem}
     }
     @media(max-width:380px){
-      .service-icon-big{height:170px}
+      .service-image{aspect-ratio:4/3}
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
@@ -188,7 +185,9 @@
 <div class="service-detail">
   <div class="service-detail-inner">
     <div class="service-visual fade-up">
-      <div class="service-icon-big">🛡️<div class="service-num-bg"></div></div>
+      <div class="service-image">
+        <img src="assets/gallery/gallery-07.jpeg" width="1156" height="520" alt="Defender Security uniformed guards deployed at a client site" loading="lazy">
+      </div>
     </div>
     <div class="service-text fade-up">
       <h2>Security Guard Services</h2>
@@ -211,7 +210,9 @@
 <div class="service-detail">
   <div class="service-detail-inner">
     <div class="service-visual fade-up">
-      <div class="service-icon-big">🏢<div class="service-num-bg"></div></div>
+      <div class="service-image">
+        <img src="assets/gallery/gallery-13.jpeg" width="1280" height="963" alt="Defender Security guards deployed outside a client facility" loading="lazy">
+      </div>
     </div>
     <div class="service-text fade-up">
       <h2>Corporate &amp; Industrial Security</h2>
@@ -233,7 +234,9 @@
 <div class="service-detail">
   <div class="service-detail-inner">
     <div class="service-visual fade-up">
-      <div class="service-icon-big">🎪<div class="service-num-bg"></div></div>
+      <div class="service-image">
+        <img src="assets/gallery/gallery-09.jpeg" width="1156" height="520" alt="Defender event security team at an outdoor venue" loading="lazy">
+      </div>
     </div>
     <div class="service-text fade-up">
       <h2>Event Security</h2>
@@ -255,7 +258,9 @@
 <div class="service-detail">
   <div class="service-detail-inner">
     <div class="service-visual fade-up">
-      <div class="service-icon-big">🔍<div class="service-num-bg"></div></div>
+      <div class="service-image">
+        <img src="assets/gallery/gallery-03.jpeg" width="1152" height="864" alt="Defender safety awareness and risk training session" loading="lazy">
+      </div>
     </div>
     <div class="service-text fade-up">
       <h2>Risk Assessment &amp; Consulting</h2>
@@ -277,7 +282,9 @@
 <div class="service-detail">
   <div class="service-detail-inner">
     <div class="service-visual fade-up">
-      <div class="service-icon-big">👥<div class="service-num-bg"></div></div>
+      <div class="service-image service-image--top">
+        <img src="assets/gallery/gallery-08.jpeg" width="520" height="1156" alt="Defender housekeeping and manpower staff in uniform" loading="lazy">
+      </div>
     </div>
     <div class="service-text fade-up">
       <h2>Manpower &amp; Staffing Services</h2>
@@ -299,7 +306,9 @@
 <div class="service-detail">
   <div class="service-detail-inner">
     <div class="service-visual fade-up">
-      <div class="service-icon-big">🚨<div class="service-num-bg"></div></div>
+      <div class="service-image service-image--top">
+        <img src="assets/gallery/gallery-11.jpeg" width="468" height="1040" alt="Defender response team guards ready for deployment" loading="lazy">
+      </div>
     </div>
     <div class="service-text fade-up">
       <h2>Emergency Response Teams</h2>
