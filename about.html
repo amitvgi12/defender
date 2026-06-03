@@ -85,9 +85,9 @@
     /* STORY */
     .story { background: var(--navy-mid); }
     .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-    .story-img { position: relative; }
-    .story-img img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 2px; }
-    .story-overlay { position: absolute; bottom: -1.5rem; left: -1.5rem; background: var(--gold); padding: 1.5rem 2rem; font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--navy); line-height: 1; }
+    .story-img { position: relative; width: min(100%, 520px); justify-self: center; }
+    .story-img img { width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: center 52%; border: 1px solid var(--border); border-radius: 2px; display: block; }
+    .story-overlay { position: absolute; bottom: 1rem; left: 1rem; background: var(--gold); padding: 1.2rem 1.6rem; font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: var(--navy); line-height: 1; box-shadow: 0 12px 32px rgba(10,14,26,0.28); }
     .story-text p { color: var(--gray); line-height: 1.8; margin-bottom: 1.5rem; font-weight: 300; font-size: 1rem; }
 
     /* VALUES */
@@ -209,6 +209,7 @@
       .nav-links, .nav-actions { display: none; }
       .nav-hamburger { display: flex; }
       .story-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .story-img { width: min(100%, 640px); }
       .values-grid, .cert-grid { grid-template-columns: 1fr 1fr; }
       .team-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -229,7 +230,8 @@
       .section-title { font-size: clamp(2rem, 9vw, 3rem); }
 
       .story-grid { gap: 2rem; }
-      .story-overlay { font-size: 2rem; padding: 1rem 1.25rem; bottom: -1rem; left: -0.5rem; }
+      .story-img { width: 100%; }
+      .story-overlay { font-size: 2rem; padding: 1rem 1.25rem; bottom: 0.75rem; left: 0.75rem; }
 
       .values-grid { grid-template-columns: 1fr; gap: 1rem; }
       .value-card { padding: 1.75rem 1.25rem; }
@@ -319,7 +321,7 @@
   <div class="container">
     <div class="story-grid">
       <div class="story-img fade-up">
-        <img src="assets/hero-bg.jpg" width="1536" height="1024" alt="Defender Security Team">
+        <img src="assets/gallery/gallery-04.jpeg" width="2560" height="1920" alt="Defender Security team at a community safety awareness event">
         <div class="story-overlay">EST.<br>2022</div>
       </div>
       <div class="fade-up">

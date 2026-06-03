@@ -73,11 +73,11 @@
     .service-detail-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
     .service-detail:nth-child(even) .service-detail-inner{direction:rtl}
     .service-detail:nth-child(even) .service-detail-inner > *{direction:ltr}
-    .service-visual{position:relative}
-    .service-image{width:100%;aspect-ratio:4/3;background:var(--navy-light);border:1px solid var(--border);position:relative;overflow:hidden}
+    .service-visual{position:relative;width:min(100%,520px);justify-self:center}
+    .service-image{width:100%;aspect-ratio:16/9;background:var(--navy-light);border:1px solid var(--border);position:relative;overflow:hidden}
     .service-image::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,26,0.02),rgba(10,14,26,0.18));pointer-events:none}
-    .service-image img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-    .service-image--top img{object-position:center top}
+    .service-image img{width:100%;height:100%;object-fit:cover;object-position:var(--image-position,center);display:block}
+    .service-image--wide{aspect-ratio:2/1}
     .service-text h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);line-height:1;margin-bottom:1rem}
     .service-text p{color:var(--gray);line-height:1.8;margin-bottom:1.5rem;font-weight:300}
     .service-features{display:flex;flex-direction:column;gap:0.6rem;margin-bottom:2rem}
@@ -115,6 +115,7 @@
       .nav-links,.nav-actions{display:none}
       .nav-hamburger{display:flex}
       .service-detail-inner{grid-template-columns:1fr;gap:2.5rem}
+      .service-visual{width:min(100%,640px)}
       .service-detail:nth-child(even) .service-detail-inner{direction:ltr}
       .footer-grid{grid-template-columns:1fr 1fr}
       section{padding:4rem 1.5rem}
@@ -132,14 +133,15 @@
       .section-title{font-size:clamp(2rem,9vw,3rem)}
       .service-detail-inner{grid-template-columns:1fr;gap:1.5rem}
       .service-detail{padding:3rem 1.25rem}
-      .service-image{aspect-ratio:16/10}
+      .service-visual{width:100%}
+      .service-image,.service-image--wide{aspect-ratio:16/10}
       .footer-grid{grid-template-columns:1fr;gap:2rem}
       footer{padding:3rem 1.25rem 2rem}
       .footer-bottom{flex-direction:column;align-items:flex-start;gap:.75rem}
       .wa-float{bottom:1.25rem;right:1.25rem;width:50px;height:50px;font-size:1.4rem}
     }
     @media(max-width:380px){
-      .service-image{aspect-ratio:4/3}
+      .service-image,.service-image--wide{aspect-ratio:4/3}
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
@@ -185,7 +187,7 @@
 <div class="service-detail">
   <div class="service-detail-inner">
     <div class="service-visual fade-up">
-      <div class="service-image">
+      <div class="service-image service-image--wide" style="--image-position:center 52%;">
         <img src="assets/gallery/gallery-07.jpeg" width="1156" height="520" alt="Defender Security uniformed guards deployed at a client site" loading="lazy">
       </div>
     </div>
@@ -210,7 +212,7 @@
 <div class="service-detail">
   <div class="service-detail-inner">
     <div class="service-visual fade-up">
-      <div class="service-image">
+      <div class="service-image" style="--image-position:center 42%;">
         <img src="assets/gallery/gallery-13.jpeg" width="1280" height="963" alt="Defender Security guards deployed outside a client facility" loading="lazy">
       </div>
     </div>
@@ -234,7 +236,7 @@
 <div class="service-detail">
   <div class="service-detail-inner">
     <div class="service-visual fade-up">
-      <div class="service-image">
+      <div class="service-image service-image--wide" style="--image-position:center 52%;">
         <img src="assets/gallery/gallery-09.jpeg" width="1156" height="520" alt="Defender event security team at an outdoor venue" loading="lazy">
       </div>
     </div>
@@ -258,7 +260,7 @@
 <div class="service-detail">
   <div class="service-detail-inner">
     <div class="service-visual fade-up">
-      <div class="service-image">
+      <div class="service-image" style="--image-position:center 46%;">
         <img src="assets/gallery/gallery-03.jpeg" width="1152" height="864" alt="Defender safety awareness and risk training session" loading="lazy">
       </div>
     </div>
@@ -282,7 +284,7 @@
 <div class="service-detail">
   <div class="service-detail-inner">
     <div class="service-visual fade-up">
-      <div class="service-image service-image--top">
+      <div class="service-image" style="--image-position:center 72%;">
         <img src="assets/gallery/gallery-08.jpeg" width="520" height="1156" alt="Defender housekeeping and manpower staff in uniform" loading="lazy">
       </div>
     </div>
@@ -306,8 +308,8 @@
 <div class="service-detail">
   <div class="service-detail-inner">
     <div class="service-visual fade-up">
-      <div class="service-image service-image--top">
-        <img src="assets/gallery/gallery-11.jpeg" width="468" height="1040" alt="Defender response team guards ready for deployment" loading="lazy">
+      <div class="service-image service-image--wide" style="--image-position:center 52%;">
+        <img src="assets/gallery/gallery-06.jpeg" width="1156" height="520" alt="Defender rapid response team assembled at an outdoor venue" loading="lazy">
       </div>
     </div>
     <div class="service-text fade-up">
