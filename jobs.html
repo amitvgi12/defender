@@ -17,7 +17,7 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#0a0e1a">
-  <link rel="preload" as="image" href="assets/hero-staff-illustration.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/hero-jobs-staff.jpg" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Barlow:wght@300;400;500;600;700&amp;family=Barlow+Condensed:wght@400;600;700&amp;display=swap" rel="stylesheet">
   <style>
     :root{--navy:#0a0e1a;--navy-mid:#111827;--navy-light:#1c2537;--gold:#c9a84c;--gold-light:#e8c96b;--white:#f8f9fa;--gray:#c5ccd8;--text-muted:#c5ccd8;--border:rgba(201,168,76,0.2)}
@@ -42,9 +42,10 @@
     .mobile-menu.open{display:flex;flex-direction:column;gap:1rem}
     .mobile-menu a{color:var(--gray);text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em}
 
-    .page-hero{padding:112px 2rem 48px;background:linear-gradient(180deg,var(--navy-mid) 0%,var(--navy) 100%);position:relative;overflow:hidden}
-    .page-hero::before{content:'';position:absolute;inset:0;opacity:0.08;background:url('assets/hero-staff-illustration.jpg') center top/100% 100% no-repeat}
-    .page-hero-inner{max-width:1200px;margin:0 auto;position:relative}
+    .page-hero{--page-hero-image:url('assets/hero-jobs-staff.jpg');padding:120px 2rem 72px;min-height:460px;background:var(--navy);position:relative;overflow:hidden;display:flex;align-items:center}
+    .page-hero::before{content:'';position:absolute;inset:0;opacity:1;background-image:linear-gradient(90deg,rgba(17,24,39,0.88) 0%,rgba(17,24,39,0.72) 36%,rgba(17,24,39,0.36) 64%,rgba(17,24,39,0.2) 100%),var(--page-hero-image);background-position:center,center 42%;background-size:cover,100% auto;background-repeat:no-repeat}
+    .page-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,26,0.1) 0%,rgba(10,14,26,0.08) 58%,var(--navy) 100%);pointer-events:none}
+    .page-hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;text-align:left}
     .breadcrumb{display:flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem;font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase}
     .breadcrumb a{color:var(--gold);text-decoration:none}.breadcrumb span{color:var(--gray)}
     .page-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,6rem);line-height:0.95;letter-spacing:0.02em;margin-bottom:1rem}
