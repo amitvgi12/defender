@@ -65,7 +65,7 @@
     .page-hero { --page-hero-image: url('assets/hero-about-staff.jpg'); padding: 120px 2rem 72px; min-height: 460px; background: var(--navy); position: relative; overflow: hidden; display: flex; align-items: center; }
     .page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(90deg, rgba(17,24,39,0.88) 0%, rgba(17,24,39,0.72) 36%, rgba(17,24,39,0.36) 64%, rgba(17,24,39,0.2) 100%), var(--page-hero-image); background-position: center, center 42%; background-size: cover, 100% auto; background-repeat: no-repeat; opacity: 1; }
     .page-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,14,26,0.1) 0%, rgba(10,14,26,0.08) 58%, var(--navy) 100%); pointer-events: none; }
-    .page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; text-align: left; }
+    .page-hero-inner { width: 100%; max-width: none; margin: 0; padding-left: clamp(2rem,8vw,11rem); padding-right: 2rem; position: relative; z-index: 1; text-align: left; }
     .breadcrumb { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
     .breadcrumb a { color: var(--gold); text-decoration: none; }
     .breadcrumb span { color: var(--gray); }
@@ -87,8 +87,8 @@
     /* STORY */
     .story { background: var(--navy-mid); }
     .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-    .story-img { position: relative; width: min(100%, 520px); justify-self: center; }
-    .story-img img { width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: center; border: 1px solid var(--border); border-radius: 2px; display: block; }
+    .story-img { position: relative; width: min(100%, 520px); aspect-ratio: 16 / 10; justify-self: center; overflow: hidden; border: 1px solid var(--border); border-radius: 2px; }
+    .story-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 42%; display: block; }
     .story-overlay { position: absolute; bottom: 1rem; left: 1rem; background: var(--gold); padding: 1.2rem 1.6rem; font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: var(--navy); line-height: 1; box-shadow: 0 12px 32px rgba(10,14,26,0.28); }
     .story-text p { color: var(--gray); line-height: 1.8; margin-bottom: 1.5rem; font-weight: 300; font-size: 1rem; }
 
@@ -289,7 +289,7 @@
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <nav>
-  <a href="index.html" class="nav-logo"><img src="assets/logo-160.png" width="160" height="160" alt="Defender Security Services"></a>
+  <a href="index.html" class="nav-logo"><img src="assets/logo-160.png" width="160" height="160" alt="Defender Security Services"><span class="brand-wordmark"><strong>Defender</strong><span>Security &amp; Staffing</span></span></a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
@@ -324,7 +324,7 @@
   <div class="container">
     <div class="story-grid">
       <div class="story-img fade-up">
-        <img src="assets/team-staff-illustration.jpg" width="1586" height="992" alt="Illustration of Defender Security guards and manpower staff at a client facility">
+        <img src="assets/hero-about-staff.jpg" width="1672" height="941" alt="Illustration of Defender Security guards and manpower staff at a client facility">
         <div class="story-overlay">EST.<br>2022</div>
       </div>
       <div class="fade-up">

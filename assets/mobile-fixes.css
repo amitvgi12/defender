@@ -1,7 +1,43 @@
 /* Shared mobile polish overrides */
+.nav-logo {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  min-width: 0;
+}
+
 .nav-logo img {
+  height: 54px;
   width: auto;
-  max-width: 92px;
+  max-width: 54px;
+  filter: drop-shadow(0 0 10px rgba(201, 168, 76, 0.22));
+}
+
+.brand-wordmark {
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+  font-family: 'Barlow Condensed', sans-serif;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.brand-wordmark strong {
+  color: var(--gold);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.brand-wordmark span {
+  color: rgba(248, 249, 250, 0.7);
+  font-size: 0.66rem;
+  font-weight: 600;
 }
 
 @media (max-width: 600px) {
@@ -15,14 +51,14 @@
   }
 
   .nav-logo {
-    padding: 0.22rem 0.32rem !important;
-    max-width: 124px;
+    gap: 0.5rem;
+    max-width: 185px;
   }
 
   .nav-logo img {
-    height: 40px !important;
+    height: 42px !important;
     width: auto !important;
-    max-width: 96px;
+    max-width: 42px;
   }
 
   nav.scrolled .nav-logo img {
@@ -73,7 +109,7 @@
 
   .hero-bg {
     background-size: auto 100% !important;
-    background-position: 62% center !important;
+    background-position: center center !important;
   }
 
   .hero-content {
@@ -85,6 +121,48 @@
   .hero-stats {
     margin-top: 1.25rem !important;
     gap: 0.75rem !important;
+  }
+
+  .service-card {
+    min-height: 310px !important;
+    padding: 0 !important;
+  }
+
+  .service-card-body {
+    padding: 1.4rem !important;
+  }
+
+  .service-card h3 {
+    font-size: 1.18rem !important;
+  }
+
+  .mission {
+    padding-top: 2.25rem !important;
+  }
+
+  .mission-grid {
+    gap: 1.65rem !important;
+  }
+
+  .mission-img {
+    width: 100% !important;
+    aspect-ratio: 16 / 10 !important;
+    max-height: 320px;
+    overflow: hidden;
+    border-radius: 3px;
+  }
+
+  .mission-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 42% !important;
+    display: block;
+  }
+
+  .mission-badge {
+    bottom: 0.75rem !important;
+    right: 0.75rem !important;
   }
 
   .page-hero {
@@ -100,6 +178,8 @@
 
   .page-hero-inner {
     width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     text-align: left !important;
   }
 
@@ -167,6 +247,10 @@
 }
 
 @media (max-width: 380px) {
+  .brand-wordmark {
+    display: none;
+  }
+
   .mobile-menu.open {
     grid-template-columns: 1fr;
   }
