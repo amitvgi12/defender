@@ -104,23 +104,54 @@
   }
 
   .hero {
-    min-height: auto !important;
+    min-height: 100svh !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    padding: 0 0 2.5rem !important;
   }
 
   .hero-bg {
-    background-size: auto 100% !important;
-    background-position: center center !important;
+    background-color: var(--navy) !important;
+    background-size: 100% auto !important;
+    background-position: center 64px !important;
+    background-repeat: no-repeat !important;
+    filter: brightness(0.72) !important;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(10, 14, 26, 0.16) 0%,
+      rgba(10, 14, 26, 0.4) 190px,
+      rgba(10, 14, 26, 0.88) 340px,
+      var(--navy) 100%
+    ) !important;
   }
 
   .hero-content {
-    width: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
     margin: 0 !important;
-    padding: 88px 1.25rem 0 !important;
+    padding: 94px 1.25rem 0 !important;
   }
 
   .hero-stats {
+    width: 100% !important;
+    box-sizing: border-box;
     margin-top: 1.25rem !important;
     gap: 0.75rem !important;
+  }
+
+  .hero p {
+    max-width: 100% !important;
+    font-size: 0.98rem !important;
+    line-height: 1.62 !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.55rem, 11vw, 3.45rem) !important;
+    margin-bottom: 0.85rem !important;
   }
 
   .service-card {
@@ -172,8 +203,8 @@
   }
 
   .page-hero::before {
-    background-position: center, 58% center !important;
-    background-size: cover, auto 100% !important;
+    background-position: center, center top !important;
+    background-size: cover, 100% auto !important;
   }
 
   .page-hero-inner {
@@ -185,6 +216,11 @@
 
   .page-hero p {
     max-width: 92%;
+  }
+
+  .contact-band {
+    padding-top: 5rem !important;
+    scroll-margin-top: 76px;
   }
 
   footer {
