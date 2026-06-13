@@ -708,7 +708,8 @@ nav.scrolled {
 .tile .t-no { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em; color: var(--gold); }
 .tile h3 { font-size: 1.3rem; margin: 0.85rem 0 0.6rem; color: var(--ink); }
 .tile p { font-size: 0.93rem; color: var(--muted); }
-.tile .ico { font-size: 1.6rem; margin-bottom: 0.75rem; display: block; }
+.tile .ico { font-size: 1.6rem; margin-bottom: 0.85rem; display: block; color: var(--gold-light); }
+.tile .ico svg { width: 2.1rem; height: 2.1rem; display: block; }
 
 /* job openings list */
 .job-list { display: flex; flex-direction: column; gap: 1rem; }
