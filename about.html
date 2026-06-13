@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us | Defender Security Services – Dehradun, Uttarakhand</title>
   <meta name="description" content="About Defender Security Services – PSARA licensed security agency founded in 2022 in Dehradun, Uttarakhand. Integrity, professionalism, and 24/7 commitment."/>
   <link rel="canonical" href="https://amitvgi12.github.io/defender/about.html"/>
-  <!-- Open Graph -->
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://amitvgi12.github.io/defender/about.html"/>
   <meta property="og:title" content="About Us | Defender Security Services"/>
-  <meta property="og:description" content="PSARA licensed security agency based in Dehradun. Founded 2022. Professional guards, 24/7 operations across Uttarakhand."/>
+  <meta property="og:description" content="PSARA licensed security agency founded in 2022 in Dehradun, Uttarakhand. Integrity, professionalism, and 24/7 commitment."/>
   <meta property="og:image" content="https://amitvgi12.github.io/defender/assets/logo-512.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="About Us | Defender Security Services"/>
+  <meta name="twitter:description" content="PSARA licensed security agency founded in 2022 in Dehradun, Uttarakhand."/>
+  <meta name="twitter:image" content="https://amitvgi12.github.io/defender/assets/logo-512.png"/>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -19,286 +23,27 @@
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#0a0e1a">
   <link rel="preload" as="image" href="assets/hero-about-staff.jpg" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Barlow:wght@300;400;500;600;700&amp;family=Barlow+Condensed:wght@400;600;700&amp;display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --navy:       #0a0e1a;
-      --navy-mid:   #111827;
-      --navy-light: #1c2537;
-      --gold:       #c9a84c;
-      --gold-light: #e8c96b;
-      --gold-pale:  #f5e6b0;
-      --white:      #f8f9fa;
-      --gray:       #c5ccd8;
-      --text-muted: #c5ccd8;
-      --border:     rgba(201,168,76,0.2);
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Barlow', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
-    .nav-hamburger { appearance: none; background: transparent; border: 0; padding: 0.5rem; }
-    .nav-hamburger:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 4px; }
-
-    /* NAV */
-    /* Skip link */
-    .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
-    .skip-link:focus { position: fixed; top: 0; left: 0; width: auto; height: auto; padding: 0.75rem 1.5rem; background: var(--gold); color: var(--navy); font-weight: 700; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; z-index: 9999; }
-
-    nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(10,14,26,0.97); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
-    .nav-logo { display: flex; align-items: center; justify-content: center; padding: 0.32rem 0.44rem; background: linear-gradient(180deg, rgba(248,249,250,0.14), rgba(201,168,76,0.08)); border: 1px solid rgba(201,168,76,0.18); border-radius: 4px; text-decoration: none; }
-    .nav-logo img { height: 48px; object-fit: contain; display: block; }
-    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
-    .nav-links a { color: var(--gray); text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
-    .nav-actions { display: flex; align-items: center; gap: 1rem; }
-    .nav-phone { color: var(--gold); font-weight: 600; text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; }
-    .nav-phone:hover { color: var(--gold); }
-    .btn-contact { background: var(--gold); color: var(--navy); padding: 0.5rem 1.4rem; border-radius: 2px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; font-size: 0.9rem; transition: background 0.2s; }
-    .btn-contact:hover { background: var(--gold-light); }
-    .nav-hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
-    .nav-hamburger span { width: 26px; height: 2px; background: var(--gold); }
-    .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; background: var(--navy-mid); border-bottom: 1px solid var(--border); padding: 1.5rem 2rem; z-index: 99; }
-    .mobile-menu.open { display: flex; flex-direction: column; gap: 1rem; }
-    .mobile-menu a { color: var(--gray); text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
-    .mobile-menu a:hover { color: var(--gold); }
-
-    /* PAGE HERO */
-    .page-hero { --page-hero-image: url('assets/hero-about-staff.jpg'); padding: 120px 2rem 72px; min-height: 460px; background: var(--navy); position: relative; overflow: hidden; display: flex; align-items: center; }
-    .page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(90deg, rgba(17,24,39,0.88) 0%, rgba(17,24,39,0.72) 36%, rgba(17,24,39,0.36) 64%, rgba(17,24,39,0.2) 100%), var(--page-hero-image); background-position: center, center 42%; background-size: cover, 100% auto; background-repeat: no-repeat; opacity: 1; }
-    .page-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,14,26,0.1) 0%, rgba(10,14,26,0.08) 58%, var(--navy) 100%); pointer-events: none; }
-    .page-hero-inner { width: 100%; max-width: none; margin: 0; padding-left: clamp(2rem,8vw,11rem); padding-right: 2rem; position: relative; z-index: 1; text-align: left; }
-    .breadcrumb { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
-    .breadcrumb a { color: var(--gold); text-decoration: none; }
-    .breadcrumb span { color: var(--gray); }
-    .page-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem,7vw,6rem); line-height: 0.95; letter-spacing: 0.02em; margin-bottom: 1rem; }
-    .page-hero p { color: var(--gray); font-size: 1.1rem; max-width: 560px; line-height: 1.7; font-weight: 300; }
-
-    /* SHARED */
-    .container { max-width: 1200px; margin: 0 auto; }
-    section { padding: 5rem 2rem; }
-    .section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
-    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem,5vw,4rem); line-height: 1; letter-spacing: 0.02em; margin-bottom: 1rem; }
-    .section-sub { color: var(--gray); font-size: 1.05rem; max-width: 560px; line-height: 1.7; font-weight: 300; }
-    .divider { width: 48px; height: 3px; background: var(--gold); margin: 1.5rem 0; }
-    .btn-primary { background: var(--gold); color: var(--navy); padding: 0.85rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; display: inline-block; transition: all 0.2s; }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
-    .btn-secondary { border: 1px solid rgba(248,249,250,0.35); color: var(--white); padding: 0.85rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; display: inline-block; transition: all 0.2s; }
-    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
-
-    /* STORY */
-    .story { background: var(--navy-mid); }
-    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-    .story-img { position: relative; width: min(100%, 520px); aspect-ratio: 16 / 10; justify-self: center; overflow: hidden; border: 1px solid var(--border); border-radius: 2px; }
-    .story-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 42%; display: block; }
-    .story-overlay { position: absolute; bottom: 1rem; left: 1rem; background: var(--gold); padding: 1.2rem 1.6rem; font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: var(--navy); line-height: 1; box-shadow: 0 12px 32px rgba(10,14,26,0.28); }
-    .story-text p { color: var(--gray); line-height: 1.8; margin-bottom: 1.5rem; font-weight: 300; font-size: 1rem; }
-
-    /* VALUES */
-    .values { background: var(--navy); }
-    .values-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3rem; }
-    .value-card { padding: 2.5rem 2rem; border: 1px solid var(--border); background: var(--navy-light); position: relative; overflow: hidden; transition: box-shadow 0.3s, border-color 0.3s; }
-    .value-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), transparent); }
-    .value-card:hover { box-shadow: 0 8px 24px rgba(201,168,76,0.1); border-color: var(--gold); }
-    .value-icon { font-size: 2.5rem; margin-bottom: 1.5rem; }
-    .value-card h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.1rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; color: var(--gold); }
-    .value-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.7; font-weight: 300; }
-
-    /* TEAM */
-    .team { background: var(--navy-mid); }
-    .team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; margin-top: 3rem; }
-    .team-card { position: relative; overflow: hidden; border: 1px solid var(--border); }
-    .team-bg { width: 100%; aspect-ratio: 3/4; background: var(--navy-light); display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative; overflow: hidden; }
-    .team-bg::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(17,24,39,0.75)); }
-    .team-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem 1.25rem; }
-    .team-info h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.15rem; letter-spacing: 0.05em; color: #fff; }
-    .team-info span { color: var(--gold); font-size: 0.82rem; letter-spacing: 0.08em; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; }
-
-    /* TIMELINE */
-    .timeline { background: var(--navy); }
-    .timeline-list { position: relative; margin-top: 3rem; padding-left: 2rem; }
-    .timeline-list::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--gold), transparent); }
-    .timeline-item { position: relative; padding-left: 2rem; padding-bottom: 2.5rem; }
-    .timeline-item::before { content: ''; position: absolute; left: -2.45rem; top: 0.4rem; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); border: 2px solid var(--navy); }
-    .timeline-year { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--gold); margin-bottom: 0.25rem; }
-    .timeline-item h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.1rem; letter-spacing: 0.06em; margin-bottom: 0.4rem; }
-    .timeline-item p { color: var(--gray); font-size: 0.95rem; font-weight: 300; line-height: 1.6; max-width: 500px; }
-
-    /* CERTIFICATIONS */
-    .certifications { background: var(--navy-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 4rem 2rem; }
-    .cert-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; margin-top: 3rem; }
-    .cert-card { padding: 2rem 1.5rem; text-align: center; border: 1px solid var(--border); background: var(--navy); transition: border-color 0.3s, box-shadow 0.3s; }
-    .cert-card:hover { border-color: var(--gold); box-shadow: 0 4px 16px rgba(201,168,76,0.1); }
-    .cert-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-    .cert-card h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
-    .cert-card p { color: var(--gray); font-size: 0.85rem; font-weight: 300; }
-
-    /* ═══════════════════════════════════════════
-       GALLERY SECTION
-    ═══════════════════════════════════════════ */
-    .gallery { background: var(--navy); }
-    .gallery-header { text-align: center; margin-bottom: 3rem; }
-    .gallery-header .section-sub { margin: 0 auto; }
-
-    /* Filter tabs */
-    .gallery-filters { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
-    .gf-btn {
-      font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem;
-      font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
-      padding: 0.5rem 1.4rem; border-radius: 2px; cursor: pointer;
-      border: 1px solid var(--border); background: rgba(255,255,255,0.05);
-      color: var(--gray); transition: all 0.2s;
-    }
-    .gf-btn.active, .gf-btn:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
-
-    /* Masonry grid */
-    .gallery-grid { columns: 3; column-gap: 16px; }
-    @media (max-width: 900px) { .gallery-grid { columns: 2; } }
-    @media (max-width: 540px) { .gallery-grid { columns: 1; } }
-
-    .gallery-item {
-      break-inside: avoid; margin-bottom: 16px;
-      position: relative; overflow: hidden;
-      border: 1px solid var(--border); border-radius: 2px;
-      cursor: pointer; background: var(--navy-light);
-    }
-    .gallery-item img { width: 100%; display: block; object-fit: cover; transition: transform 0.4s ease; }
-    .gallery-item:hover img { transform: scale(1.06); }
-    .gallery-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(17,24,39,0.75) 0%, transparent 55%);
-      opacity: 0; transition: opacity 0.3s;
-      display: flex; align-items: flex-end; padding: 1rem 1.25rem;
-    }
-    .gallery-item:hover .gallery-overlay { opacity: 1; }
-    .gallery-overlay-text { font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem; letter-spacing: 0.15em; text-transform: uppercase; color: #fff; }
-    .gallery-item.g-hidden { display: none; }
-
-    /* Lightbox */
-    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 9000; align-items: center; justify-content: center; }
-    .lightbox.open { display: flex; }
-    .lb-inner { position: relative; max-width: 92vw; }
-    .lb-inner img { max-width: 88vw; max-height: 82vh; object-fit: contain; display: block; border-radius: 2px; box-shadow: 0 24px 72px rgba(0,0,0,0.6); }
-    .lb-close { position: absolute; top: -44px; right: 0; font-size: 28px; color: var(--gold); cursor: pointer; background: none; border: none; line-height: 1; transition: opacity 0.2s; }
-    .lb-close:hover { opacity: 0.7; }
-    .lb-caption { text-align: center; margin-top: 12px; font-family: 'Barlow Condensed', sans-serif; letter-spacing: 0.12em; font-size: 0.8rem; text-transform: uppercase; color: rgba(255,255,255,0.55); }
-    .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.25); color: #fff; font-size: 20px; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
-    .lb-nav:hover { background: rgba(201,168,76,0.3); border-color: var(--gold); }
-    .lb-prev { left: -60px; }
-    .lb-next { right: -60px; }
-    @media (max-width: 700px) { .lb-prev { left: -8px; } .lb-next { right: -8px; } }
-
-    /* FOOTER */
-    footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.07); padding: 4rem 2rem 2rem; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
-    .footer-brand img { height: 44px; object-fit: contain; margin-bottom: 1rem; }
-    .footer-brand p { color: rgba(255,255,255,0.72); font-size: 0.9rem; line-height: 1.7; max-width: 280px; font-weight: 300; }
-    .footer-col h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-    .footer-col ul li a { color: rgba(255,255,255,0.72); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; font-weight: 300; }
-    .footer-col ul li a:hover { color: var(--gold); }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .footer-bottom p { color: rgba(255,255,255,0.65); font-size: 0.85rem; font-weight: 300; }
-    .footer-legal { display: flex; gap: 1.5rem; }
-    .footer-legal a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
-    .footer-legal a:hover { color: var(--gold); }
-
-    .wa-float { position: fixed; bottom: 2rem; right: 2rem; z-index: 999; background: #25D366; color: #fff; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none; transition: transform 0.2s; }
-    .wa-float:hover { transform: scale(1.1); }
-    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-    /* ── TABLET ── */
-    @media (max-width: 900px) {
-      nav { padding: 0 1.25rem; }
-      .nav-links, .nav-actions { display: none; }
-      .nav-hamburger { display: flex; }
-      .story-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .story-img { width: min(100%, 640px); }
-      .values-grid, .cert-grid { grid-template-columns: 1fr 1fr; }
-      .team-grid { grid-template-columns: 1fr 1fr; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      section { padding: 4rem 1.5rem; }
-    }
-
-    /* ── MOBILE ── */
-    @media (max-width: 600px) {
-      nav { padding: 0 1rem; height: 70px; }
-      nav.scrolled { height: 60px; }
-      .nav-logo img { height: 52px; }
-      nav.scrolled .nav-logo img { height: 42px; }
-      .mobile-menu { top: 70px; }
-
-      section { padding: 3rem 1.25rem; }
-      .page-hero { padding: 96px 1.25rem 40px; }
-      .page-hero h1 { font-size: clamp(2.6rem, 11vw, 4rem); }
-      .section-title { font-size: clamp(2rem, 9vw, 3rem); }
-
-      .story-grid { gap: 2rem; }
-      .story-img { width: 100%; }
-      .story-overlay { font-size: 2rem; padding: 1rem 1.25rem; bottom: 0.75rem; left: 0.75rem; }
-
-      .values-grid { grid-template-columns: 1fr; gap: 1rem; }
-      .value-card { padding: 1.75rem 1.25rem; }
-
-      .team-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
-
-      .timeline-list { padding-left: 1.5rem; }
-      .timeline-item { padding-left: 1.5rem; }
-      .timeline-item::before { left: -1.95rem; }
-
-      .cert-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
-      .cert-card { padding: 1.5rem 1rem; }
-
-      .gf-btn { padding: 0.4rem 1rem; font-size: 0.75rem; }
-
-      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-      footer { padding: 3rem 1.25rem 2rem; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
-
-      .wa-float { bottom: 1.25rem; right: 1.25rem; width: 50px; height: 50px; font-size: 1.4rem; }
-      .lb-inner img { max-width: 94vw; max-height: 70vh; }
-    }
-
-    @media (max-width: 380px) {
-      .team-grid { grid-template-columns: 1fr; }
-      .cert-grid { grid-template-columns: 1fr; }
-    }
-
-    /* LICENSES */
-    .licenses { background: var(--navy); padding: 5rem 2rem; }
-    .section-sub-center { color: var(--gray); font-size: 1.05rem; max-width: 560px; line-height: 1.7; font-weight: 300; margin: 0 auto; text-align: center; }
-    .licenses .cert-grid { margin-top: 3rem; }
-    .licenses-brochure { text-align: center; margin-top: 2.5rem; }
-
-    /* ABOUT CTA */
-    .about-cta { background: var(--navy-mid); padding: 5rem 2rem; border-top: 1px solid var(--border); text-align: center; }
-    .about-cta p { color: var(--gray); max-width: 520px; margin: 0 auto 2rem; line-height: 1.7; font-weight: 300; }
-    .about-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-
-    @media (max-width: 600px) {
-      .licenses { padding: 3rem 1.25rem; }
-      .about-cta { padding: 3rem 1.25rem; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
-      .clients-marquee { animation: none !important; }
-      .fade-up { opacity: 1 !important; transform: none !important; }
-    }
-  </style>
-  <link rel="stylesheet" href="assets/mobile-fixes.css">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800;900&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/defender.css">
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<nav>
-  <a href="index.html" class="nav-logo"><img src="assets/logo-160.png" width="160" height="160" alt="Defender Security Services"><span class="brand-wordmark"><strong>Defender</strong><span>Security &amp; Staffing</span></span></a>
+<!-- NAV -->
+<nav id="siteNav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logo-160.png" width="160" height="160" alt="Defender Security Services Logo">
+    <span class="brand-wordmark"><strong>Defender</strong><span>Security &amp; Staffing</span></span>
+  </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
-    <li><a href="about.html" class="active">About Us</a></li>
+    <li><a href="about.html" class="active">About</a></li>
     <li><a href="jobs.html">Jobs</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <div class="nav-actions">
-    <a href="tel:+918077942213" class="nav-phone">📞 +91 8077942213</a>
+    <a href="tel:+918077942213" class="nav-phone"><span class="dot"></span>+91 8077942213</a>
     <a href="contact.html" class="btn-contact">Get a Quote</a>
   </div>
   <button type="button" class="nav-hamburger" aria-label="Toggle navigation menu" aria-controls="mobileMenu" aria-expanded="false">
@@ -306,37 +51,43 @@
   </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a><a href="services.html">Services</a><a href="about.html">About Us</a><a href="jobs.html">Jobs</a><a href="contact.html">Contact</a>
-  <a href="tel:+918077942213" style="color:var(--gold)">📞 +91 8077942213</a>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="about.html">About</a>
+  <a href="jobs.html">Jobs</a>
+  <a href="contact.html">Contact</a>
+  <a href="tel:+918077942213">📞 +91 8077942213</a>
 </div>
 
 <main id="main-content">
-<div class="page-hero">
-  <div class="page-hero-inner fade-up visible">
-    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>About Us</span></div>
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-media"><img src="assets/hero-about-staff.jpg" width="1672" height="941" alt="" aria-hidden="true"></div>
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>About Us</span></div>
+    <p class="eyebrow is-light" style="margin-top:1.25rem;">File No. DSS · Est. 2022</p>
     <h1>About Defender<br>Security</h1>
-    <p>4+ years of trusted security excellence across Uttarakhand — protecting what matters most to businesses and communities.</p>
+    <p class="lede">4+ years of trusted security excellence across Uttarakhand — protecting what matters most to businesses and communities.</p>
   </div>
-</div>
+</section>
 
 <!-- STORY -->
-<section class="story">
+<section class="section">
   <div class="container">
-    <div class="story-grid">
-      <div class="story-img fade-up">
-        <img src="assets/hero-about-staff.jpg" width="1672" height="941" alt="Illustration of Defender Security guards and manpower staff at a client facility">
-        <div class="story-overlay">EST.<br>2022</div>
+    <div class="split">
+      <div class="media-frame reveal">
+        <img src="assets/hero-about-staff.jpg" width="1672" height="941" alt="Defender Security guards and manpower staff at a client facility">
+        <div class="stamp"><small>EST.</small>2022</div>
       </div>
-      <div class="fade-up">
-        <div class="section-label">Our Story</div>
-        <h2 class="section-title">Who We Are</h2>
-        <div class="divider"></div>
-        <p>Defender Security &amp; Manpower Services was founded in Dehradun with a singular mission: to provide dependable, professional security services to the people and businesses of Uttarakhand.</p>
-        <p>Since 2022, we have grown from a small local operation to one of the most trusted names in security across the region, deploying 50+ manpower professionals and security guards to clients ranging from government institutions and hospitals to hotels and industrial facilities.</p>
-        <p>We are PSARA licensed and operate with unwavering commitment to professionalism, integrity, and the safety of every client we serve.</p>
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;">
-          <a href="contact.html" class="btn-primary">Work With Us</a>
-          <a href="services.html" class="btn-secondary">Our Services</a>
+      <div class="reveal">
+        <p class="eyebrow">Our Story</p>
+        <h2>Who We Are</h2>
+        <p class="lede" style="margin-top:1.25rem;">Defender Security &amp; Manpower Services was founded in Dehradun with a singular mission: to provide dependable, professional security services to the people and businesses of Uttarakhand.</p>
+        <p style="margin-top:1rem;color:var(--muted);">Since 2022, we have grown from a small local operation to one of the most trusted names in security across the region, deploying 50+ manpower professionals and security guards to clients ranging from government institutions and hospitals to hotels and industrial facilities.</p>
+        <p style="margin-top:1rem;color:var(--muted);">We are PSARA licensed and operate with unwavering commitment to professionalism, integrity, and the safety of every client we serve.</p>
+        <div class="btn-row">
+          <a href="contact.html" class="btn">Work With Us <span class="arr">→</span></a>
+          <a href="services.html" class="btn btn--ghost">Our Services</a>
         </div>
       </div>
     </div>
@@ -344,227 +95,120 @@
 </section>
 
 <!-- VALUES -->
-<section class="values">
+<section class="section band--alt">
   <div class="container">
-    <div class="fade-up" style="text-align:center;">
-      <div class="section-label">What We Stand For</div>
-      <h2 class="section-title">Our Core Values</h2>
-      <div class="divider" style="margin:1rem auto;"></div>
+    <div class="section-head is-center reveal">
+      <p class="eyebrow is-center">What We Stand For</p>
+      <h2>Our Core Values</h2>
     </div>
-    <div class="values-grid">
-      <div class="value-card fade-up"><div class="value-icon">🎯</div><h3>Integrity</h3><p>We operate with complete transparency and honesty in all dealings — with our clients, our personnel, and our communities.</p></div>
-      <div class="value-card fade-up"><div class="value-icon">⚡</div><h3>Professionalism</h3><p>Every team member is trained to the highest standards, uniformed, punctual, and accountable at all times.</p></div>
-      <div class="value-card fade-up"><div class="value-icon">🤝</div><h3>Client Focus</h3><p>We prioritize our clients' needs above all else, building long-term relationships built on trust and results.</p></div>
-      <div class="value-card fade-up"><div class="value-icon">🔒</div><h3>Reliability</h3><p>Security doesn't take a day off — neither do we. Our teams are available and dependable every single hour of every day.</p></div>
-      <div class="value-card fade-up"><div class="value-icon">📈</div><h3>Continuous Improvement</h3><p>We invest constantly in training, technology, and processes to stay ahead of evolving security challenges.</p></div>
-      <div class="value-card fade-up"><div class="value-icon">🌍</div><h3>Community</h3><p>As a local company, we are deeply invested in the safety and well-being of the communities where we operate.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- TEAM -->
-<section class="team">
-  <div class="container">
-    <div class="fade-up">
-      <div class="section-label">Leadership</div>
-      <h2 class="section-title">Meet Our Team</h2>
-      <div class="divider"></div>
-      <p class="section-sub">Dedicated professionals with decades of combined experience in security, law enforcement, and operations management.</p>
-    </div>
-    <div class="team-grid">
-      <div class="team-card fade-up"><div class="team-bg">🛡️</div><div class="team-info"><h3>Founder &amp; Director</h3><span>Leadership &amp; Vision</span></div></div>
-      <div class="team-card fade-up"><div class="team-bg">⚙️</div><div class="team-info"><h3>Operations Head</h3><span>Field Deployment &amp; Logistics</span></div></div>
-      <div class="team-card fade-up"><div class="team-bg">🔒</div><div class="team-info"><h3>Security Chief</h3><span>Guard Oversight &amp; Compliance</span></div></div>
-      <div class="team-card fade-up"><div class="team-bg">🎓</div><div class="team-info"><h3>Training Head</h3><span>Personnel Development</span></div></div>
+    <div class="tile-grid reveal">
+      <div class="tile"><span class="ico">🎯</span><span class="t-no">01</span><h3>Integrity</h3><p>We operate with complete transparency and honesty in all dealings — with our clients, our personnel, and our communities.</p></div>
+      <div class="tile"><span class="ico">⚡</span><span class="t-no">02</span><h3>Professionalism</h3><p>Every team member is trained to the highest standards, uniformed, punctual, and accountable at all times.</p></div>
+      <div class="tile"><span class="ico">🤝</span><span class="t-no">03</span><h3>Client Focus</h3><p>We prioritize our clients' needs above all else, building long-term relationships built on trust and results.</p></div>
+      <div class="tile"><span class="ico">🔒</span><span class="t-no">04</span><h3>Reliability</h3><p>Security doesn't take a day off — neither do we. Our teams are available and dependable every single hour of every day.</p></div>
+      <div class="tile"><span class="ico">📈</span><span class="t-no">05</span><h3>Continuous Improvement</h3><p>We invest constantly in training, technology, and processes to stay ahead of evolving security challenges.</p></div>
+      <div class="tile"><span class="ico">🌍</span><span class="t-no">06</span><h3>Community</h3><p>As a local company, we are deeply invested in the safety and well-being of the communities where we operate.</p></div>
     </div>
   </div>
 </section>
 
 <!-- TIMELINE -->
-<section class="timeline">
+<section class="section">
   <div class="container">
-    <div class="fade-up">
-      <div class="section-label">Our Journey</div>
-      <h2 class="section-title">Company Milestones</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="timeline-list fade-up">
-      <div class="timeline-item"><div class="timeline-year">2022</div><h3>Founded in Dehradun</h3><p>Defender Security Services was established near Kargi Chowk, Dehradun with a small team and a big vision for professional security in Uttarakhand.</p></div>
-      <div class="timeline-item"><div class="timeline-year">2023</div><h3>PSARA Licensing Obtained</h3><p>Officially licensed under the Private Security Agencies Regulation Act, cementing our commitment to legal and professional operations.</p></div>
-      <div class="timeline-item"><div class="timeline-year">2023</div><h3>Expanded to Manpower Services</h3><p>Launched our professional manpower and staffing division to serve the growing hospitality and facility management sectors in Uttarakhand.</p></div>
-      <div class="timeline-item"><div class="timeline-year">2024</div><h3>20+ Clients Milestone</h3><p>Reached a landmark of over 20 clients including government bodies, hospitals, educational institutions, and commercial facilities.</p></div>
-      <div class="timeline-item"><div class="timeline-year">2025</div><h3>50+ Manpower / Guards Deployed</h3><p>Grew our deployed workforce to over 50 trained manpower professionals and security guards across Uttarakhand.</p></div>
-      <div class="timeline-item"><div class="timeline-year">2025</div><h3>Continued Growth &amp; Digital Presence</h3><p>Launched enhanced digital platforms to better serve clients and streamline operations, while continuing to expand our service coverage across the state.</p></div>
+    <div class="split" style="align-items:start;">
+      <div class="reveal">
+        <p class="eyebrow">Our Journey</p>
+        <h2>Company<br>Milestones</h2>
+        <p class="lede" style="margin-top:1.25rem;">From a small local team to one of Uttarakhand's most trusted security names — the operational record, year by year.</p>
+      </div>
+      <div class="reveal">
+        <div class="timeline">
+          <div class="timeline-item"><div class="timeline-year">2022</div><h3>Founded in Dehradun</h3><p>Defender Security Services was established near Kargi Chowk, Dehradun with a small team and a big vision for professional security in Uttarakhand.</p></div>
+          <div class="timeline-item"><div class="timeline-year">2023</div><h3>PSARA Licensing Obtained</h3><p>Officially licensed under the Private Security Agencies Regulation Act, cementing our commitment to legal and professional operations.</p></div>
+          <div class="timeline-item"><div class="timeline-year">2023</div><h3>Expanded to Manpower Services</h3><p>Launched our professional manpower and staffing division to serve the growing hospitality and facility management sectors in Uttarakhand.</p></div>
+          <div class="timeline-item"><div class="timeline-year">2024</div><h3>20+ Clients Milestone</h3><p>Reached a landmark of over 20 clients including government bodies, hospitals, educational institutions, and commercial facilities.</p></div>
+          <div class="timeline-item"><div class="timeline-year">2025</div><h3>50+ Guards Deployed</h3><p>Grew our deployed workforce to over 50 trained manpower professionals and security guards across Uttarakhand.</p></div>
+          <div class="timeline-item"><div class="timeline-year">2025</div><h3>Continued Growth &amp; Digital Presence</h3><p>Launched enhanced digital platforms to better serve clients and streamline operations, while continuing to expand our service coverage across the state.</p></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CERTIFICATIONS -->
-<div class="certifications">
+<!-- LEADERSHIP -->
+<section class="section band--alt">
   <div class="container">
-    <div class="fade-up" style="text-align:center;">
-      <div class="section-label">Credentials</div>
-      <h2 class="section-title">Licensed &amp; Certified</h2>
-      <div class="divider" style="margin:1rem auto;"></div>
+    <div class="section-head is-center reveal">
+      <p class="eyebrow is-center">Leadership</p>
+      <h2>Meet Our Team</h2>
+      <p class="lede">Dedicated professionals with decades of combined experience in security, law enforcement, and operations management.</p>
     </div>
-    <div class="cert-grid">
-      <div class="cert-card fade-up"><div class="cert-icon">📜</div><h4>PSARA Licensed</h4><p>Private Security Agencies Regulation Act certified and compliant</p></div>
-      <div class="cert-card fade-up"><div class="cert-icon">🏛️</div><h4>Govt. Registered</h4><p>Registered security agency with Uttarakhand Government</p></div>
-      <div class="cert-card fade-up"><div class="cert-icon">🎓</div><h4>Trained Personnel</h4><p>All guards undergo certified professional training programs</p></div>
-      <div class="cert-card fade-up"><div class="cert-icon">✔️</div><h4>Background Verified</h4><p>Rigorous police verification for every deployed personnel</p></div>
-    </div>
-  </div>
-</div>
-
-<!-- LICENSES &amp; COMPLIANCE -->
-<section class="licenses">
-  <div class="container">
-    <div class="fade-up" style="text-align:center;">
-      <div class="section-label">Legal &amp; Compliance</div>
-      <h2 class="section-title">Licences &amp; Registrations</h2>
-      <div class="divider" style="margin:1rem auto;"></div>
-      <p class="section-sub-center">Defender Security Services operates with full legal compliance. Our credentials are available for verification by prospective clients.</p>
-    </div>
-    <div class="cert-grid fade-up">
-      <div class="cert-card"><div class="cert-icon">📜</div><h4>PSARA Licensed</h4><p>Certified under the Private Security Agencies Regulation Act — legally compliant to deploy guards in Uttarakhand.</p></div>
-      <div class="cert-card"><div class="cert-icon">🏛️</div><h4>Govt. Registered Business</h4><p>Registered entity with Uttarakhand Government. Full registration and GST details available on request.</p></div>
-      <div class="cert-card"><div class="cert-icon">🧾</div><h4>GST Registered</h4><p>Goods &amp; Services Tax registered. Official invoices issued for all contracts and service engagements.</p></div>
-      <div class="cert-card"><div class="cert-icon">📄</div><h4>Company Brochure</h4><p>Download our official business brochure with full registration, tax, office, and contact details.</p></div>
-    </div>
-    <div class="licenses-brochure fade-up">
-      <a href="assets/brochure.pdf" class="btn-primary" target="_blank" rel="noopener noreferrer">Download Company Brochure (PDF)</a>
+    <div class="team-grid reveal">
+      <div class="team-card"><div class="team-monogram">🛡️</div><h3>Founder &amp; Director</h3><span>Leadership &amp; Vision</span></div>
+      <div class="team-card"><div class="team-monogram">⚙️</div><h3>Operations Head</h3><span>Field Deployment &amp; Logistics</span></div>
+      <div class="team-card"><div class="team-monogram">🔒</div><h3>Security Chief</h3><span>Guard Oversight &amp; Compliance</span></div>
+      <div class="team-card"><div class="team-monogram">🎓</div><h3>Training Head</h3><span>Personnel Development</span></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT CTA -->
-<section class="about-cta">
-  <div class="container fade-up">
-    <div class="section-label">Ready to Partner?</div>
-    <h2 class="section-title">Let's Secure Your Premises</h2>
-    <div class="divider" style="margin:1rem auto;"></div>
-    <p>Get a free on-site security assessment and a customized proposal. Our team is available 24 hours a day, 7 days a week.</p>
-    <div class="about-cta-btns">
-      <a href="contact.html" class="btn-primary">Get Free Assessment</a>
-      <a href="tel:+918077942213" class="btn-secondary">Call +91 8077942213</a>
+<!-- CREDENTIALS / LICENCES -->
+<section class="section">
+  <div class="container">
+    <div class="section-head is-center reveal">
+      <p class="eyebrow is-center">Legal &amp; Compliance</p>
+      <h2>Licensed &amp; Certified</h2>
+      <p class="lede">Defender Security Services operates with full legal compliance. Our credentials are available for verification by prospective clients.</p>
+    </div>
+    <div class="tile-grid reveal">
+      <div class="tile"><span class="ico">📜</span><h3>PSARA Licensed</h3><p>Certified under the Private Security Agencies Regulation Act — legally compliant to deploy guards in Uttarakhand.</p></div>
+      <div class="tile"><span class="ico">🏛️</span><h3>Govt. Registered Business</h3><p>Registered entity with the Uttarakhand Government. Full registration details available on request.</p></div>
+      <div class="tile"><span class="ico">🧾</span><h3>GST Registered</h3><p>Goods &amp; Services Tax registered. Official invoices issued for all contracts and service engagements.</p></div>
+      <div class="tile"><span class="ico">🎓</span><h3>Trained Personnel</h3><p>All guards undergo certified professional training programs before deployment.</p></div>
+      <div class="tile"><span class="ico">✔️</span><h3>Background Verified</h3><p>Rigorous police verification for every deployed member of personnel.</p></div>
+      <div class="tile"><span class="ico">📄</span><h3>Documents on Request</h3><p>Registration, GST, and licence copies provided to prospective clients for full transparency.</p></div>
+    </div>
+    <div class="brochure-strip reveal">
+      <a href="assets/brochure.pdf" class="btn" target="_blank" rel="noopener noreferrer">Download Company Brochure (PDF) <span class="arr">→</span></a>
     </div>
   </div>
 </section>
 
+<!-- CTA BAND -->
+<section class="section band--pine">
+  <div class="container">
+    <div class="section-head is-center reveal" style="margin-bottom:0;">
+      <p class="eyebrow is-light is-center">Ready to Partner?</p>
+      <h2>Let's Secure Your Premises</h2>
+      <p class="lede">Get a free on-site security assessment and a customized proposal. Our team is available 24 hours a day, 7 days a week.</p>
+      <div class="btn-row" style="justify-content:center;">
+        <a href="contact.html" class="btn btn--light">Get Free Assessment <span class="arr">→</span></a>
+        <a href="tel:+918077942213" class="btn btn--ghost-light">Call +91 8077942213</a>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
 
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><img src="assets/logo-160.png" width="160" height="160" alt="Defender Security Services"><p>Professional security guard and manpower services in Dehradun, Uttarakhand. Trusted by leading organizations since 2022.</p></div>
+      <div class="footer-brand">
+        <img src="assets/logo-160.png" width="160" height="160" alt="Defender Security Services">
+        <p>Professional security guard and manpower services in Dehradun, Uttarakhand. Trusted by leading organizations since 2022.</p>
+      </div>
       <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About Us</a></li><li><a href="jobs.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Security Guards</a></li><li><a href="services.html">Corporate Security</a></li><li><a href="services.html">Event Security</a></li><li><a href="services.html">Risk Assessment</a></li></ul></div>
       <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+918077942213">+91 8077942213</a></li><li><a href="tel:+911352522520">0135 2522520</a></li><li><a href="mailto:Defenderuttarakhand@gmail.com">Email Us</a></li><li><a href="https://wa.me/918077942213">WhatsApp</a></li></ul></div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Defender Security Services. All Rights Reserved. | Near Kargi Chowk, Dehradun, Uttarakhand 248001</p>
+      <p>© 2026 Defender Security Services — Near Kargi Chowk, Dehradun, Uttarakhand 248001</p>
       <div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
     </div>
   </div>
 </footer>
-
-<a href="https://wa.me/918077942213" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">💬</a>
-
-<script>
-  function setupMobileNav() {
-    const navToggle = document.querySelector('.nav-hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (!navToggle || !mobileMenu) return;
-    navToggle.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', String(isOpen));
-    });
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-
-  function trackConversion(name, details = {}) {
-    if (window.gtag) window.gtag('event', name, details);
-    if (window.dataLayer) window.dataLayer.push({ event: name, ...details });
-  }
-
-  function bindConversionClicks() {
-    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-      link.addEventListener('click', () => trackConversion('phone_click', { label: link.textContent.trim() }));
-    });
-    document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-      link.addEventListener('click', () => trackConversion('whatsapp_click', { label: link.textContent.trim() || link.getAttribute('aria-label') || 'WhatsApp' }));
-    });
-  }
-
-  setupMobileNav();
-  bindConversionClicks();
-
-  // Scroll animations
-  const animatedEls = document.querySelectorAll('.fade-up');
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    animatedEls.forEach(el => el.classList.add('visible'));
-  } else {
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80); });
-    }, { threshold: 0.12 });
-    animatedEls.forEach(el => obs.observe(el));
-  }
-
-  // Gallery filter
-  document.querySelectorAll('.gf-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.gf-btn').forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-      const f = this.dataset.filter;
-      document.querySelectorAll('.gallery-item').forEach(item => {
-        item.classList.toggle('g-hidden', f !== 'all' && item.dataset.cat !== f);
-      });
-    });
-  });
-
-  // Lightbox
-  const lightbox = document.getElementById('lightbox');
-  let lbItems = [], lbIdx = 0;
-  function openLB(el) {
-    if (!lightbox) return;
-    lbItems = Array.from(document.querySelectorAll('.gallery-item:not(.g-hidden)'));
-    lbIdx = lbItems.indexOf(el);
-    updateLB();
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeLB() {
-    if (!lightbox) return;
-    lightbox.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  function navLB(dir) {
-    if (!lbItems.length) return;
-    lbIdx = (lbIdx + dir + lbItems.length) % lbItems.length;
-    updateLB();
-  }
-  function updateLB() {
-    const item = lbItems[lbIdx];
-    const lbImg = document.getElementById('lbImg');
-    const lbCap = document.getElementById('lbCap');
-    if (!item || !lbImg || !lbCap) return;
-    lbImg.src = item.querySelector('img').src;
-    lbCap.textContent = item.dataset.cap || '';
-  }
-  document.querySelectorAll('.gallery-item').forEach(item => {
-    item.addEventListener('click', () => openLB(item));
-  });
-  document.addEventListener('keydown', e => {
-    if (!lightbox || !lightbox.classList.contains('open')) return;
-    if (e.key === 'ArrowRight') navLB(1);
-    if (e.key === 'ArrowLeft')  navLB(-1);
-    if (e.key === 'Escape')     closeLB();
-  });
-</script>
+<a href="https://wa.me/918077942213" class="wa-float" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">💬</a>
+<script src="assets/js/defender.js" defer></script>
 </body>
 </html>
