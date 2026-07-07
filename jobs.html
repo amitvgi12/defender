@@ -141,11 +141,13 @@
       <h2>Submit Your Application</h2>
       <p class="lede">Fill out the form and our HR team will reach out within 2 business days.</p>
     </div>
-    <form class="form-card reveal" id="applyForm" action="https://wa.me/918077942213" method="get" style="max-width:840px;margin-inline:auto;">
+    <form class="form-card reveal" id="applyForm" action="https://formsubmit.co/Defenderuttarakhand@gmail.com" method="post" style="max-width:840px;margin-inline:auto;">
       <input type="hidden" name="_subject" value="New job application from Defender Security Services website"/>
+      <input type="hidden" name="_template" value="table"/>
+      <input type="hidden" name="_captcha" value="false"/>
       <div aria-hidden="true" style="position:absolute;left:-9999px;">
         <label for="j-website">Website</label>
-        <input id="j-website" type="text" name="website" tabindex="-1" autocomplete="off">
+        <input id="j-website" type="text" name="_honey" tabindex="-1" autocomplete="off">
       </div>
       <div class="form-grid">
         <div class="field"><label for="j-fname">First Name <span class="req">*</span></label><input id="j-fname" type="text" name="first_name" placeholder="Rahul" required></div>
@@ -211,15 +213,12 @@
 <script>
   (function () {
     var WHATSAPP_NUMBER = "918077942213";
+    var EMAIL_ENDPOINT = "https://formsubmit.co/ajax/Defenderuttarakhand@gmail.com";
     var form = document.getElementById("applyForm");
     var status = document.getElementById("appStatus");
     if (!form) return;
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (!form.reportValidity()) return;
-      var hp = form.querySelector('[name="website"]');
-      if (hp && hp.value.trim()) { form.reset(); return; }
-      var d = new FormData(form);
+
+    function whatsAppUrl(d) {
       var fullName = ((d.get("first_name") || "") + " " + (d.get("last_name") || "")).trim();
       var lines = [
         "New job application - Defender Security Services",
@@ -232,13 +231,38 @@
         d.get("resume_link") ? "Resume/CV: " + d.get("resume_link") : "",
         d.get("message") ? "Background: " + d.get("message") : ""
       ].filter(Boolean);
-      var url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(lines.join("\n"));
-      var opened = window.open(url, "_blank", "noopener,noreferrer");
-      if (!opened) window.location.href = url;
-      if (window.gtag) window.gtag("event", "job_application_submit", { position: d.get("position") || "unspecified" });
-      if (status) { status.textContent = "✓ Your application is ready in WhatsApp. Send it there and our HR team will contact you within 2 business days."; status.classList.add("success"); }
+      return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(lines.join("\n"));
+    }
+
+    function finish(msg) {
+      if (status) { status.textContent = msg; status.classList.add("success"); }
       form.reset();
-      setTimeout(function () { if (status) { status.textContent = ""; status.classList.remove("success"); } }, 6000);
+      setTimeout(function () { if (status) { status.textContent = ""; status.classList.remove("success"); } }, 10000);
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      var hp = form.querySelector('[name="_honey"]');
+      if (hp && hp.value.trim()) { form.reset(); return; }
+      var d = new FormData(form);
+      var btn = form.querySelector('button[type="submit"]');
+      if (btn) btn.disabled = true;
+      if (status) { status.textContent = "Submitting your application…"; status.classList.remove("success"); }
+      if (window.gtag) window.gtag("event", "job_application_submit", { position: d.get("position") || "unspecified" });
+      fetch(EMAIL_ENDPOINT, { method: "POST", body: d, headers: { "Accept": "application/json" } })
+        .then(function (r) { return r.json(); })
+        .then(function (j) {
+          if (!(j && (j.success === true || j.success === "true"))) throw new Error("send failed");
+          finish("✓ Application submitted! Our HR team will contact you within 2 business days.");
+        })
+        .catch(function () {
+          var url = whatsAppUrl(d);
+          var opened = window.open(url, "_blank", "noopener,noreferrer");
+          if (!opened) window.location.href = url;
+          finish("✓ Your application is ready in WhatsApp. Press send there and our HR team will contact you within 2 business days.");
+        })
+        .finally(function () { if (btn) btn.disabled = false; });
     });
   })();
 </script>

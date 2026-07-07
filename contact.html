@@ -89,11 +89,13 @@
       </div>
 
       <!-- FORM -->
-      <form class="form-card reveal" id="contactForm" action="https://wa.me/918077942213" method="get">
+      <form class="form-card reveal" id="contactForm" action="https://formsubmit.co/Defenderuttarakhand@gmail.com" method="post">
         <input type="hidden" name="_subject" value="New enquiry from Defender Security Services website"/>
+        <input type="hidden" name="_template" value="table"/>
+        <input type="hidden" name="_captcha" value="false"/>
         <div aria-hidden="true" style="position:absolute;left:-9999px;">
           <label for="c-website">Website</label>
-          <input id="c-website" type="text" name="website" tabindex="-1" autocomplete="off">
+          <input id="c-website" type="text" name="_honey" tabindex="-1" autocomplete="off">
         </div>
         <p class="eyebrow">Send Us a Message</p>
         <h3 style="margin:0.75rem 0 0.5rem;">Request a Free Assessment</h3>
@@ -193,15 +195,12 @@
 <script>
   (function () {
     var WHATSAPP_NUMBER = "918077942213";
+    var EMAIL_ENDPOINT = "https://formsubmit.co/ajax/Defenderuttarakhand@gmail.com";
     var form = document.getElementById("contactForm");
     var status = document.getElementById("formStatus");
     if (!form) return;
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (!form.reportValidity()) return;
-      var hp = form.querySelector('[name="website"]');
-      if (hp && hp.value.trim()) { form.reset(); return; }
-      var d = new FormData(form);
+
+    function whatsAppUrl(d) {
       var fullName = ((d.get("first_name") || "") + " " + (d.get("last_name") || "")).trim();
       var lines = [
         "New website enquiry - Defender Security Services",
@@ -212,13 +211,38 @@
         "Service required: " + (d.get("service") || ""),
         d.get("message") ? "Message: " + d.get("message") : ""
       ].filter(Boolean);
-      var url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(lines.join("\n"));
-      var opened = window.open(url, "_blank", "noopener,noreferrer");
-      if (!opened) window.location.href = url;
-      if (window.gtag) window.gtag("event", "contact_form_submit", { service: d.get("service") || "unspecified" });
-      if (status) { status.textContent = "✓ Your message is ready in WhatsApp. Send it there and our team will reply within 24 hours."; status.classList.add("success"); }
+      return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(lines.join("\n"));
+    }
+
+    function finish(msg) {
+      if (status) { status.textContent = msg; status.classList.add("success"); }
       form.reset();
-      setTimeout(function () { if (status) { status.textContent = ""; status.classList.remove("success"); } }, 6000);
+      setTimeout(function () { if (status) { status.textContent = ""; status.classList.remove("success"); } }, 10000);
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      var hp = form.querySelector('[name="_honey"]');
+      if (hp && hp.value.trim()) { form.reset(); return; }
+      var d = new FormData(form);
+      var btn = form.querySelector('button[type="submit"]');
+      if (btn) btn.disabled = true;
+      if (status) { status.textContent = "Sending your message…"; status.classList.remove("success"); }
+      if (window.gtag) window.gtag("event", "contact_form_submit", { service: d.get("service") || "unspecified" });
+      fetch(EMAIL_ENDPOINT, { method: "POST", body: d, headers: { "Accept": "application/json" } })
+        .then(function (r) { return r.json(); })
+        .then(function (j) {
+          if (!(j && (j.success === true || j.success === "true"))) throw new Error("send failed");
+          finish("✓ Message sent! Our team will reply within 24 hours. For an instant response, use the WhatsApp button below.");
+        })
+        .catch(function () {
+          var url = whatsAppUrl(d);
+          var opened = window.open(url, "_blank", "noopener,noreferrer");
+          if (!opened) window.location.href = url;
+          finish("✓ Your message is ready in WhatsApp. Press send there and our team will reply within 24 hours.");
+        })
+        .finally(function () { if (btn) btn.disabled = false; });
     });
   })();
 </script>
