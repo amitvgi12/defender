@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Careers &amp; Jobs | Defender Security Services – Dehradun</title>
   <meta name="description" content="Join Defender Security Services in Dehradun, Uttarakhand. Hiring security guards, supervisors, event staff, and operations executives. PF, ESI, and free training provided."/>
-  <link rel="canonical" href="https://amitvgi12.github.io/defender/jobs.html"/>
+  <link rel="canonical" href="https://defendersecurityservices.in/jobs.html"/>
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://amitvgi12.github.io/defender/jobs.html"/>
+  <meta property="og:url" content="https://defendersecurityservices.in/jobs.html"/>
   <meta property="og:title" content="Careers | Defender Security Services"/>
   <meta property="og:description" content="Security guard jobs in Dehradun. Competitive pay, PF/ESI, free training. Apply now."/>
-  <meta property="og:image" content="https://amitvgi12.github.io/defender/assets/logo-512.png"/>
+  <meta property="og:image" content="https://defendersecurityservices.in/assets/logo-512.png"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Careers | Defender Security Services"/>
   <meta name="twitter:description" content="Security guard jobs in Dehradun. Competitive pay, PF/ESI, free training."/>
-  <meta name="twitter:image" content="https://amitvgi12.github.io/defender/assets/logo-512.png"/>
+  <meta name="twitter:image" content="https://defendersecurityservices.in/assets/logo-512.png"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -145,6 +145,7 @@
       <input type="hidden" name="_subject" value="New job application from Defender Security Services website"/>
       <input type="hidden" name="_template" value="table"/>
       <input type="hidden" name="_captcha" value="false"/>
+      <input type="hidden" name="_next" value="https://defendersecurityservices.in/jobs.html"/>
       <div aria-hidden="true" style="position:absolute;left:-9999px;">
         <label for="j-website">Website</label>
         <input id="j-website" type="text" name="_honey" tabindex="-1" autocomplete="off">
@@ -152,7 +153,7 @@
       <div class="form-grid">
         <div class="field"><label for="j-fname">First Name <span class="req">*</span></label><input id="j-fname" type="text" name="first_name" placeholder="Rahul" required></div>
         <div class="field"><label for="j-lname">Last Name <span class="req">*</span></label><input id="j-lname" type="text" name="last_name" placeholder="Sharma" required></div>
-        <div class="field"><label for="j-phone">Phone <span class="req">*</span></label><input id="j-phone" type="tel" name="phone" placeholder="+91 98765 43210" required></div>
+        <div class="field"><label for="j-phone">Phone <span class="req">*</span></label><input id="j-phone" type="tel" name="phone" placeholder="+91 98765 43210" pattern="[0-9+()\-\s]{8,17}" title="Enter a valid phone number (digits, +, spaces only)" required></div>
         <div class="field"><label for="j-email">Email</label><input id="j-email" type="email" name="email" placeholder="your@email.com"></div>
         <div class="field full">
           <label for="j-position">Position Applying For <span class="req">*</span></label>
@@ -181,6 +182,7 @@
         <div class="field full"><label for="j-resume">Resume / CV Link</label><input id="j-resume" type="url" name="resume_link" placeholder="https://drive.google.com/..."></div>
         <div class="field full"><label for="j-about">Tell Us About Yourself</label><textarea id="j-about" name="message" placeholder="Brief description of your background, qualifications, or any relevant experience..."></textarea></div>
         <div class="field full"><button type="submit" class="btn btn--block">Submit Application <span class="arr">→</span></button></div>
+        <div class="field full"><button type="button" id="waSend" style="background:none;border:0;width:100%;text-align:center;color:var(--pine-2);font-family:var(--mono);font-size:0.85rem;cursor:pointer;padding:0.25rem;">or apply via WhatsApp instead 💬</button></div>
       </div>
       <div class="form-status" id="appStatus" role="alert"></div>
       <p class="form-note">PF &amp; ESI · Free training · We respond within 2 business days</p>
@@ -234,11 +236,25 @@
       return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(lines.join("\n"));
     }
 
+    function openWhatsApp(d) {
+      var url = whatsAppUrl(d);
+      var opened = window.open(url, "_blank", "noopener,noreferrer");
+      if (!opened) window.location.href = url;
+    }
+
     function finish(msg) {
       if (status) { status.textContent = msg; status.classList.add("success"); }
       form.reset();
-      setTimeout(function () { if (status) { status.textContent = ""; status.classList.remove("success"); } }, 10000);
     }
+
+    var waBtn = document.getElementById("waSend");
+    if (waBtn) waBtn.addEventListener("click", function () {
+      if (!form.reportValidity()) return;
+      var d = new FormData(form);
+      openWhatsApp(d);
+      if (window.gtag) window.gtag("event", "job_application_whatsapp_send", { position: d.get("position") || "unspecified" });
+      finish("✓ Your application is ready in WhatsApp. Press send there and our HR team will contact you within 2 business days.");
+    });
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -249,20 +265,21 @@
       var btn = form.querySelector('button[type="submit"]');
       if (btn) btn.disabled = true;
       if (status) { status.textContent = "Submitting your application…"; status.classList.remove("success"); }
-      if (window.gtag) window.gtag("event", "job_application_submit", { position: d.get("position") || "unspecified" });
-      fetch(EMAIL_ENDPOINT, { method: "POST", body: d, headers: { "Accept": "application/json" } })
+      var ctrl = window.AbortController ? new AbortController() : null;
+      var timer = ctrl ? setTimeout(function () { ctrl.abort(); }, 15000) : null;
+      fetch(EMAIL_ENDPOINT, { method: "POST", body: d, headers: { "Accept": "application/json" }, signal: ctrl ? ctrl.signal : undefined })
         .then(function (r) { return r.json(); })
         .then(function (j) {
           if (!(j && (j.success === true || j.success === "true"))) throw new Error("send failed");
+          if (window.gtag) window.gtag("event", "job_application_submit", { position: d.get("position") || "unspecified" });
           finish("✓ Application submitted! Our HR team will contact you within 2 business days.");
         })
         .catch(function () {
-          var url = whatsAppUrl(d);
-          var opened = window.open(url, "_blank", "noopener,noreferrer");
-          if (!opened) window.location.href = url;
+          openWhatsApp(d);
+          if (window.gtag) window.gtag("event", "job_application_submit_wa_fallback", { position: d.get("position") || "unspecified" });
           finish("✓ Your application is ready in WhatsApp. Press send there and our HR team will contact you within 2 business days.");
         })
-        .finally(function () { if (btn) btn.disabled = false; });
+        .finally(function () { if (timer) clearTimeout(timer); if (btn) btn.disabled = false; });
     });
   })();
 </script>

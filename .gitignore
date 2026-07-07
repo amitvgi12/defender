@@ -3,3 +3,6 @@
 
 # gstack local tooling state (PIDs, tokens, audit logs)
 .gstack/
+
+# local working notes
+claude-design.txt
