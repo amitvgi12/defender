@@ -287,12 +287,12 @@ nav.scrolled {
 .brand-wordmark span {
   font-family: var(--mono); font-size: 0.6rem; font-weight: 500;
   letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);
-  margin-top: 3px;
+  margin-top: 3px; white-space: nowrap;
 }
 
 .nav-links { display: flex; align-items: center; gap: 2rem; }
 .nav-links a {
-  position: relative;
+  position: relative; white-space: nowrap;
   font-family: var(--mono); font-size: 0.76rem; font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
   padding-block: 0.35rem;
@@ -392,7 +392,8 @@ nav.scrolled {
     linear-gradient(0deg, rgba(7,10,18,0.48) 0%, rgba(7,10,18,0) 45%),
     radial-gradient(120% 80% at 88% 4%, rgba(201,168,76,0.18), transparent 50%);
 }
-.hero-inner { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+.hero-inner { width: 100%; max-width: var(--container); margin-inline: 0 auto; padding-inline: var(--gutter); }
+.page-hero .container { margin-inline: 0 auto; }
 .hero-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
 
 .hero h1 { color: var(--ink); margin: 1.4rem 0; text-shadow: 0 2px 30px rgba(0,0,0,0.4); }
@@ -799,6 +800,11 @@ footer { background: var(--panel); border-top: 1px solid var(--line); padding-bl
 @keyframes load-up { to { opacity: 1; transform: none; } }
 
 /* ----------------------------------------------------------- RESPONSIVE */
+@media (max-width: 1140px) {
+  .nav-phone { display: none; }
+  .nav-links { gap: 1.4rem; }
+}
+
 @media (max-width: 1024px) {
   :root { --nav-h: 70px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
