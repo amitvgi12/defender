@@ -278,7 +278,13 @@ nav.scrolled {
 }
 
 .nav-logo { display: flex; align-items: center; gap: 0.75rem; margin-right: auto; }
-.nav-logo img { width: 44px; height: 44px; object-fit: contain; }
+.nav-logo img {
+  width: 48px; height: 48px; object-fit: contain;
+  padding: 3px;
+  background: linear-gradient(180deg, rgba(248,249,250,0.92), rgba(232,201,107,0.7));
+  border: 1px solid rgba(201,168,76,0.35);
+  border-radius: 6px;
+}
 .brand-wordmark { display: flex; flex-direction: column; line-height: 1; }
 .brand-wordmark strong {
   font-family: var(--display); font-weight: 800; font-size: 1.45rem;
@@ -820,6 +826,11 @@ footer { background: var(--panel); border-top: 1px solid var(--line); padding-bl
 }
 
 @media (max-width: 680px) {
+  :root { --nav-h: 62px; }
+  .nav-logo { gap: 0.6rem; }
+  .nav-logo img { width: 42px; height: 42px; }
+  .brand-wordmark strong { font-size: 1.2rem; }
+  .brand-wordmark span { font-size: 0.54rem; letter-spacing: 0.18em; }
   .cards-grid, .tile-grid, .team-grid { grid-template-columns: 1fr; }
   .stats-grid, .contact-blocks { grid-template-columns: 1fr 1fr; }
   .stat-block { padding: 1.5rem 0.5rem; }
